@@ -348,59 +348,167 @@ a {
   }
 }
 
-/* Footer */
+/* Footer — adapted from BYQ Supply's "Baseframe" footer (multi-column +
+   giant background wordmark), restyled onto our tokens. Identical markup
+   is injected on every page so the footer never drifts between them. */
 .footer {
-  background: var(--color-bg-dark);
-  padding: 80px 0 40px;
+  background: var(--color-surface-alt);
   color: var(--color-text-light);
+  padding-top: 120px;
+  overflow: hidden;
 }
 
-.footer__grid {
+.footer__top {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
-  gap: 40px;
-}
-
-.footer__grid--5col {
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2xl);
+  align-items: start;
+  padding-bottom: var(--space-3xl);
 }
 
 @media (max-width: 900px) {
-  .footer__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .footer__grid {
+  .footer__top {
     grid-template-columns: 1fr;
+    gap: var(--space-2xl);
   }
 }
 
-.footer__col-title {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-accent);
-  margin-bottom: 20px;
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  max-width: 380px;
 }
 
-.footer__col p, .footer__col a {
+.footer__logo {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-white);
+}
+
+.footer__tagline {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--color-text-muted);
+}
+
+.footer__contact-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(237, 243, 243, 0.55);
+  margin-bottom: var(--space-sm);
+}
+
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__contact-list a,
+.footer__contact-list span {
+  font-family: var(--font-body);
   font-size: 15px;
-  line-height: 2;
+  color: var(--color-text-light);
   transition: color var(--transition-fast);
 }
 
-.footer__col a:hover {
+.footer__contact-list a:hover {
+  color: var(--color-accent);
+}
+
+.footer__nav {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .footer__nav {
+    gap: var(--space-2xl);
+  }
+}
+
+.footer__nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-left: var(--space-lg);
+  border-left: 1px solid var(--color-border-dark);
+  min-width: 150px;
+}
+
+.footer__nav-col-title {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(237, 243, 243, 0.55);
+}
+
+.footer__nav-col a {
+  font-family: var(--font-body);
+  font-size: 14.5px;
   color: var(--color-text-light);
+  transition: color var(--transition-fast);
+}
+
+.footer__nav-col a:hover {
+  color: var(--color-accent);
+}
+
+.footer__nav-col a.footer__nav-col-all {
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 .footer__bottom {
-  margin-top: 60px;
-  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-2xl);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
   border-top: 1px solid var(--color-border-dark);
-  text-align: center;
-  font-size: 13px;
+}
+
+@media (max-width: 767px) {
+  .footer__bottom {
+    flex-direction: column;
+  }
+}
+
+.footer__bottom-left {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
   color: var(--color-text-muted);
+}
+
+.footer__bottom-right {
+  max-width: 640px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: rgba(237, 243, 243, 0.45);
+}
+
+.footer__wordmark {
+  width: 100%;
+  line-height: 0.82;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(64px, 13vw, 210px);
+  letter-spacing: -0.02em;
+  color: rgba(237, 243, 243, 0.06);
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+  padding-bottom: 0.06em;
 }
