@@ -2,6 +2,7 @@
   /* Typography — single source of truth for font stacks.
      Update here to restyle every section consistently. */
   --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-body: Tahoma, Geneva, Verdana, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   /* Colors — PALETTE TEST: Construction Orange & Dark Teal-Slate

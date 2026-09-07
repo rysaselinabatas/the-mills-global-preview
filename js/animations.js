@@ -207,7 +207,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Smooth Scroll for Nav Links
+    // 8. Process Timeline — scroll-fill line + lighting up numbered circles
+    const timelines = document.querySelectorAll('.process-timeline');
+    if (timelines.length > 0) {
+        const triggerRatio = 0.65; // fraction down the viewport that "activates" a step
+        let rafId = null;
+        const updateTimelines = () => {
+            const triggerY = window.innerHeight * triggerRatio;
+            timelines.forEach((timeline) => {
+                const track = timeline.querySelector('.process-timeline__track');
+                const fill = timeline.querySelector('.process-timeline__track-fill');
+                const circles = timeline.querySelectorAll('.process-timeline__circle');
+                if (!track || !fill) return;
+                const trackRect = track.getBoundingClientRect();
+                const filledPx = Math.max(0, Math.min(trackRect.height, triggerY - trackRect.top));
+                fill.style.height = `${filledPx}px`;
+                circles.forEach((circle) => {
+                    const circleRect = circle.getBoundingClientRect();
+                    const circleCenterY = circleRect.top + circleRect.height / 2;
+                    circle.classList.toggle('is-filled', circleCenterY <= triggerY);
+                });
+            });
+            rafId = null;
+        };
+        const onScroll = () => {
+            if (rafId === null) rafId = requestAnimationFrame(updateTimelines);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        updateTimelines();
+    }
+
+    // 9. "Who This Is For" hover backdrop — crossfades the section's
+    // background image to match the hovered list item.
+    const audienceHero = document.querySelector('.audience-hero');
+    if (audienceHero) {
+        const bgLayers = audienceHero.querySelectorAll('.audience-hero__bg');
+        const items = audienceHero.querySelectorAll('.audience-list__item[data-bg]');
+        let activeIndex = 0;
+        const setBg = (url) => {
+            if (!url || bgLayers.length < 2) return;
+            const nextLayer = bgLayers[1 - activeIndex];
+            const currentLayer = bgLayers[activeIndex];
+            nextLayer.style.backgroundImage = `url('${url}')`;
+            nextLayer.classList.add('is-active');
+            currentLayer.classList.remove('is-active');
+            activeIndex = 1 - activeIndex;
+        };
+        if (items.length > 0 && bgLayers.length >= 2) {
+            const firstBg = items[0].getAttribute('data-bg');
+            if (firstBg) {
+                bgLayers[0].style.backgroundImage = `url('${firstBg}')`;
+                bgLayers[0].classList.add('is-active');
+            }
+            items.forEach((item) => {
+                item.addEventListener('mouseenter', () => setBg(item.getAttribute('data-bg')));
+            });
+        }
+    }
+
+    // 10. Smooth Scroll for Nav Links
     const navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {

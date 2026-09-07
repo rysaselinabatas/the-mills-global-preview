@@ -83,7 +83,7 @@
    intro) rather than a short punchy headline. Using the giant
    .services-intro__heading size here reads as a wall of huge text. */
 .services-intro__lead {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: clamp(19px, 2.1vw, 25px);
   line-height: 1.6;
@@ -227,7 +227,7 @@
 .service-slide__text {
   position: relative;
   z-index: 3;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14.5px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
@@ -354,7 +354,7 @@
 }
 
 .why-point__text {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   color: var(--color-text-muted);
   font-size: 15px;
   line-height: 1.65;
@@ -471,7 +471,7 @@
 }
 
 .contact-split__text {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.7;
   color: var(--color-text-muted);
@@ -494,7 +494,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 15px;
   color: var(--color-text-light);
   transition: color var(--transition-fast);
@@ -519,7 +519,7 @@ a.contact-split__item:hover {
 }
 
 .contact-split__form-lead {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 16px;
   color: var(--color-text-muted);
   line-height: 1.6;
@@ -547,7 +547,7 @@ a.contact-split__item:hover {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 15px;
   color: var(--color-text-light);
   background: var(--color-surface);
@@ -574,7 +574,7 @@ a.contact-split__item:hover {
 }
 
 .contact-form__hint {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
   color: var(--color-text-muted);
   margin-top: -2px;
