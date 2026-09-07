@@ -1,0 +1,315 @@
+/* ============================================ */
+/* CONTENT PAGES — Blog, Learning Pavilion, About */
+/* Depends on tokens.css + sections.css +        */
+/* service-page.css already loaded.               */
+/* ============================================ */
+
+/* Card grid — reused for blog posts, guides and lead magnets */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+@media (max-width: 980px) {
+  .content-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .content-grid { grid-template-columns: 1fr; }
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px var(--color-card-shadow);
+}
+
+.content-card__image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.content-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.content-card:hover .content-card__image img {
+  transform: scale(1.05);
+}
+
+.content-card__body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.content-card__tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.content-card__title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--color-text-light);
+}
+
+.content-card__excerpt {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+.content-card__meta {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.content-card__badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+/* Category filter pills — Blog / Learning Pavilion index */
+.content-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: var(--space-lg);
+}
+
+.content-filter {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: transparent;
+  cursor: default;
+}
+
+.content-filter.is-active {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Lead-magnet card — download-style resource tile */
+.lead-magnet {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg-alt);
+}
+
+.lead-magnet__icon {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lead-magnet__icon svg { width: 26px; height: 26px; }
+
+.lead-magnet__body { flex: 1; }
+
+.lead-magnet__title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15.5px;
+  color: var(--color-text-light);
+  margin-bottom: 4px;
+}
+
+.lead-magnet__text {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+}
+
+.lead-magnet__cta {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+}
+
+/* Logo marquee — placeholder accreditation/partner logos, infinite
+   CSS-only loop (no JS). Swap the placeholder tiles for real logo
+   images/SVGs; the track duplicates its children once for a seamless
+   loop, so keep both halves identical when replacing content. */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee__logo {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 var(--space-lg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.marquee__logo:hover {
+  opacity: 1;
+}
+
+/* Article body — long-form blog post typography */
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-body p {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+.article-body h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--color-text-light);
+  margin: var(--space-2xl) 0 var(--space-md);
+}
+
+.article-body h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-text-light);
+  margin: var(--space-xl) 0 var(--space-sm);
+}
+
+.article-body ul {
+  margin: 0 0 var(--space-lg);
+  padding-left: 1.3em;
+}
+
+.article-body li {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin-bottom: 8px;
+}
+
+.article-body blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding: 4px 0 4px var(--space-lg);
+  margin: var(--space-xl) 0;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--color-text-light);
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.article-meta__sep { opacity: 0.4; }
+
+.template-notice {
+  max-width: 720px;
+  margin: 0 auto var(--space-2xl);
+  padding: var(--space-md) var(--space-lg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  text-align: center;
+}
