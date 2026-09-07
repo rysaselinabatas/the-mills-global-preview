@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mills Global — Customs Brokerage & Freight Solutions</title>
+  <meta name="description" content="The Mills Global delivers end-to-end customs brokerage, freight forwarding, and supply chain solutions. Licensed, bonded, and technology-driven — we move your goods across borders seamlessly.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- NAVIGATION                                   -->
+  <!-- ============================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="/" class="nav__logo">The Mills Global</a>
+      <ul class="nav__links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#stats">Track Record</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav__cta">Get a Quote</a>
+      <button class="nav__mobile-toggle" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- HERO — SCROLL-DRIVEN VIDEO                   -->
+  <!-- ============================================ -->
+  <div class="hero-scroll-container">
+    <div class="hero-viewport">
+
+      <!-- Video -->
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero-air.jpg">
+        <source src="assets/videos/hero-cargo-transit.mp4" type="video/mp4">
+      </video>
+
+      <!-- Placeholder images (fallback while video loads / if it fails) -->
+      <div class="hero-placeholders">
+        <div class="hero-placeholder__slide active" style="background-image: url('assets/images/hero-air.jpg')"></div>
+        <div class="hero-placeholder__slide" style="background-image: url('assets/images/hero-ocean.jpg')"></div>
+        <div class="hero-placeholder__slide" style="background-image: url('assets/images/hero-ground.jpg')"></div>
+        <div class="hero-placeholder__slide" style="background-image: url('assets/images/hero-warehouse.jpg')"></div>
+      </div>
+
+      <!-- Dark, mostly-desaturated overlay — keeps the video's own color visible -->
+      <div class="hero-darken"></div>
+
+      <!-- Corner viewfinder frame — decorative, parallaxes slightly with scroll -->
+      <div class="hero-frame" aria-hidden="true">
+        <span class="hero-frame__corner hero-frame__corner--tl"></span>
+        <span class="hero-frame__corner hero-frame__corner--tr"></span>
+        <span class="hero-frame__corner hero-frame__corner--bl"></span>
+        <span class="hero-frame__corner hero-frame__corner--br"></span>
+      </div>
+
+      <!-- HUD route readout — swaps per active slide, drifts with scroll -->
+      <div class="hero-hud" aria-hidden="true">
+        <span class="hero-hud__dot"></span>
+        <span class="hero-hud__route">JFK &rarr; LAX</span>
+      </div>
+
+      <!-- Text overlays -->
+      <div class="hero-content">
+
+        <!-- Slide 1: Air Freight -->
+        <div class="hero-slide hero-slide--pos-left active" data-route="JFK &rarr; LAX">
+          <p class="hero-slide__eyebrow">Air Freight</p>
+          <h1 class="hero-slide__heading">Global reach at the speed your supply chain demands.</h1>
+          <p class="hero-slide__description">Time-critical cargo, cleared and delivered without compromise. Our air freight solutions connect you to every major trade corridor, with customs handled before wheels touch the ground.</p>
+        </div>
+
+        <!-- Slide 2: Ocean Freight -->
+        <div class="hero-slide hero-slide--pos-right" data-route="SHA &rarr; LAX">
+          <p class="hero-slide__eyebrow">Ocean Freight</p>
+          <h2 class="hero-slide__heading">End-to-end ocean logistics with customs built in.</h2>
+          <p class="hero-slide__description">We navigate the complexity of international maritime trade so your goods flow freely. Full container, LCL, and breakbulk — cleared at origin, compliant at destination.</p>
+        </div>
+
+        <!-- Slide 3: Ground Transport -->
+        <div class="hero-slide hero-slide--pos-bottom" data-route="MIA &rarr; ATL">
+          <p class="hero-slide__eyebrow">Ground Transport</p>
+          <h2 class="hero-slide__heading">Last-mile precision from port to warehouse.</h2>
+          <p class="hero-slide__description">Bonded, tracked, and cleared — every step of the way. Cross-border trucking and inland logistics managed with the same rigor as your international shipments.</p>
+        </div>
+
+        <!-- Slide 4: Warehousing -->
+        <div class="hero-slide hero-slide--pos-center" data-base-transform="translateX(-50%)" data-route="LAX &rarr; ORD">
+          <p class="hero-slide__eyebrow">Warehousing &amp; Distribution</p>
+          <h2 class="hero-slide__heading">Secure storage integrated with your customs workflow.</h2>
+          <p class="hero-slide__description">Bonded warehousing, inventory management, and distribution — all under one roof. Your goods are ready to move the moment clearance is granted.</p>
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <span class="scroll-indicator__text">Scroll to explore</span>
+        <span class="scroll-indicator__arrow"></span>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="hero-progress"></div>
+
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SERVICES OVERVIEW                            -->
+  <!-- ============================================ -->
+  <section class="section section--paper" id="services">
+    <div class="container">
+      <div class="services-intro">
+        <p class="section__eyebrow animate-in">What We Do</p>
+        <h2 class="services-intro__heading animate-in" data-delay="1">Comprehensive trade solutions, under one roof — from the moment your goods leave the factory floor to the moment they clear customs at their final destination.</h2>
+      </div>
+
+      <div class="services-slider-controls animate-in" data-delay="2">
+        <button class="services-slider__arrow" type="button" data-dir="-1" aria-label="Previous service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </button>
+        <button class="services-slider__arrow" type="button" data-dir="1" aria-label="Next service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+
+      <div class="services-slider animate-in" data-delay="3" id="services-slider">
+
+        <article class="service-slide" tabindex="0">
+          <div class="service-slide__bg" style="background-image: url('assets/images/hero-air.jpg')"></div>
+          <div class="service-slide__tint"></div>
+          <div class="service-slide__overlay"></div>
+          <h3 class="service-slide__title">Customs Brokerage</h3>
+          <p class="service-slide__text">Import & export clearance, tariff classification, duty optimization, and full regulatory compliance across all major trade corridors.</p>
+        </article>
+
+        <article class="service-slide" tabindex="0">
+          <div class="service-slide__bg" style="background-image: url('assets/images/hero-ocean.jpg')"></div>
+          <div class="service-slide__tint"></div>
+          <div class="service-slide__overlay"></div>
+          <h3 class="service-slide__title">Freight Forwarding</h3>
+          <p class="service-slide__text">Air, ocean, and ground — door-to-door coordination. We source the best routes and rates, and manage the paperwork that makes it happen.</p>
+        </article>
+
+        <article class="service-slide" tabindex="0">
+          <div class="service-slide__bg" style="background-image: url('assets/images/hero-ground.jpg')"></div>
+          <div class="service-slide__tint"></div>
+          <div class="service-slide__overlay"></div>
+          <h3 class="service-slide__title">Trade Compliance</h3>
+          <p class="service-slide__text">Regulatory advisory, compliance audits, risk management, and classification reviews. Stay ahead of changing regulations — we watch so you don't have to.</p>
+        </article>
+
+        <article class="service-slide" tabindex="0">
+          <div class="service-slide__bg" style="background-image: url('assets/images/hero-warehouse.jpg')"></div>
+          <div class="service-slide__tint"></div>
+          <div class="service-slide__overlay"></div>
+          <h3 class="service-slide__title">Supply Chain Solutions</h3>
+          <p class="service-slide__text">Bonded warehousing, distribution, inventory management, and order fulfillment — all integrated with your customs workflow for seamless operations.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- WHY THE MILLS GLOBAL                         -->
+  <!-- ============================================ -->
+  <section class="section section--sand" id="why">
+    <div class="container">
+      <div class="why-grid">
+
+        <div class="why-headline animate-in">
+          Why businesses trust <span>The Mills Global</span> with their most critical shipments.
+        </div>
+
+        <div class="why-points">
+          <div class="why-point animate-in" data-delay="1">
+            <div class="why-point__header">
+              <span class="why-point__number">01</span>
+              <h3 class="why-point__title">Licensed & Bonded</h3>
+            </div>
+            <p class="why-point__text">Fully accredited with customs authorities across every major jurisdiction. Your shipments are backed by the credentials that regulators require and trading partners trust.</p>
+          </div>
+
+          <div class="why-point animate-in" data-delay="2">
+            <div class="why-point__header">
+              <span class="why-point__number">02</span>
+              <h3 class="why-point__title">Technology-Driven</h3>
+            </div>
+            <p class="why-point__text">Real-time visibility into every shipment, filing, and clearance. Our platform gives you instant access to documentation, status updates, and compliance data — 24/7.</p>
+          </div>
+
+          <div class="why-point animate-in" data-delay="3">
+            <div class="why-point__header">
+              <span class="why-point__number">03</span>
+              <h3 class="why-point__title">Dedicated Experts</h3>
+            </div>
+            <p class="why-point__text">Named account managers who know your supply chain inside out. Not a call center — a partner who anticipates problems before they become delays.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- STATS / BY THE NUMBERS                       -->
+  <!-- ============================================ -->
+  <section class="section section--light" id="stats">
+    <div class="container">
+      <div class="stats-split__grid">
+
+        <div class="stats-split__intro animate-in">
+          <p class="section__eyebrow">By The Numbers</p>
+          <h2 class="stats-split__heading">Fifteen years of clearing the way for global trade — measured, not just claimed.</h2>
+          <a href="#contact" class="btn-secondary">
+            Get in touch
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="stats-split__cards">
+          <div class="stat-card animate-in" data-delay="1">
+            <span class="stat-card__label">Years of Experience</span>
+            <div class="stat-number" data-target="15" data-suffix="+">0</div>
+          </div>
+          <div class="stat-card animate-in" data-delay="2">
+            <span class="stat-card__label">Shipments Cleared Annually</span>
+            <div class="stat-number" data-target="50" data-suffix="K+">0</div>
+          </div>
+          <div class="stat-card animate-in" data-delay="3">
+            <span class="stat-card__label">Compliance Rate</span>
+            <div class="stat-number" data-target="98.7" data-suffix="%">0</div>
+          </div>
+          <div class="stat-card animate-in" data-delay="4">
+            <span class="stat-card__label">Support Availability</span>
+            <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CTA                                          -->
+  <!-- ============================================ -->
+  <section class="section section--dark" id="contact">
+    <div class="container">
+      <div class="contact-split__grid">
+
+        <div class="contact-split__tile animate-in">
+          <p class="contact-split__brand">The Mills Global</p>
+          <h2 class="contact-split__heading">Ready to simplify your customs?</h2>
+          <p class="contact-split__text">Get in touch for a free consultation. We'll audit your current process and show you where we can save you time, money, and headaches.</p>
+
+          <div class="contact-split__divider"></div>
+
+          <div class="contact-split__list">
+            <a href="mailto:hello@themillsglobal.com" class="contact-split__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m3 7 9 6 9-6"/>
+              </svg>
+              hello@themillsglobal.com
+            </a>
+            <a href="tel:+18005550199" class="contact-split__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              +1 (800) 555-0199
+            </a>
+            <div class="contact-split__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              New York · Los Angeles · Miami
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-split__form-wrap animate-in" data-delay="1">
+          <p class="contact-split__form-lead">Tell us about your shipment and we'll get back to you within one business day.</p>
+          <form class="contact-form" id="contact-form">
+            <div class="contact-form__row">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="text" name="company" placeholder="Company">
+            </div>
+            <input type="email" name="email" placeholder="Work email" required>
+            <textarea name="message" placeholder="What are you shipping, and where?" rows="3"></textarea>
+            <button type="submit" class="btn-primary">
+              Request a Quote
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+            <p class="contact-form__hint">Opens your email client with the message pre-filled — no account needed.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER                                       -->
+  <!-- ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">The Mills Global</h4>
+          <p>Licensed customs broker and freight forwarder delivering seamless trade solutions across air, ocean, ground, and warehouse operations.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Quick Links</h4>
+          <a href="#services" style="display:block">Services</a>
+          <a href="#why" style="display:block">Why Us</a>
+          <a href="#stats" style="display:block">Track Record</a>
+          <a href="#contact" style="display:block">Contact</a>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Contact</h4>
+          <p>hello@themillsglobal.com</p>
+          <p>+1 (800) 555-0199</p>
+          <p>New York · Los Angeles · Miami</p>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        &copy; 2026 The Mills Global. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/scroll-video.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>

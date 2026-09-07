@@ -1,0 +1,62 @@
+:root {
+  /* Typography — single source of truth for font stacks.
+     Update here to restyle every section consistently. */
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Colors — PALETTE TEST: Construction Orange & Dark Teal-Slate
+     (swapped from Deep Navy & Bright Crimson — see backup-pre-palette-test/
+     to restore the original in one copy if this doesn't work out). */
+  --color-bg-dark: #1E323A;
+  --color-surface: #24404A;
+  --color-surface-alt: #172A30;
+  --color-text-light: #EDF3F3;
+  --color-text-dark: #1C2E35;
+  --color-text-muted: #93A8AE;
+  --color-accent: #F15A24;
+  --color-accent-hover: #FF7A45;
+  --color-accent-soft: rgba(241, 90, 36, 0.12);
+  --color-accent-secondary: #4F7D8C;
+  --color-white: #FFFFFF;
+  --color-card-bg: #2A4650;
+  --color-card-bg-alt: rgba(237, 243, 243, 0.04);
+  --color-border: rgba(237, 243, 243, 0.08);
+  --color-border-dark: rgba(237, 243, 243, 0.08);
+  --color-divider: rgba(237, 243, 243, 0.12);
+  --color-card-shadow: rgba(0, 0, 0, 0.25);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.5);
+
+  /* Light-mode surface — used by .section--paper to flip a section to
+     light while everything else on the page stays on the dark palette. */
+  --color-bg-light: #F2F4F3;
+  --color-surface-light: #FFFFFF;
+  --color-text-muted-on-light: #5C6E72;
+  --color-border-light: rgba(28, 46, 53, 0.08);
+  --color-divider-light: rgba(28, 46, 53, 0.1);
+
+  /* Radius Scale */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 100px;
+  --space-4xl: 140px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.4s ease;
+  --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* z-index layers */
+  --z-nav: 1000;
+  --z-hero-content: 10;
+  --z-hero-overlay: 5;
+}

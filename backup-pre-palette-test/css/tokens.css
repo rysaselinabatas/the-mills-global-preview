@@ -1,0 +1,59 @@
+:root {
+  /* Typography — single source of truth for font stacks.
+     Update here to restyle every section consistently. */
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Colors — Deep Navy & Bright Crimson */
+  --color-bg-dark: #14161F;
+  --color-surface: #1A1D28;
+  --color-surface-alt: #111320;
+  --color-text-light: #ECEDEF;
+  --color-text-dark: #14161F;
+  --color-text-muted: #8891A5;
+  --color-accent: #D94044;
+  --color-accent-hover: #E55458;
+  --color-accent-soft: rgba(217, 64, 68, 0.12);
+  --color-white: #FFFFFF;
+  --color-card-bg: #1E2130;
+  --color-card-bg-alt: rgba(236, 237, 239, 0.04);
+  --color-border: rgba(236, 237, 239, 0.07);
+  --color-border-dark: rgba(236, 237, 239, 0.07);
+  --color-divider: rgba(236, 237, 239, 0.12);
+  --color-card-shadow: rgba(0, 0, 0, 0.25);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.5);
+
+  /* Light-mode surface — used by .section--paper to flip a section to
+     light while everything else on the page stays on the dark palette. */
+  --color-bg-light: #F4F2ED;
+  --color-surface-light: #FFFFFF;
+  --color-text-muted-on-light: #5B6472;
+  --color-border-light: rgba(20, 22, 31, 0.08);
+  --color-divider-light: rgba(20, 22, 31, 0.1);
+
+  /* Radius Scale */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 100px;
+  --space-4xl: 140px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.4s ease;
+  --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* z-index layers */
+  --z-nav: 1000;
+  --z-hero-content: 10;
+  --z-hero-overlay: 5;
+}
