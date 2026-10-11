@@ -6,8 +6,9 @@
  */
 (function () {
     'use strict';
+    var force = /[?&]loader=1\b/.test(window.location.search); // add ?loader=1 to the URL to preview it again
     try {
-        if (window.sessionStorage.getItem('millsLoaderSeen')) return;
+        if (!force && window.sessionStorage.getItem('millsLoaderSeen')) return;
         window.sessionStorage.setItem('millsLoaderSeen', '1');
     } catch (e) { /* storage blocked: show the loader anyway */ }
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
