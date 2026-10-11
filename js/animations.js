@@ -300,6 +300,10 @@ document.addEventListener('DOMContentLoaded', () => {
         probe.onload = () => {
             slot.style.backgroundImage = `url("${src}")`;
             slot.classList.add('has-image');
+            // floating stickers: the box takes the picture's own proportions
+            if (slot.classList.contains('img-float')) {
+                slot.style.aspectRatio = String(probe.naturalWidth / probe.naturalHeight);
+            }
             // cutouts: size the box to the picture so it sits flush at the bottom
             if (slot.classList.contains('img-slot--cutout')) {
                 const ratio = probe.naturalWidth / probe.naturalHeight;

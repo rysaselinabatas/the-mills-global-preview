@@ -1,7 +1,7 @@
 /**
- * Custom cursor: an orange ring that trails the pointer with a springy,
- * momentum feel, plus a small dot that tracks it exactly. The ring grows over
- * links and buttons and squeezes on click. Desktop (fine pointer) only.
+ * Custom cursor: an orange ring that glides after the pointer with a soft,
+ * sleek lag, plus a small dot that tracks it exactly. The ring grows over
+ * links and buttons. Desktop (fine pointer) only.
  */
 (function () {
     'use strict';
@@ -21,12 +21,10 @@
 
     var mouse = { x: -100, y: -100 };
     var pos = { x: -100, y: -100 };
-    var vel = { x: 0, y: 0 };
-    var scale = 1, scaleTarget = 1;
+        var scale = 1, scaleTarget = 1;
     var seen = false;
 
-    var STIFFNESS = 0.11;   // pull toward the pointer
-    var DAMPING = 0.78;     // lower = more overshoot and drift
+    var FOLLOW = 0.16;      // glide toward the pointer: no overshoot, no bounce
 
     var INTERACTIVE = 'a, button, [data-open], [role="button"], summary, label, .content-card, .faq-question, .service-slide, .cta-pair *';
     var TEXTY = 'input, textarea, select';
@@ -54,20 +52,11 @@
     document.addEventListener('mouseenter', function () { root.classList.add('cursor-visible'); });
 
     function tick() {
-        vel.x += (mouse.x - pos.x) * STIFFNESS;
-        vel.y += (mouse.y - pos.y) * STIFFNESS;
-        vel.x *= DAMPING;
-        vel.y *= DAMPING;
-        pos.x += vel.x;
-        pos.y += vel.y;
-        scale += (scaleTarget - scale) * 0.18;
+        pos.x += (mouse.x - pos.x) * FOLLOW;
+        pos.y += (mouse.y - pos.y) * FOLLOW;
+        scale += (scaleTarget - scale) * 0.14;
 
-        // stretch slightly along the direction of travel
-        var speed = Math.min(Math.hypot(vel.x, vel.y), 40);
-        var stretch = 1 + speed / 120;
-        var angle = Math.atan2(vel.y, vel.x) * 180 / Math.PI;
-
-        ring.style.transform = 'translate3d(' + pos.x + 'px,' + pos.y + 'px,0) translate(-50%,-50%) rotate(' + angle + 'deg) scale(' + (scale * stretch) + ',' + (scale / stretch) + ')';
+        ring.style.transform = 'translate3d(' + pos.x + 'px,' + pos.y + 'px,0) translate(-50%,-50%) scale(' + scale + ')';
         dot.style.transform = 'translate3d(' + mouse.x + 'px,' + mouse.y + 'px,0) translate(-50%,-50%)';
         window.requestAnimationFrame(tick);
     }

@@ -700,12 +700,21 @@ a {
   position: absolute;
   z-index: 1;
   width: var(--w, 220px);
-  aspect-ratio: var(--ar, 4 / 5);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 24px 50px var(--color-card-shadow);
+  aspect-ratio: var(--ar, 1 / 1);
+  border: 0;
+  border-radius: 0;
+  background: none;
   pointer-events: none;
   transform: rotate(var(--rot, 0deg));
   animation: img-float-bob 8s ease-in-out infinite;
+}
+
+/* Cut-out stickers: no box, no frame, just the object with a soft shadow */
+.img-float.has-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 18px 22px rgba(33, 36, 49, 0.35));
 }
 
 .img-float:nth-of-type(even) {
@@ -883,8 +892,8 @@ html.has-custom-cursor textarea {
 }
 
 .mills-cursor {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border: 1.5px solid #EA5C1F;
   border-radius: 50%;
   transition: opacity 0.25s ease, background 0.25s ease, border-color 0.25s ease;
@@ -913,4 +922,43 @@ html.cursor-visible .mills-cursor-dot {
 html.cursor-texty .mills-cursor,
 html.cursor-texty .mills-cursor-dot {
   opacity: 0;
+}
+
+/* Footer: address, contact lists and social icons */
+.footer__contact-block .footer__contact-label {
+  margin-top: var(--space-lg);
+}
+
+.footer__contact-block .footer__contact-label:first-child {
+  margin-top: 0;
+}
+
+.footer__contact-block .footer__contact-list {
+  max-width: 340px;
+}
+
+.footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__social a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(245, 245, 245, 0.28);
+  border-radius: 50%;
+  color: #F5F5F5;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.footer__social a:hover {
+  background: #EA5C1F;
+  border-color: #EA5C1F;
+  transform: translateY(-2px);
 }
