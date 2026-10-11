@@ -51,9 +51,9 @@
                 .bumpImageUrl('assets/images/globe/earth-topology.png')
                 .backgroundColor('rgba(0,0,0,0)')
                 .atmosphereColor('#8FB8F0')
-                .atmosphereAltitude(0.2)
+                .atmosphereAltitude(0.14)
                 .width(el.clientWidth)
-                .height(el.clientHeight)
+                .height(el.clientWidth)
                 .pointsData(CITIES)
                 .pointLat('lat').pointLng('lng')
                 .pointColor(function (d) { return d.hq ? '#EA5C1F' : '#F5F5F5'; })
@@ -86,16 +86,17 @@
             controls.autoRotateSpeed = 0.55;
             controls.enableZoom = false;
             controls.enablePan = false;
-            g.pointOfView({ lat: 14, lng: 121, altitude: 2.2 });
+            g.pointOfView({ lat: 14, lng: 121, altitude: 2.5 });
 
             if (window.ResizeObserver) {
-                new ResizeObserver(function () { g.width(el.clientWidth).height(el.clientHeight); }).observe(el);
+                new ResizeObserver(function () { g.width(el.clientWidth).height(el.clientWidth); }).observe(el);
             }
             if (window.IntersectionObserver) {
                 new IntersectionObserver(function (entries) {
                     entries.forEach(function (en) { if (en.isIntersecting) g.resumeAnimation(); else g.pauseAnimation(); });
                 }).observe(el);
             }
+            el.__globe = g;
             el.classList.add('is-ready');
         }).catch(function () { el.classList.add('is-failed'); });
     }
@@ -112,6 +113,29 @@
         });
     }
 
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-    else init();
+ // count-up for the network stats
+    function countUp() {
+        var nums = document.querySelectorAll('[data-count]');
+        if (!nums.length) return;
+        function run(el) {
+            var end = parseInt(el.getAttribute('data-count'), 10), t0 = null, dur = 1800;
+            if (reduce) { el.textContent = end; return; }
+            function step(t) {
+                if (t0 === null) t0 = t;
+                var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(end * e);
+                if (p < 1) window.requestAnimationFrame(step);
+            }
+            window.requestAnimationFrame(step);
+        }
+        if (!('IntersectionObserver' in window)) return;
+        nums.forEach(function (el) { el.textContent = '0'; });
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); run(en.target); } });
+        }, { threshold: 0.6 });
+        nums.forEach(function (el) { io.observe(el); });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { init(); countUp(); });
+    else { init(); countUp(); }
 })();

@@ -960,6 +960,7 @@ html.cursor-texty .mills-cursor-dot {
   max-width: 640px;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
+  align-self: center;
   cursor: grab;
 }
 
@@ -967,7 +968,19 @@ html.cursor-texty .mills-cursor-dot {
   cursor: grabbing;
 }
 
+.mills-globe::after {
+  content: '';
+  position: absolute;
+  inset: 8%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(110, 160, 235, 0.28) 38%, rgba(70, 110, 200, 0.12) 56%, transparent 72%);
+  pointer-events: none;
+}
+
 .mills-globe canvas {
+  position: absolute;
+  inset: 0;
   display: block;
   outline: none;
 }
@@ -1021,7 +1034,7 @@ html.cursor-texty .mills-cursor-dot {
   color: #F5F5F5;
 }
 
-.globe-stats strong span {
+.globe-stats strong .globe-stats__plus {
   color: #EA5C1F;
 }
 

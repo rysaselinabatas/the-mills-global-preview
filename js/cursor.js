@@ -1,7 +1,7 @@
 /**
  * Custom cursor: a small dot that tracks the pointer exactly, plus a larger
- * outlined ring that trails it with soft momentum and stretches slightly in the
- * direction of travel. Both invert what is beneath them. The ring grows over
+ * outlined ring that trails it with a soft delay, catching up to the dot, and
+ * stretches slightly toward it while it lags. Both invert what is beneath them. The ring grows over
  * links and buttons. Desktop (fine pointer) only.
  */
 (function () {
@@ -26,8 +26,7 @@
     var scale = 1, scaleTarget = 1;
     var seen = false;
 
-    var STIFFNESS = 0.12;   // pull toward the pointer
-    var DAMPING = 0.82;     // near critical damping: a soft lag with barely any overshoot
+    var FOLLOW = 0.09;      // the ring eases toward the dot: always behind it, never past it
 
     var INTERACTIVE = 'a, button, [data-open], [role="button"], summary, label, .content-card, .faq-question, .service-slide, .cta-pair *';
     var TEXTY = 'input, textarea, select';
@@ -55,16 +54,17 @@
     document.addEventListener('mouseenter', function () { root.classList.add('cursor-visible'); });
 
     function tick() {
-        vel.x = (vel.x + (mouse.x - pos.x) * STIFFNESS) * DAMPING;
-        vel.y = (vel.y + (mouse.y - pos.y) * STIFFNESS) * DAMPING;
+        // plain easing (no spring), so the ring only ever trails the dot
+        vel.x = (mouse.x - pos.x) * FOLLOW;
+        vel.y = (mouse.y - pos.y) * FOLLOW;
         pos.x += vel.x;
         pos.y += vel.y;
         scale += (scaleTarget - scale) * 0.14;
 
         // stretch gently along the direction of travel, then settle back to a circle
-        var speed = Math.min(Math.hypot(vel.x, vel.y), 30);
-        var stretch = 1 + speed / 150;
-        var angle = Math.atan2(vel.y, vel.x) * 180 / Math.PI;
+        var lag = Math.min(Math.hypot(mouse.x - pos.x, mouse.y - pos.y), 60);
+        var stretch = 1 + lag / 400;
+        var angle = Math.atan2(mouse.y - pos.y, mouse.x - pos.x) * 180 / Math.PI;
 
         ring.style.transform = 'translate3d(' + pos.x + 'px,' + pos.y + 'px,0) translate(-50%,-50%) rotate(' + angle + 'deg) scale(' + (scale * stretch) + ',' + (scale / stretch) + ')';
         dot.style.transform = 'translate3d(' + mouse.x + 'px,' + mouse.y + 'px,0) translate(-50%,-50%)';
