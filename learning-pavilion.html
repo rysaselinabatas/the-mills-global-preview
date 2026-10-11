@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/service-page.css">
   <link rel="stylesheet" href="css/content.css">
+  <link rel="stylesheet" href="css/lead-magnet.css">
 </head>
 <body>
 
@@ -247,50 +248,273 @@
   <!-- ============================================ -->
   <!-- LEAD MAGNETS / DOWNLOADS                     -->
   <!-- ============================================ -->
-  <section class="section section--paper">
-    <div class="container" style="max-width: 880px;">
+  <section class="section section--paper" id="resources">
+    <div class="container">
       <div class="services-intro">
         <p class="section__eyebrow animate-in">Free Resources</p>
-        <h2 class="services-intro__heading animate-in" data-delay="1">Checklists and references you can download.</h2>
+        <h2 class="services-intro__heading animate-in" data-delay="1">Checklists you can download.</h2>
       </div>
 
-      <div style="display:flex; flex-direction:column; gap: var(--space-md); margin-top: var(--space-xl);">
-
-        <div class="lead-magnet">
-          <div class="lead-magnet__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
-          </div>
-          <div class="lead-magnet__body">
-            <p class="lead-magnet__title">Philippine Import Readiness Checklist (PDF)</p>
-            <p class="lead-magnet__text">A one-page checklist covering importer structure, permits, documents and delivery planning.</p>
-          </div>
-          <span class="lead-magnet__cta">Coming Soon</span>
+      <div class="resource-tools">
+        <div class="content-filters" role="group" aria-label="Filter checklists">
+          <button type="button" class="content-filter is-active" data-filter="all" aria-pressed="true">All <span class="content-filter__count">27</span></button>
+          <button type="button" class="content-filter" data-filter="service" aria-pressed="false">By Service <span class="content-filter__count">11</span></button>
+          <button type="button" class="content-filter" data-filter="industry" aria-pressed="false">By Industry <span class="content-filter__count">16</span></button>
         </div>
-
-        <div class="lead-magnet">
-          <div class="lead-magnet__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
-          </div>
-          <div class="lead-magnet__body">
-            <p class="lead-magnet__title">Customs Document Cheat Sheet (PDF)</p>
-            <p class="lead-magnet__text">The documents customs commonly asks for, organized by shipment mode.</p>
-          </div>
-          <span class="lead-magnet__cta">Coming Soon</span>
-        </div>
-
-        <div class="lead-magnet">
-          <div class="lead-magnet__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
-          </div>
-          <div class="lead-magnet__body">
-            <p class="lead-magnet__title">Project Cargo Quotation Checklist (PDF)</p>
-            <p class="lead-magnet__text">The dimensions, weights and site details a broker needs before quoting an oversized move.</p>
-          </div>
-          <span class="lead-magnet__cta">Coming Soon</span>
-        </div>
-
+        <label class="resource-search">
+          <span class="sr-only">Search checklists</span>
+          <input type="search" id="resourceSearch" placeholder="Search checklists" autocomplete="off">
+        </label>
       </div>
-      <p class="services-intro__lead animate-in" style="margin-top: var(--space-xl); font-size: 14px;">Want early access when these are ready? <a href="contact.html" style="color: var(--color-accent); text-decoration: underline;">Get in touch</a> and we'll send them your way.</p>
+
+      <p class="resource-status" id="resourceStatus" aria-live="polite"></p>
+
+      <div class="resource-grid" id="resourceGrid">
+        <article class="lead-magnet resource-card" data-type="service" data-title="philippine trade regulation readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Philippine Trade Regulation Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for businesses navigating Philippine trade regulation, government processes and customs risk.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="advisory" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="customs clearance readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Customs Clearance Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers who want cargo cleared correctly the first time.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="customs" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="dangerous goods shipping readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Dangerous Goods Shipping Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for shippers of hazardous or regulated cargo into or out of the Philippines.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="dangerous-goods" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="philippine market entry readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Philippine Market Entry Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for foreign businesses preparing to import, operate or expand in the Philippines.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="entry" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="marine cargo insurance readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Marine Cargo Insurance Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for shippers deciding how to protect cargo in transit.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="insurance" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="post-clearance delivery readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Post-Clearance Delivery Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers who need cargo moved from customs release to final destination.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="logistics" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="vessel and marine equipment readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Vessel and Marine Equipment Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for vessel owners, operators and marine equipment importers.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="marine" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="export and industrial packaging readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Export and Industrial Packaging Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for shippers of industrial, export and fragile cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="packaging" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="import permit and product registration checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Import Permit and Product Registration Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers of regulated products who need approvals before cargo moves.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="permits" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="project cargo readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Project Cargo Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for project teams moving oversized, heavy or complex cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="projects" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="service" data-title="priority clearance readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Service</span>
+            <p class="lead-magnet__title">Priority Clearance Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for shippers with cargo that cannot afford ordinary processing timelines.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="time-critical" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="agriculture, plants, animals and fisheries import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Agriculture, Plants, Animals and Fisheries Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving agriculture, plants, animals and fisheries cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-agriculture" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="automotive, heavy equipment and special-purpose vehicles import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Automotive, Heavy Equipment and Special-Purpose Vehicles Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving automotive, heavy equipment and special-purpose vehicles cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-automotive" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="aviation and aerospace import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Aviation and Aerospace Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving aviation and aerospace cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-aviation" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="chemicals and controlled materials import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Chemicals and Controlled Materials Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving chemicals and controlled materials cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-chemicals" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="cold chain and temperature-sensitive cargo import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Cold Chain and Temperature-Sensitive Cargo Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving cold chain and temperature-sensitive cargo cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-cold-chain" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="construction and infrastructure import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Construction and Infrastructure Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving construction and infrastructure cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-construction" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="data centers and digital infrastructure import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Data Centers and Digital Infrastructure Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving data centers and digital infrastructure cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-data-centers" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="telecommunications, electronics and it hardware import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Telecommunications, Electronics and IT Hardware Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving telecommunications, electronics and it hardware cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-electronics-telecom" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="food, beverage and fmcg import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Food, Beverage and FMCG Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving food, beverage and fmcg cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-food-beverage" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="freight forwarders and logistics providers import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Freight Forwarders and Logistics Providers Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving freight forwarders and logistics providers cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-freight-forwarders" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="pharmaceuticals, medical devices and healthcare import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Pharmaceuticals, Medical Devices and Healthcare Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving pharmaceuticals, medical devices and healthcare cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-healthcare" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="manufacturing and industrial machinery import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Manufacturing and Industrial Machinery Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving manufacturing and industrial machinery cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-manufacturing" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="marine, vessels and yachts import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Marine, Vessels and Yachts Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving marine, vessels and yachts cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-marine" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="mining, minerals and industrial materials import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Mining, Minerals and Industrial Materials Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving mining, minerals and industrial materials cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-mining" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="renewable energy and power import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Renewable Energy and Power Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving renewable energy and power cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-renewable-energy" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+        <article class="lead-magnet resource-card" data-type="industry" data-title="retail, consumer goods and e-commerce import readiness checklist">
+          <div class="lead-magnet__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <div class="lead-magnet__body">
+            <span class="resource-card__badge">Industry</span>
+            <p class="lead-magnet__title">Retail, Consumer Goods and E-Commerce Import Readiness Checklist</p>
+            <p class="lead-magnet__text">A free 12-point checklist for importers, project owners and logistics teams moving retail, consumer goods and e-commerce cargo.</p>
+          </div>
+          <button type="button" class="lead-magnet__cta lead-magnet__cta--btn" data-open="industry-retail" data-trigger="learning_pavilion">Get the checklist</button>
+        </article>
+      </div>
+      <p class="resource-empty" id="resourceEmpty" hidden>No checklists match that search. Try a different word or clear the filter.</p>
     </div>
   </section>
 
@@ -373,7 +597,10 @@
     <div class="footer__wordmark" aria-hidden="true">THE MILLS GLOBAL</div>
   </footer>
 
+  <script src="js/analytics.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/lead-magnet.js" defer></script>
+  <script src="js/learning-pavilion.js" defer></script>
 
 </body>
 </html>

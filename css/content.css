@@ -334,3 +334,135 @@
 .marquee__logo.has-image:hover img {
   filter: none;
 }
+
+/* Learning Pavilion: filterable checklist grid */
+button.content-filter {
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+button.content-filter:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.content-filter__count {
+  margin-left: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.resource-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.resource-tools .content-filters {
+  margin-top: 0;
+}
+
+.resource-search input {
+  width: 280px;
+  max-width: 100%;
+  padding: 11px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #212431;
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.resource-search input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.resource-status {
+  margin: var(--space-lg) 0 var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.resource-card[hidden] {
+  display: none;
+}
+
+.resource-card {
+  align-items: flex-start;
+  background: #FFFFFF;
+}
+
+.resource-card__badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #212431;
+  color: #EA5C1F;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resource-card .lead-magnet__title {
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.lead-magnet__cta--btn {
+  align-self: center;
+  border: none;
+  background: #EA5C1F;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lead-magnet__cta--btn:hover {
+  background: #F27A47;
+  transform: translateY(-1px);
+}
+
+.resource-empty {
+  margin-top: var(--space-lg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .resource-card {
+    flex-wrap: wrap;
+  }
+
+  .lead-magnet__cta--btn {
+    width: 100%;
+  }
+}

@@ -163,12 +163,19 @@
     function storageGet(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
     function storageSet(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) { /* storage blocked */ } }
 
-    function init() {
-        var strip = document.querySelector('.lm-strip[data-guide]');
-        if (!strip) return;
-        var slug = strip.getAttribute('data-guide');
+    function track(name, params) {
+        if (window.mtgTrack) window.mtgTrack(name, params);
+    }
+
+    var instances = {};
+
+    // Builds the popup for one guide (once) and returns its controls.
+    // autoOpen: also open it when the reader passes 30 percent of the page.
+    function setup(slug, autoOpen) {
+        if (instances[slug]) return instances[slug];
         var guide = GUIDES[slug];
-        if (!guide) return;
+        if (!guide) return null;
+        var lastTrigger = 'scroll';
         var key = slug.replace(/-/g, '_');
         var photo = slug.indexOf('industry-') === 0 ? 'assets/images/' + slug + '.jpg' : 'assets/images/pexels-' + slug + '.jpg';
         var dismissKey = 'popupDismissed_' + key;
@@ -217,8 +224,10 @@
         var lastFocus = null;
         var opened = false;
 
-        function open(manual) {
+        function open(manual, trigger) {
             if (!manual && storageGet(dismissKey)) return;
+            lastTrigger = trigger || (manual ? 'button' : 'scroll');
+            track('lead_magnet_open', { guide: slug, guide_title: guide.title, trigger: lastTrigger });
             lastFocus = document.activeElement;
             wrap.hidden = false;
             document.documentElement.classList.add('lm-lock');
@@ -228,6 +237,7 @@
         }
 
         function close() {
+            if (!wrap.hidden) track('lead_magnet_dismiss', { guide: slug, guide_title: guide.title, trigger: lastTrigger });
             wrap.hidden = true;
             document.documentElement.classList.remove('lm-lock');
             storageSet(dismissKey, '1');
@@ -240,15 +250,6 @@
             if (e.key === 'Escape' && !wrap.hidden) close();
         });
 
-        // Manual reopen: separate trigger elements carry data-open="<slug>"
-        document.addEventListener('click', function (e) {
-            var t = e.target.closest ? e.target.closest('[data-open]') : null;
-            if (t && t.getAttribute('data-open') === slug) {
-                e.preventDefault();
-                open(true);
-            }
-        });
-
         // Open once the reader is 30 percent of the way down the page
         function onScroll() {
             if (opened || storageGet(dismissKey)) return;
@@ -259,7 +260,7 @@
                 window.removeEventListener('scroll', onScroll);
             }
         }
-        window.addEventListener('scroll', onScroll, { passive: true });
+        if (autoOpen) window.addEventListener('scroll', onScroll, { passive: true });
 
         // Live character filtering for the phone field
         var phone = document.getElementById(id('popupPhone'));
@@ -288,6 +289,8 @@
 
         function succeed(firstName) {
             storageSet(dismissKey, '1');
+            track('generate_lead', { lead_source: 'lead_magnet', guide: slug, guide_title: guide.title, trigger: lastTrigger });
+            track('lead_magnet_download', { guide: slug, guide_title: guide.title, file_name: guide.pdf.split('/').pop() });
             body.innerHTML =
                 '<span class="lm-pill lm-pill_' + key + '">FREE CHECKLIST</span>' +
                 '<h2 class="lm-popup__title lm-popup__title_' + key + '" id="' + id('popupTitle') + '">Thank you' + (firstName ? ', ' + esc(firstName) : '') + '.</h2>' +
@@ -342,8 +345,29 @@
             }).catch(function () {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Download the Checklist';
+                track('lead_magnet_error', { guide: slug, guide_title: guide.title });
                 errorEl.innerHTML = 'Something went wrong sending your details. Please try again, or email <a class="lm-link" href="mailto:' + CONFIG.SUPPORT_EMAIL + '?subject=' + encodeURIComponent(guide.title) + '">' + CONFIG.SUPPORT_EMAIL + '</a> and we will send the checklist.';
             });
+        });
+
+        instances[slug] = { open: open };
+        return instances[slug];
+    }
+
+    function init() {
+        // End-of-page strip pages: this page's guide also opens at 30 percent scroll
+        var strip = document.querySelector('.lm-strip[data-guide]');
+        if (strip) setup(strip.getAttribute('data-guide'), true);
+
+        // Any element with data-open="<slug>" opens that guide's popup.
+        // Optional data-trigger names where the click came from, for analytics.
+        document.addEventListener('click', function (e) {
+            var t = e.target.closest ? e.target.closest('[data-open]') : null;
+            if (!t) return;
+            var inst = setup(t.getAttribute('data-open'), false);
+            if (!inst) return;
+            e.preventDefault();
+            inst.open(true, t.getAttribute('data-trigger') || 'button');
         });
     }
 
