@@ -51,7 +51,7 @@
                 .bumpImageUrl('assets/images/globe/earth-topology.png')
                 .backgroundColor('rgba(0,0,0,0)')
                 .atmosphereColor('#8FB8F0')
-                .atmosphereAltitude(0.14)
+                .atmosphereAltitude(0.06)
                 .width(el.clientWidth)
                 .height(el.clientWidth)
                 .pointsData(CITIES)
@@ -86,7 +86,7 @@
             controls.autoRotateSpeed = 0.55;
             controls.enableZoom = false;
             controls.enablePan = false;
-            g.pointOfView({ lat: 14, lng: 121, altitude: 2.5 });
+            g.pointOfView({ lat: 14, lng: 121, altitude: 2.2 });
 
             if (window.ResizeObserver) {
                 new ResizeObserver(function () { g.width(el.clientWidth).height(el.clientWidth); }).observe(el);
