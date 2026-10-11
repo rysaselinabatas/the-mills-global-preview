@@ -10,7 +10,7 @@ Editing or unticking Draft on an existing post works the same way. Deleting a po
 
 ## Under the hood
 - Posts are Markdown files: `content/posts/articles/*.md` and `content/posts/news/*.md`.
-- `.github/workflows/build-content.yml` runs `tools/build-content.py` on every change to those files, and commits
+- `.github/workflows/build-content.yml` (source: `docs/build-content.workflow.yml`) runs `tools/build-content.py` on every change to those files, and commits
   the generated `articles/`, `news/`, `blog.html`, `learning-pavilion.html` and `content/posts.json`.
 - Cover images upload to `assets/images/blog/`. If none is set, a category default image is used.
 - To rebuild locally: `python3 tools/build-content.py`.
