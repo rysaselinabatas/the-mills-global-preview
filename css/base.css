@@ -197,8 +197,19 @@ a {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  transition: opacity 0.2s ease 0.15s, transform 0.2s ease 0.15s, visibility 0s linear 0.35s;
   z-index: 10;
+}
+
+/* Invisible bridge over the gap between the link and the panel, so the
+   pointer can travel down into the dropdown without losing hover. */
+.nav__dropdown::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+  height: 40px;
 }
 
 .nav__dropdown--wide {
@@ -220,6 +231,7 @@ a {
   visibility: visible;
   pointer-events: auto;
   transform: translate(-50%, 0);
+  transition-delay: 0s;
 }
 
 .nav__dropdown a {
