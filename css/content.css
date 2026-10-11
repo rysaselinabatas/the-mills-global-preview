@@ -426,7 +426,9 @@ button.content-filter:hover {
 
 .lead-magnet__cta--btn {
   align-self: center;
-  border: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 12px 24px;
   background: #EA5C1F;
   color: #FFFFFF;
   font-family: var(--font-sans);

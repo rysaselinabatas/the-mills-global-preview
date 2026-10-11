@@ -266,11 +266,11 @@ a {
 .nav__cta {
   background: var(--color-accent);
   color: var(--color-white);
-  padding: 10px 24px;
+  padding: 12px 28px;
   border-radius: var(--radius-pill);
   font-weight: 600;
   font-size: 14px;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   transition: background var(--transition-fast), transform var(--transition-fast);
 }
@@ -357,8 +357,8 @@ a {
     text-align: center;
     background: var(--color-accent);
     color: var(--color-white);
-    padding: 14px 24px;
-    border-radius: 6px;
+    padding: 15px 32px;
+    border-radius: 999px;
     font-weight: 600;
   }
 
