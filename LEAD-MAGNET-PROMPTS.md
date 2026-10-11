@@ -12,8 +12,8 @@
 
 ## Shared spec (already included in every prompt)
 
-- Format: 3 pages, US Letter: dark teal cover, two light inner pages, orange accents, 12 checkbox items, closing CTA panel with BOOK A CALL.
-- Brand: #1E323A / #24404A / #F15A24 / #F2F4F3, Plus Jakarta Sans headings, Tahoma body, temporary wordmark logo.
+- Format: 3 pages, US Letter: dark navy cover, two light inner pages, orange accents, 12 checkbox items, closing CTA panel with BOOK A CALL.
+- Brand palette: #F5F5F5 / #EA5C1F / #D6D7D7 / #4F5D75 / #212431, Plus Jakarta Sans headings, Tahoma body, temporary wordmark logo.
 - Rules: no em dashes, no invented statistics or legal specifics, general-guidance disclaimer on page 3.
 
 ## Contents
@@ -44,16 +44,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -83,16 +83,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -122,16 +122,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -161,16 +161,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -200,16 +200,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -239,16 +239,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -278,16 +278,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -317,16 +317,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -356,16 +356,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -395,16 +395,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -434,16 +434,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -477,16 +477,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -516,16 +516,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -555,16 +555,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -594,16 +594,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -633,16 +633,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -672,16 +672,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -711,16 +711,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -750,16 +750,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -789,16 +789,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -828,16 +828,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -867,16 +867,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -906,16 +906,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -945,16 +945,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -984,16 +984,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -1023,16 +1023,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES
@@ -1062,16 +1062,16 @@ DOCUMENT
 
 BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
-- Colors: Dark teal #1E323A (cover and dark panels), surface teal #24404A, construction orange #F15A24 (accent bar, rules, buttons, bullets), off-white #F2F4F3 (inner page background), body text #1C2E35, muted text #5C6E72, soft tint panels rgba(79,125,140,0.12).
+- Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark teal on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
+- TEMPORARY LOGO: until the real logo is supplied, use a text wordmark "THE MILLS GLOBAL" in Plus Jakarta Sans ExtraBold with a small orange dot before it (white on dark pages, dark navy on light pages). Place it in one reusable logo slot at the top left of the cover and in every page header, so the real logo file can be dropped in later by replacing a single asset.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
 Use the attached PDF, "Freight Forwarding Readiness Checklist" by another company, ONLY as a structural reference. Do not copy its wording, name, logo, colors or claims. Recreate this skeleton in The Mills Global's brand, US Letter, 3 pages:
-1. Cover: full dark teal page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
-2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold teal number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
-3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft teal-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
+1. Cover: full dark navy page, thin orange bar across the top edge, logo slot top left, mono eyebrow label in orange, large white title, two-line muted subtitle, and a footer rule with the company line left and website right.
+2. Page 2: running header (small logo left, uppercase document title right, orange rule beneath). An intro section titled "Why ..." (one paragraph, then one italic lead-in sentence introducing the checklist), then "The Readiness Checklist" with items 1 to 9. Each item: an empty square checkbox, a bold slate-blue number and title, then a 1 to 2 sentence description. Footer: "The Mills Global" left, page number right.
+3. Page 3: running header again, "The Readiness Checklist (continued)" with items 10 to 12, then a soft slate-tint rounded CTA panel: a two-line headline, one supporting sentence, and an orange BOOK A CALL button. Under the panel, a small muted disclaimer line.
 Deliver one print-ready PDF (and the editable HTML source if you built it that way).
 
 CONTENT RULES

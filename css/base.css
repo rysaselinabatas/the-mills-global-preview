@@ -86,7 +86,7 @@ a {
   border-radius: inherit;
   z-index: -1;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06) 45%, rgba(190, 225, 235, 0.14));
+    linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06) 45%, rgba(214, 215, 215, 0.14));
   backdrop-filter: blur(22px) saturate(160%);
   -webkit-backdrop-filter: blur(22px) saturate(160%);
   box-shadow:
@@ -101,7 +101,7 @@ a {
 
 .nav.scrolled .nav__inner::before {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(30, 50, 58, 0.45) 55%, rgba(120, 175, 190, 0.18));
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(33, 36, 49, 0.45) 55%, rgba(79, 93, 117, 0.18));
 }
 
 .nav__logo {
@@ -444,7 +444,7 @@ a {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: rgba(237, 243, 243, 0.55);
+  color: rgba(245, 245, 245, 0.55);
   margin-bottom: var(--space-sm);
 }
 
@@ -493,7 +493,7 @@ a {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: rgba(237, 243, 243, 0.55);
+  color: rgba(245, 245, 245, 0.55);
 }
 
 .footer__nav-col a {
@@ -540,7 +540,7 @@ a {
   font-family: var(--font-body);
   font-size: 12.5px;
   line-height: 1.7;
-  color: rgba(237, 243, 243, 0.45);
+  color: rgba(245, 245, 245, 0.45);
 }
 
 .footer__wordmark {
@@ -550,7 +550,7 @@ a {
   font-weight: 800;
   font-size: clamp(64px, 13vw, 210px);
   letter-spacing: -0.02em;
-  color: rgba(237, 243, 243, 0.06);
+  color: rgba(245, 245, 245, 0.06);
   white-space: nowrap;
   overflow: hidden;
   user-select: none;
@@ -567,9 +567,9 @@ a {
   display: grid;
   place-items: center;
   overflow: hidden;
-  border: 2px dashed rgba(241, 90, 36, 0.6);
-  background-color: #2A4650;
-  background-image: repeating-linear-gradient(135deg, rgba(79, 125, 140, 0.22) 0 14px, rgba(79, 125, 140, 0.08) 14px 28px);
+  border: 2px dashed rgba(234, 92, 31, 0.6);
+  background-color: #30364B;
+  background-image: repeating-linear-gradient(135deg, rgba(79, 93, 117, 0.22) 0 14px, rgba(79, 93, 117, 0.08) 14px 28px);
   background-size: cover;
   background-position: center;
 }
@@ -580,8 +580,8 @@ a {
   max-width: 86%;
   padding: 8px 14px;
   border-radius: var(--radius-md);
-  background: rgba(10, 18, 22, 0.78);
-  color: #EDF3F3;
+  background: rgba(17, 19, 28, 0.78);
+  color: #F5F5F5;
   font-family: var(--font-mono);
   font-size: 11px;
   line-height: 1.5;
@@ -652,7 +652,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(160deg, rgba(10, 18, 22, 0.86) 0%, rgba(15, 26, 31, 0.68) 100%);
+  background: linear-gradient(160deg, rgba(17, 19, 28, 0.86) 0%, rgba(24, 26, 38, 0.68) 100%);
 }
 
 /* Band: full-width image strip between two sections */
