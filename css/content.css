@@ -197,7 +197,7 @@
   align-items: center;
   gap: 64px;
   width: max-content;
-  animation: marquee-scroll 55s linear infinite;
+  animation: marquee-scroll 120s linear infinite;
 }
 
 .marquee:hover .marquee__track {
