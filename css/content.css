@@ -197,7 +197,7 @@
   align-items: center;
   gap: 64px;
   width: max-content;
-  animation: marquee-scroll 28s linear infinite;
+  animation: marquee-scroll 55s linear infinite;
 }
 
 .marquee:hover .marquee__track {
@@ -214,8 +214,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 176px;
-  height: 64px;
+  width: 150px;
+  height: 84px;
   padding: 0 var(--space-md);
   border: 1px dashed var(--color-border);
   border-radius: var(--radius-sm);
@@ -318,21 +318,23 @@
 /* Real logo swapped in by animations.js: grayscale until hovered */
 .marquee__logo.has-image {
   border: none;
-  opacity: 0.75;
+  opacity: 1;
 }
 
 .marquee__logo img {
   max-width: 100%;
-  max-height: 44px;
+  max-height: 68px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(1);
-  transition: filter 0.3s ease;
 }
 
 .marquee__logo.has-image:hover img {
-  filter: none;
+  transform: scale(1.06);
+}
+
+.marquee__logo img {
+  transition: transform 0.3s ease;
 }
 
 /* Learning Pavilion: filterable checklist grid */
