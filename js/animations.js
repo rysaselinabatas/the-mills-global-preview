@@ -317,3 +317,61 @@ document.addEventListener('DOMContentLoaded', () => {
         probe.src = tile.dataset.img;
     });
 });
+
+/**
+ * Core Support pointer: a small floating container icon that glides to
+ * whichever numbered item is currently at reading height as the user scrolls.
+ * Works for the 2-column grid and the stacked mobile layout alike: it always
+ * sits at the top-right of the active item.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const grids = document.querySelectorAll('.service-feature-grid');
+    const icon = '<svg viewBox="0 0 48 32" width="44" height="30" fill="none" aria-hidden="true">' +
+        '<rect x="1" y="3" width="46" height="24" rx="3" fill="#EA5C1F"/>' +
+        '<g stroke="#212431" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round">' +
+        '<line x1="9" y1="7" x2="9" y2="23"/><line x1="16" y1="7" x2="16" y2="23"/>' +
+        '<line x1="23" y1="7" x2="23" y2="23"/><line x1="30" y1="7" x2="30" y2="23"/>' +
+        '<line x1="37" y1="7" x2="37" y2="23"/></g>' +
+        '<rect x="1" y="3" width="46" height="24" rx="3" stroke="#212431" stroke-opacity="0.55" stroke-width="1.5"/>' +
+        '<rect x="3" y="27" width="6" height="3" rx="1" fill="#212431"/><rect x="39" y="27" width="6" height="3" rx="1" fill="#212431"/></svg>';
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    grids.forEach(grid => {
+        const items = Array.from(grid.querySelectorAll('.service-feature'));
+        if (!items.length) return;
+        const pointer = document.createElement('div');
+        pointer.className = 'feature-pointer';
+        pointer.setAttribute('aria-hidden', 'true');
+        pointer.innerHTML = '<div class="feature-pointer__bob">' + icon + '</div>';
+        grid.appendChild(pointer);
+
+        let placed = false;
+        let raf = null;
+        const update = () => {
+            raf = null;
+            const g = grid.getBoundingClientRect();
+            const vh = window.innerHeight;
+            pointer.classList.toggle('is-visible', g.bottom > 0 && g.top < vh);
+            const line = vh * 0.55;
+            let active = items[0];
+            items.forEach(it => { if (it.getBoundingClientRect().top <= line) active = it; });
+            items.forEach(it => it.classList.toggle('is-active', it === active));
+            const r = active.getBoundingClientRect();
+            const x = r.right - g.left - 60;
+            const y = r.top - g.top + 12;
+            pointer.style.transform = `translate(${x}px, ${y}px)`;
+            if (!placed) {
+                placed = true;
+                requestAnimationFrame(() => pointer.classList.add('is-ready'));
+            }
+        };
+        const queue = () => { if (raf === null) raf = requestAnimationFrame(update); };
+        window.addEventListener('scroll', queue, { passive: true });
+        window.addEventListener('resize', queue);
+        update();
+        // reveal animations shift item positions slightly right after load
+        setTimeout(queue, 700);
+        setTimeout(queue, 1400);
+        if (reduce) pointer.classList.add('is-static');
+    });
+});
