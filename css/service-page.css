@@ -441,6 +441,18 @@
   line-height: 1.45;
   max-width: 780px;
   margin: 0 auto var(--space-xl);
+  text-wrap: balance;
+}
+
+/* Landscape screens: exactly two lines (the <br> in the markup), never an
+   extra wrapped line. The font scales with the viewport so the longer first
+   line always fits inside the container. */
+@media (min-width: 769px) {
+  .book-call__heading {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(14px, calc((100vw - 64px) / 39), 30px);
+  }
 }
 
 .book-call__actions {
