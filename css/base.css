@@ -111,13 +111,13 @@ a {
 
 .nav__logo img {
   display: block;
-  height: 36px;
+  height: 40px;
   width: auto;
   transition: height 0.3s ease;
 }
 
 .nav.scrolled .nav__logo img {
-  height: 30px;
+  height: 32px;
 }
 
 .nav__links {
