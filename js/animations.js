@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const baseLeft = items[0].offsetLeft;
             single = items.every(it => Math.abs(it.offsetLeft - baseLeft) < 4);
             pts = items.map(it => ({
-                x: it.offsetLeft + it.offsetWidth - 58,
+                x: it.offsetLeft + it.offsetWidth - Math.max(120, it.offsetWidth * 0.24) - 22,
                 y: it.offsetTop + 10
             }));
             keys = items.map((it, i) => {
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const seg = tAt(u);
             const pos = spline(seg.t);
             // soft S-bend between waypoints so the road feels organic
-            const amp = single ? 16 : 9;
+            const amp = single ? 14 : 5;
             pos.x += amp * Math.sin(seg.f * Math.PI) * (seg.j % 2 ? 1 : -1);
             if (!cur || reduce) cur = { x: pos.x, y: pos.y };
             const dx = pos.x - cur.x;
