@@ -284,3 +284,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+/**
+ * Image placeholders: if a file exists at a slot's data-img path, swap it in.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.img-slot[data-img]').forEach(slot => {
+        const src = slot.dataset.img;
+        const probe = new Image();
+        probe.onload = () => {
+            slot.style.backgroundImage = `url("${src}")`;
+            slot.classList.add('has-image');
+        };
+        probe.src = src;
+    });
+});
