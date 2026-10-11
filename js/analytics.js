@@ -22,7 +22,7 @@
     // Google Ads: 'AW-ACCOUNT/LABEL' from Goals > Conversions > the action's tag setup.
     // Leave a value empty until that conversion action exists; empty ones are skipped.
     var ADS_CONVERSIONS = {
-        phone: 'AW-17000148570/1VnWCI_inOEcENrcpqo_', // Call Now / any tel: link click
+        phone: 'AW-17000148570/gISqCI-RpqscENrcpqo_', // "Phone Click - Contact Us": Call Now / any tel: link click
         email: '',                                     // Email Us / any mailto: link click
         book_click: '',                                // Book a Consultation / Book a Call click
         book_scheduled: '',                            // a meeting was actually booked in Cal.com
@@ -77,9 +77,21 @@
         loadScript(CONTENTSQUARE_SRC);
     }
 
+    function pageType() {
+        var f = window.location.pathname.split('/').pop() || 'index.html';
+        if (f === '' || f === 'index.html') return 'home';
+        if (f.indexOf('services-mills-') === 0) return 'service';
+        if (f === 'industries.html') return 'industries_hub';
+        if (f.indexOf('industries-') === 0) return 'industry';
+        if (f.indexOf('legal-') === 0) return 'legal';
+        if (f.indexOf('blog') === 0) return 'blog';
+        return f.replace('.html', '').replace(/-/g, '_');
+    }
+
     window.mtgTrack = function (name, params) {
         params = params || {};
         params.page_path = window.location.pathname;
+        params.page_type = pageType();
         if (debug) console.debug('[event]', name, params);
         try {
             window.dataLayer.push(Object.assign({ event: name }, params));
@@ -110,31 +122,41 @@
         }
     };
 
+    // Where on the page a click happened: an explicit data-ga-label wins,
+    // otherwise the nearest known region of the layout.
+    function ctaLocation(el) {
+        var tagged = el.closest('[data-ga-label]');
+        if (tagged) return tagged.getAttribute('data-ga-label');
+        if (el.closest('.nav')) return 'nav';
+        if (el.closest('.footer')) return 'footer';
+        if (el.closest('.book-call')) return 'book_call_section';
+        if (el.closest('.lm-strip, .lm-popup')) return 'lead_magnet';
+        if (el.closest('.contact-split__grid, #contact')) return 'contact_section';
+        return 'other';
+    }
+
+    // One canonical GA4 event per kind of click, with the location as a parameter:
+    //   call_click, email_click, book_consult_click
     document.addEventListener('click', function (e) {
-        var el = e.target.closest ? e.target.closest('a, button, [data-ga]') : null;
+        var el = e.target.closest ? e.target.closest('a, button') : null;
         if (!el) return;
+        var href = el.getAttribute('href') || '';
+        var text = (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60);
+        var details = { cta_location: ctaLocation(el), link_text: text };
 
-        // Explicit tags: data-ga="event_name" data-ga-label="where on the page"
-        var tag = el.closest('[data-ga]');
-        if (tag) {
-            var name = tag.getAttribute('data-ga');
-            window.mtgTrack(name, {
-                label: tag.getAttribute('data-ga-label') || (tag.textContent || '').trim().slice(0, 60)
-            });
-            if (name === 'hero_book_consultation' || name === 'cta_book_consultation') window.mtgConversion('book_click');
-        }
-
-        var href = el.getAttribute && el.getAttribute('href');
-        if (!href) return;
-        if (href.indexOf('mailto:') === 0) {
-            window.mtgTrack('contact_click', { method: 'email' });
-            window.mtgConversion('email');
-        } else if (href.indexOf('tel:') === 0) {
-            window.mtgTrack('contact_click', { method: 'phone' });
+        if (href.indexOf('tel:') === 0) {
+            window.mtgTrack('call_click', details);
             window.mtgConversion('phone'); // never blocks the call
-        } else if (href.indexOf('book-a-call') !== -1) {
-            window.mtgTrack('book_call_click', { link_text: (el.textContent || '').trim().slice(0, 60) });
+        } else if (href.indexOf('mailto:') === 0) {
+            window.mtgTrack('email_click', details);
+            window.mtgConversion('email');
+        } else if (href === '#book-call' || href.indexOf('book-a-call') !== -1) {
+            window.mtgTrack('book_consult_click', details);
             window.mtgConversion('book_click');
+        } else {
+            // any other element can opt in with data-ga="event_name"
+            var tag = el.closest('[data-ga]');
+            if (tag) window.mtgTrack(tag.getAttribute('data-ga'), details);
         }
     });
 })();
