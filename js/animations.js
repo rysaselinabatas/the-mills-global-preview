@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         statElements.forEach(el => statObserver.observe(el));
     }
 
-    // 3. Services Slider — arrow nav + tap-to-reveal on touch devices
+    // 3. Services Slider - arrow nav + tap-to-reveal on touch devices
     // (CSS :hover/:focus-within already handles mouse + keyboard).
     const slider = document.getElementById('services-slider');
     if (slider) {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Contact Form — composes a pre-filled mailto (static site, no backend)
+    // 4. Contact Form - composes a pre-filled mailto (static site, no backend)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. FAQ Accordion — each item toggles independently (not exclusive)
+    // 5. FAQ Accordion - each item toggles independently (not exclusive)
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 7. Service Pill Hover Preview — small card that follows the cursor
+    // 7. Service Pill Hover Preview - small card that follows the cursor
     // near the hovered "Connected Services" pill on industry pages.
     const previewPills = document.querySelectorAll('.industry-pill[data-preview-desc]');
     if (previewPills.length > 0 && window.matchMedia('(hover: hover)').matches) {
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Process Timeline — scroll-fill line + lighting up numbered circles
+    // 8. Process Timeline - scroll-fill line + lighting up numbered circles
     const timelines = document.querySelectorAll('.process-timeline');
     if (timelines.length > 0) {
         const triggerRatio = 0.65; // fraction down the viewport that "activates" a step
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTimelines();
     }
 
-    // 9. "Who This Is For" hover backdrop — crossfades the section's
+    // 9. "Who This Is For" hover backdrop - crossfades the section's
     // background image to match the hovered list item.
     const audienceHero = document.querySelector('.audience-hero');
     if (audienceHero) {

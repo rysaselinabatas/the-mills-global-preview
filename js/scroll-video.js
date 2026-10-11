@@ -1,7 +1,7 @@
 /**
  * Scroll-scrubbed hero video engine for The Mills Global.
  * Desktop: the video's own playback position is driven directly by scroll
- * (currentTime = progress * duration), updated every frame — scrolling
+ * (currentTime = progress * duration), updated every frame - scrolling
  * down moves forward through the clip, scrolling up moves back.
  * Mobile: scroll-scrub is disabled, so the video just loops normally.
  * Self-initializes on DOMContentLoaded.
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Continuous scroll-scrubbed motion for a slide's local progress `t`
     // (0..1 within its own zone, can fall outside that range when another
-    // slide is active). Fades AND translates — no discrete on/off snap.
+    // slide is active). Fades AND translates - no discrete on/off snap.
     const slideMotion = (t) => {
         if (t <= 0) return { opacity: 0, y: 40 };
         if (t >= 1) return { opacity: 0, y: -50 };
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let hasVideo = false;
     let videoPrimed = false;
     // Set once, the first time the video has a frame to show, and never
-    // re-checked after — readyState briefly dips below 2 mid-seek while
+    // re-checked after - readyState briefly dips below 2 mid-seek while
     // scrubbing, and re-testing it every frame flickered the placeholder
     // on and off during scroll (looked like the video glitching).
     let videoReady = false;
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Desktop: currentTime is driven by scroll (see render() step 4), so
-    // the video needs to stay paused — but a <video> that has never
+    // the video needs to stay paused - but a <video> that has never
     // actually played won't paint a new frame when you seek it (Safari
     // in particular just holds on a blank/first frame). So we "prime" it
     // with one real play → pause cycle, then hand control to scroll.
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // 4. Video scrub / placeholder — video stays paused (primed
+            // 4. Video scrub / placeholder - video stays paused (primed
             // once, see primeVideoForScrub) and we seek currentTime
             // directly every frame so playback position tracks scroll
             // 1:1. Placeholder visibility is decided once via videoReady
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // 5. Slides — continuous scroll-scrubbed fade + translate, one
+            // 5. Slides - continuous scroll-scrubbed fade + translate, one
             // quarter of total progress per slide, tracking the scrollbar
             // (and therefore the video) 1:1 rather than snapping in/out.
             slides.forEach((slide, i) => {
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slide.style.transform = `${base}translateY(${y.toFixed(1)}px)`;
             });
 
-            // 6. HUD route readout — swaps with the active slide, drifts
+            // 6. HUD route readout - swaps with the active slide, drifts
             // slowly upward as an independent parallax layer.
             if (hudEl) {
                 const activeIndex = Math.max(0, Math.min(slides.length - 1, Math.floor(progress / 0.25)));
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hudEl.style.transform = `translateY(${(-progress * 40).toFixed(1)}px)`;
             }
 
-            // 7. Corner viewfinder frame — fades in once scrolling begins,
+            // 7. Corner viewfinder frame - fades in once scrolling begins,
             // scales open very slightly as an extra layer of scroll motion.
             if (frameEl) {
                 frameEl.classList.toggle('visible', progress > 0.015 && progress < 0.98);

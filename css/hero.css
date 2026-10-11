@@ -27,7 +27,7 @@
   opacity: 1;
 }
 
-/* Dark, mostly-desaturated overlay with just a hint of blue —
+/* Dark, mostly-desaturated overlay with just a hint of blue -
    tuned to keep the video's own color (sunset, metal, sky) coming through. */
 .hero-darken {
   position: absolute;
@@ -67,7 +67,7 @@
 }
 
 /* Desktop: each slide is scroll-scrubbed by JS (opacity + translateY set
-   per-frame in scroll-video.js), so no CSS transition here — it would lag
+   per-frame in scroll-video.js), so no CSS transition here - it would lag
    behind the scroll instead of tracking it 1:1. Position varies per slide
    via the modifier classes below. */
 .hero-slide {
@@ -142,7 +142,7 @@
   max-width: 480px;
 }
 
-/* Corner viewfinder frame — quiet decorative motion, parallaxes with scroll via JS */
+/* Corner viewfinder frame - quiet decorative motion, parallaxes with scroll via JS */
 .hero-frame {
   position: absolute;
   inset: 24px;
@@ -170,7 +170,7 @@
 .hero-frame__corner--bl { bottom: 0; left: 0; border-bottom-width: 1.5px; border-left-width: 1.5px; }
 .hero-frame__corner--br { bottom: 0; right: 0; border-bottom-width: 1.5px; border-right-width: 1.5px; }
 
-/* HUD route readout — swaps text per active slide, drifts gently with scroll */
+/* HUD route readout - swaps text per active slide, drifts gently with scroll */
 .hero-hud {
   position: absolute;
   right: 32px;

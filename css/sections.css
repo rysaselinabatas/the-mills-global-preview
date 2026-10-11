@@ -28,7 +28,7 @@
   background: var(--color-surface-alt);
 }
 
-/* Light-mode section — flips one section to light while the rest of the
+/* Light-mode section - flips one section to light while the rest of the
    page stays dark. Redefines the shared tokens locally so every component
    inside it (cards, eyebrows, buttons) picks up the right colors for free,
    with nothing to override rule-by-rule. */
@@ -45,7 +45,7 @@
   --color-divider: var(--color-divider-light);
 }
 
-/* Eyebrow tag — shared "label" motif reused across every section.
+/* Eyebrow tag - shared "label" motif reused across every section.
    Change color/spacing here and it updates everywhere at once. */
 .section__eyebrow {
   display: inline-flex;
@@ -70,7 +70,7 @@
 }
 
 /* ============================================ */
-/* SERVICES — asymmetric intro + feature grid   */
+/* SERVICES - asymmetric intro + feature grid   */
 /* ============================================ */
 .services-intro {
   display: flex;
@@ -78,7 +78,7 @@
   margin-bottom: var(--space-2xl);
 }
 
-/* Long-form lead paragraph variant — for sections where the copy under
+/* Long-form lead paragraph variant - for sections where the copy under
    the eyebrow is a full descriptive paragraph (e.g. a page's "Overview"
    intro) rather than a short punchy headline. Using the giant
    .services-intro__heading size here reads as a wall of huge text. */
@@ -132,7 +132,7 @@
   height: 18px;
 }
 
-/* Track: horizontal, scroll-snapped, drag/swipe/wheel scrollable natively —
+/* Track: horizontal, scroll-snapped, drag/swipe/wheel scrollable natively -
    the prev/next buttons just nudge scrollLeft. */
 .services-slider {
   display: flex;
@@ -193,7 +193,7 @@
   transition: transform 0.6s ease, filter 0.5s ease;
 }
 
-/* Navy wash — the resting state, in place of a solid card color */
+/* Navy wash - the resting state, in place of a solid card color */
 .service-slide__tint {
   position: absolute;
   inset: 0;
@@ -202,7 +202,7 @@
   transition: opacity 0.45s ease;
 }
 
-/* Legibility gradient for the description — fades in on hover, on top of
+/* Legibility gradient for the description - fades in on hover, on top of
    the now-cleared image */
 .service-slide__overlay {
   position: absolute;
@@ -362,7 +362,7 @@
 }
 
 /* ============================================ */
-/* STATS — split intro + 2x2 counter grid       */
+/* STATS - split intro + 2x2 counter grid       */
 /* ============================================ */
 .stats-split__grid {
   display: grid;
@@ -428,7 +428,7 @@
 }
 
 /* ============================================ */
-/* CONTACT — branded tile + inline form         */
+/* CONTACT - branded tile + inline form         */
 /* ============================================ */
 .contact-split__grid {
   display: grid;
