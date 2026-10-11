@@ -170,6 +170,7 @@
         var guide = GUIDES[slug];
         if (!guide) return;
         var key = slug.replace(/-/g, '_');
+        var photo = slug.indexOf('industry-') === 0 ? 'assets/images/' + slug + '.jpg' : 'assets/images/pexels-' + slug + '.jpg';
         var dismissKey = 'popupDismissed_' + key;
         var id = function (name) { return name + '_' + key; };
 
@@ -184,22 +185,22 @@
             '<div class="lm-popup__backdrop lm-popup__backdrop_' + key + '" id="' + id('popupBackdrop') + '"></div>' +
             '<div class="lm-popup__card lm-popup__card_' + key + '">' +
             '<button type="button" class="lm-popup__close lm-popup__close_' + key + '" id="' + id('popupClose') + '" aria-label="Close">&times;</button>' +
-            '<div class="lm-popup__media lm-popup__media_' + key + '"><img src="' + esc(guide.cover) + '" alt="Cover of ' + esc(guide.title) + '" width="1313" height="1700"></div>' +
+            '<div class="lm-popup__media lm-popup__media_' + key + '"><img src="' + esc(photo) + '" alt="" loading="lazy"></div>' +
             '<div class="lm-popup__body lm-popup__body_' + key + '" id="' + id('popupBody') + '">' +
             '<span class="lm-pill lm-pill_' + key + '">FREE CHECKLIST</span>' +
             '<h2 class="lm-popup__title lm-popup__title_' + key + '" id="' + id('popupTitle') + '">' + esc(guide.title) + '</h2>' +
             '<p class="lm-popup__lead lm-popup__lead_' + key + '">Twelve things to confirm before you book your next shipment. Enter your details and the checklist downloads right away.</p>' +
-            '<p class="lm-popup__trust lm-popup__trust_' + key + '">General guidance for importers. No spam.</p>' +
             '<form class="lm-form lm-form_' + key + '" id="' + id('popupForm') + '" novalidate>' +
-            field(id('popupName'), 'Full name', 'text', 'name', 'name', 'Jane Dela Cruz') +
-            field(id('popupEmail'), 'Work email', 'email', 'email', 'email', 'jane@company.com') +
-            field(id('popupPhone'), 'Phone', 'tel', 'phone', 'tel', '+63 917 123 4567') +
-            field(id('popupCompany'), 'Company', 'text', 'company', 'organization', 'Company name') +
+            field(id('popupName'), 'Full name', 'text', 'name', 'name', 'Full name') +
+            field(id('popupEmail'), 'Work email', 'email', 'email', 'email', 'Work email') +
+            field(id('popupPhone'), 'Phone', 'tel', 'phone', 'tel', 'Phone, for example +63 917 123 4567') +
+            field(id('popupCompany'), 'Company', 'text', 'company', 'organization', 'Company') +
             '<input type="text" name="website" id="' + id('popupHp') + '" class="lm-hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
             '<input type="hidden" name="guide" value="' + esc(slug) + '">' +
             '<p class="lm-error lm-error_' + key + '" id="' + id('popupError') + '" role="alert" aria-live="polite"></p>' +
             '<button type="submit" class="lm-btn lm-btn_' + key + '" id="' + id('popupSubmit') + '">Download the Checklist</button>' +
             '</form>' +
+            '<p class="lm-popup__trust lm-popup__trust_' + key + '">General guidance for importers. No spam.</p>' +
             '</div></div>';
         document.body.appendChild(wrap);
 
