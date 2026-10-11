@@ -299,3 +299,21 @@ document.addEventListener('DOMContentLoaded', () => {
         probe.src = src;
     });
 });
+
+/**
+ * Marquee logos: swap the placeholder tile for the real logo when the file exists.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.marquee__logo[data-img]').forEach(tile => {
+        const probe = new Image();
+        probe.onload = () => {
+            const img = document.createElement('img');
+            img.src = tile.dataset.img;
+            img.alt = '';
+            tile.textContent = '';
+            tile.appendChild(img);
+            tile.classList.add('has-image');
+        };
+        probe.src = tile.dataset.img;
+    });
+});
