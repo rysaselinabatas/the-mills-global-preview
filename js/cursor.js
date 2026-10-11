@@ -42,7 +42,7 @@
         var texty = t.closest && t.closest(TEXTY);
         root.classList.toggle('cursor-texty', !!texty);
         var hot = t.closest && t.closest(INTERACTIVE);
-        scaleTarget = hot ? 1.7 : 1;
+        scaleTarget = hot ? 1.9 : 1;
         ring.classList.toggle('is-hot', !!hot);
     }, { passive: true });
 

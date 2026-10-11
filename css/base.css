@@ -869,7 +869,7 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* Custom cursor: springy ring + dot (desktop only; JS adds .has-custom-cursor) */
+/* Custom cursor: inverting disc that glides after the pointer (desktop only; JS adds .has-custom-cursor) */
 html.has-custom-cursor,
 html.has-custom-cursor * {
   cursor: none !important;
@@ -892,26 +892,20 @@ html.has-custom-cursor textarea {
 }
 
 .mills-cursor {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid #EA5C1F;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  transition: opacity 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-}
-
-.mills-cursor.is-hot {
-  background: rgba(234, 92, 31, 0.16);
+  background: #FFFFFF;
+  mix-blend-mode: difference;   /* inverts whatever it passes over: a negative filter */
+  transition: opacity 0.25s ease;
 }
 
 .mills-cursor.is-down {
-  background: rgba(234, 92, 31, 0.3);
+  opacity: 0.8;
 }
 
 .mills-cursor-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #EA5C1F;
+  display: none;
 }
 
 html.cursor-visible .mills-cursor,
