@@ -105,11 +105,19 @@ a {
 }
 
 .nav__logo {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--color-text-light);
-  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo img {
+  display: block;
+  height: 36px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+.nav.scrolled .nav__logo img {
+  height: 30px;
 }
 
 .nav__links {
@@ -425,10 +433,13 @@ a {
 }
 
 .footer__logo {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--color-white);
+  display: inline-block;
+}
+
+.footer__logo img {
+  display: block;
+  height: 56px;
+  width: auto;
 }
 
 .footer__tagline {
