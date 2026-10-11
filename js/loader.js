@@ -1,19 +1,24 @@
 /**
- * Site loading screen. Plays the Mills mograph (silent) on a navy gradient and
- * leaves once the page and its assets have finished loading AND it has been
- * on screen for the minimum time (MIN_MS) so the animation reads. Shown once
- * per browser session so moving between pages stays fast. Loaded in <head>.
+ * Site loading screen: silent Mills mograph on a navy gradient.
+ *  - First page of a browser session: the full mograph, on screen at least 4 s.
+ *  - Every page after that: the fast (3x) mograph, on screen at least 1 s.
+ * It leaves once the page and its assets have loaded AND the minimum time has
+ * passed. Add ?loader=1 to any URL to preview the full version again.
+ * Loaded in <head>.
  */
 (function () {
     'use strict';
-    var force = /[?&]loader=1\b/.test(window.location.search); // add ?loader=1 to the URL to preview it again
+    var force = /[?&]loader=1\b/.test(window.location.search);
+    var seen = false;
     try {
-        if (!force && window.sessionStorage.getItem('millsLoaderSeen')) return;
+        seen = !!window.sessionStorage.getItem('millsLoaderSeen');
         window.sessionStorage.setItem('millsLoaderSeen', '1');
-    } catch (e) { /* storage blocked: show the loader anyway */ }
+    } catch (e) { /* storage blocked: treat as a first visit */ }
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    var MIN_MS = 4000;
+    var fast = seen && !force;
+    var MIN_MS = fast ? 1000 : 4000;
+    var clip = fast ? 'loader-fast' : 'loader-mograph-v2';
     var shownAt = Date.now();
 
     var css = '' +
@@ -31,8 +36,8 @@
     el.setAttribute('role', 'status');
     el.setAttribute('aria-label', 'Loading');
     el.innerHTML = '<video muted playsinline autoplay preload="auto" aria-hidden="true">' +
-        '<source src="assets/videos/loader-mograph-v2.webm" type="video/webm">' +
-        '<source src="assets/videos/loader-mograph-v2.mp4" type="video/mp4"></video>';
+        '<source src="assets/videos/' + clip + '.webm" type="video/webm">' +
+        '<source src="assets/videos/' + clip + '.mp4" type="video/mp4"></video>';
     document.documentElement.appendChild(el);
     document.documentElement.classList.add('mills-loading');
     var video = el.querySelector('video');
