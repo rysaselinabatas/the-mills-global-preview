@@ -6,7 +6,7 @@
 
 1. Start a new Claude chat (or Claude Code session) for each prompt.
 2. Attach **FHL_Freight_Forwarding_Readiness_Checklist.pdf** (structure reference only; the prompt tells Claude not to copy its wording or branding).
-3. Also attach `assets/images/brand/mills-logo-white.png` and `assets/images/brand/mills-logo-navy.png`.
+3. Also attach `assets/images/brand/mills-logo-horizontal-white.png` and `assets/images/brand/mills-logo-horizontal-navy.png`.
 4. Paste the prompt. Claude builds the 3-page PDF with the real Mills logo.
 5. Review the output; ask for tweaks in the same chat.
 6. Save the output as `lead-magnets/<slug>-readiness-checklist.pdf` (the file name is in each prompt) and link it from the matching page or the Learning Pavilion.
@@ -47,7 +47,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -86,7 +86,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -125,7 +125,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -164,7 +164,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -203,7 +203,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -242,7 +242,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -281,7 +281,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -320,7 +320,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -359,7 +359,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -398,7 +398,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -437,7 +437,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -480,7 +480,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -519,7 +519,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -558,7 +558,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -597,7 +597,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -636,7 +636,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -675,7 +675,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -714,7 +714,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -753,7 +753,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -792,7 +792,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -831,7 +831,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -870,7 +870,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -909,7 +909,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -948,7 +948,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -987,7 +987,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -1026,7 +1026,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
@@ -1065,7 +1065,7 @@ BRAND (apply to every page)
 - Company: The Mills Global, a Philippine market-entry, permits, customs and specialist-cargo platform. Offices: Manila, Cebu, Subic Bay.
 - Colors: The brand palette is exactly five colors: dark navy #212431 (cover and dark panels), slate blue #4F5D75 (secondary: subheadings, checkbox outlines, tint panels at 12 percent opacity, muted text), construction orange #EA5C1F (accent bar, rules, buttons, bullets), light grey #D6D7D7 (dividers and borders), off-white #F5F5F5 (inner page background). Body text is #212431. Do not introduce other colors.
 - Type: Plus Jakarta Sans for headings (bold, tight), Tahoma (fallback Verdana) for body copy. Small mono eyebrow labels in IBM Plex Mono, uppercase, letter-spaced.
-- LOGO: use the attached Mills logo (mills-logo-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
+- LOGO: use the attached Mills logo (mills-logo-horizontal-white.png, white on transparent) on dark pages such as the cover, and the attached mills-logo-horizontal-navy.png on light pages. Do not redraw, restyle or recolor the logo. Put it in the cover top-left and in each page header at about 36px height.
 - Contact line: inquiry@themillsglobal.com | +63 917 712 9000 | themillsglobal.com. CTA button label: BOOK A CALL (orange, white text, rounded 10px).
 
 LAYOUT (follow the reference PDF's structure, not its branding)
