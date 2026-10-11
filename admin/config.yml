@@ -1,0 +1,78 @@
+# Staff content editor (Sveltia CMS, Decap compatible). Open /admin/ and sign in with GitHub.
+# Each save is a commit to this repo; a GitHub Action then rebuilds the article pages.
+backend:
+  name: github
+  repo: themillsglobalcustomsbrokerage/the-mills-global-preview
+  branch: main
+
+media_folder: assets/images/blog
+public_folder: /assets/images/blog
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: articles
+    label: Articles
+    label_singular: Article
+    folder: content/posts/articles
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} ({{date}})"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - "Duties, Taxes & Fees"
+          - "Compliance & Regulations"
+          - "Customs Procedures"
+          - "Importation Guides"
+          - "Industry Guides"
+          - "Trade Strategy"
+          - "Accreditation & Registration"
+          - "Documentation"
+          - "Tariff & Classification"
+          - "Import Permits & Agencies"
+          - "Trade Agreements"
+          - "Shipping & Logistics"
+      - { label: Summary, name: summary, widget: text, hint: "One or two sentences. Shown on cards and in Google results." }
+      - { label: Cover image, name: image, widget: image, required: false, hint: "Landscape, at least 1200 px wide. Leave empty to use a default image." }
+      - { label: Featured, name: featured, widget: boolean, default: false, required: false }
+      - { label: "Draft (keep unpublished)", name: draft, widget: boolean, default: false, required: false }
+      - { label: Body, name: body, widget: markdown, hint: "Use Heading 2 and Heading 3 for sections. Link to other articles as /articles/their-slug." }
+  - name: news
+    label: News
+    label_singular: News item
+    folder: content/posts/news
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} ({{date}})"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - "Market News"
+          - "BOC Issuances"
+          - "Compliance & Regulations"
+          - "Industry"
+          - "Customs"
+          - "Duties, Taxes & Fees"
+      - { label: Summary, name: summary, widget: text, hint: "One or two sentences. Shown on cards and in Google results." }
+      - { label: Cover image, name: image, widget: image, required: false, hint: "Landscape, at least 1200 px wide. Leave empty to use a default image." }
+      - { label: Featured, name: featured, widget: boolean, default: false, required: false }
+      - { label: "Draft (keep unpublished)", name: draft, widget: boolean, default: false, required: false }
+      - { label: Body, name: body, widget: markdown, hint: "Use Heading 2 and Heading 3 for sections. Link to other articles as /articles/their-slug." }

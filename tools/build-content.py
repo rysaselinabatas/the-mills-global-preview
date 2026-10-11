@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Builds the Blog / News content from the two CSV files in content/.
+Builds the Blog / News content from the Markdown files in content/posts/.
 
-  content/articles.csv   evergreen guides and explainers
-  content/news.csv       time-sensitive news and BOC issuances
+  content/posts/articles/<slug>.md   evergreen guides and explainers
+  content/posts/news/<slug>.md       time-sensitive news and BOC issuances
 
-To publish something new: add a row to the matching CSV (same columns as the
-Webflow export), then run   python3 tools/build-content.py   and push.
+Staff edit these through the CMS at /admin/ (each save is a commit, and a GitHub
+Action runs this script). Locally:   python3 tools/build-content.py   then push.
+The old Webflow CSV exports are kept in content/ for reference only.
 
 It writes:
   articles/<slug>.html, news/<slug>.html   one static, SEO-friendly page per post
@@ -17,10 +18,12 @@ It writes:
 
 Needs Python 3 and Pillow. Standard library only otherwise.
 """
-import csv, io, json, math, os, re, subprocess, sys, time, urllib.request, urllib.parse
+import csv, glob, io, json, math, os, re, subprocess, sys, time, urllib.request, urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from html import escape, unescape
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mdhtml import md_to_html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -31,12 +34,6 @@ IMG_DIR = 'assets/images/blog'
 os.makedirs(IMG_DIR, exist_ok=True)
 os.makedirs('articles', exist_ok=True)
 os.makedirs('news', exist_ok=True)
-
-# Posts that should not be published (reason noted). Remove a slug here to publish it.
-HIDE = {
-    'trump-urges-ukraine-to-negotiate-drops-ceasefire-demand-after-putin-talks': 'not related to trade or customs',
-    'ad-interlim-cyber-intelligence-section': 'body text is about a CHED memorandum, not the BOC section',
-}
 
 ARTICLE_CATS = {
     'duties-taxes-fees': 'Duties, Taxes & Fees', 'compliance-regulations': 'Compliance & Regulations',
@@ -89,24 +86,57 @@ def parse_date(s):
     return datetime.strptime(' '.join(m.groups()), '%b %d %Y') if m else datetime(2025, 1, 1)
 
 
-def read_csv(path, kind):
-    raw = open(path, 'rb').read().decode('utf-8', errors='replace')
-    rows = list(csv.DictReader(io.StringIO(raw)))
+def parse_front(text):
+    """Front matter is flat `key: value` lines (JSON-style quoting or plain); body follows the closing ---."""
+    m = re.match(r'^---\s*\n(.*?)\n---\s*\n?(.*)$', text, re.S)
+    if not m:
+        return {}, text
+    meta = {}
+    lines = m.group(1).split('\n')
+    i = 0
+    while i < len(lines):
+        kv = re.match(r'^([\w-]+):\s*(.*)$', lines[i])
+        i += 1
+        if not kv:
+            continue
+        key, v = kv.group(1), kv.group(2).strip()
+        cont = []                                    # indented continuation lines (folded / multi-line values)
+        while i < len(lines) and (lines[i].startswith(' ') or not lines[i].strip()) and not re.match(r'^[\w-]+:', lines[i]):
+            cont.append(lines[i].strip()); i += 1
+        if v[:1] in '>|':
+            v = (' ' if v[0] == '>' else '\n').join(c for c in cont if c)
+        elif cont and v[:1] not in '"\'':
+            v = ' '.join([v] + [c for c in cont if c])
+        elif cont:
+            v = ' '.join([v] + [c for c in cont if c])
+        if v[:1] == '"':
+            try: v = json.loads(v)
+            except Exception: v = v.strip('"')
+        elif v[:1] == "'" and v[-1:] == "'":
+            v = v[1:-1].replace("''", "'")
+        meta[key] = v
+    return meta, m.group(2)
+
+
+def read_posts(kind):
+    folder = 'articles' if kind == 'article' else 'news'
+    label_map = ARTICLE_CATS if kind == 'article' else NEWS_CATS
+    default_cat = 'Trade Agreements' if kind == 'article' else 'Market News'
     posts = []
-    for r in rows:
-        if r.get('Draft') == 'true' or r.get('Archived') == 'true':
+    for path in sorted(glob.glob(f'content/posts/{folder}/*.md')):
+        slug = os.path.basename(path)[:-3]
+        meta, body = parse_front(open(path, encoding='utf-8').read())
+        if str(meta.get('draft', '')).lower() == 'true':
             continue
-        slug = r['Slug'].strip()
-        if slug in HIDE or not slug:
-            continue
-        label_map = ARTICLE_CATS if kind == 'article' else NEWS_CATS
-        cat = (r.get('Category') or '').strip() or label_map.get((r.get('Post category') or '').strip(), 'Market News' if kind == 'news' else 'Trade Agreements')
-        d = parse_date(r.get('Publish date') or r.get('Published On'))
+        cat = (meta.get('category') or '').strip() or default_cat
+        m = re.match(r'(\d{4})-(\d{2})-(\d{2})', str(meta.get('date', '')))
+        d = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3))) if m else datetime(2025, 1, 1)
+        image = (meta.get('image') or '').strip()
         posts.append({
-            'type': kind, 'slug': slug, 'title': clean_text(r['Name']), 'summary': clean_text(r['Summary']),
+            'type': kind, 'slug': slug, 'title': clean_text(meta.get('title', slug)), 'summary': clean_text(meta.get('summary', '')),
             'cat': cat, 'catSlug': slugify(cat), 'date': d.strftime('%Y-%m-%d'), 'dateLabel': d.strftime('%b %-d, %Y'),
-            'body': r['Post body'], 'imgUrl': (r.get('Post Image') or r.get('Card image') or r.get('Card image') or '').strip() or (r.get('Card image') or '').strip(),
-            'acronym': (r.get('Acronym') or '').strip(), 'featured': r.get('Featured post') == 'true',
+            'body': md_to_html(body), 'imgUrl': image if image.startswith('http') else '', 'imgLocal': image.lstrip('/') if image and not image.startswith('http') else '',
+            'acronym': '', 'featured': str(meta.get('featured', '')).lower() == 'true',
         })
     return posts
 
@@ -115,8 +145,19 @@ def read_csv(path, kind):
 def fetch_image(p):
     out = f"{IMG_DIR}/{p['type']}-{p['slug'][:90]}.jpg"
     p['img'] = out
-    if os.path.exists(out):
+    local = p.get('imgLocal')
+    if os.path.exists(out) and (not local or os.path.abspath(local) == os.path.abspath(out)):
         return
+    if local and os.path.exists(local):
+        from PIL import Image
+        try:
+            im = Image.open(local).convert('RGB')
+            if im.width > 1200:
+                im = im.resize((1200, round(im.height * 1200 / im.width)), Image.LANCZOS)
+            im.save(out, 'JPEG', quality=84)
+            return
+        except Exception:
+            pass
     url = p['imgUrl']
     if os.environ.get('SKIP_FETCH') or not url:
         p['img'] = FALLBACK_IMG.get(p['cat'], 'assets/images/pexels-entry.jpg'); return
@@ -228,7 +269,7 @@ NAV, FOOT = chrome()
 HEAD_SCRIPTS = '''  <script src="../js/loader.js?v=6"></script>'''
 TAIL_SCRIPTS = '''  <script src="../js/vendor/lenis.min.js"></script>
   <script src="../js/smooth.js?v=1"></script>
-  <script src="../js/cursor.js?v=1"></script>
+  <script src="../js/cursor.js?v=3"></script>
   <script src="../js/analytics.js"></script>
   <script src="../js/animations.js"></script>'''
 GTM_NOSCRIPT = '''  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3QFNL94" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>'''
@@ -355,10 +396,10 @@ def post_page(p, posts):
 
 
 def main():
-    articles = read_csv('content/articles.csv', 'article')
-    news = read_csv('content/news.csv', 'news')
+    articles = read_posts('article')
+    news = read_posts('news')
     posts = articles + news
-    print(f'{len(articles)} articles, {len(news)} news ({len(HIDE)} hidden)')
+    print(f'{len(articles)} articles, {len(news)} news')
     with ThreadPoolExecutor(1) as ex:
         list(ex.map(fetch_image, posts))
     slugs = {p['slug'] for p in articles}
@@ -367,6 +408,11 @@ def main():
         p['mins'] = read_mins(p['bodyHtml'])
     posts.sort(key=lambda p: (p['date'], p['title']), reverse=True)
 
+    keep = {(('articles' if p['type'] == 'article' else 'news'), p['slug']) for p in posts}
+    for d in ('articles', 'news'):          # drop pages whose post was deleted or set to draft
+        for f in glob.glob(f'{d}/*.html'):
+            if (d, os.path.basename(f)[:-5]) not in keep:
+                os.remove(f)
     for p in posts:
         d = 'articles' if p['type'] == 'article' else 'news'
         open(f"{d}/{p['slug']}.html", 'w').write(post_page(p, posts))
@@ -375,6 +421,12 @@ def main():
               'catSlug': p['catSlug'], 'date': p['date'], 'dateLabel': p['dateLabel'], 'mins': p['mins'], 'img': p['img'],
               'url': f"{'articles' if p['type'] == 'article' else 'news'}/{p['slug']}.html"} for p in posts]
     json.dump(index, open('content/posts.json', 'w'), ensure_ascii=False, indent=1)
+
+    # sitemap: site pages plus every published post
+    urls = sorted(f for f in glob.glob('*.html'))
+    urls += sorted(glob.glob('articles/*.html')) + sorted(glob.glob('news/*.html'))
+    open('sitemap.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
+        f"  <url><loc>{SITE}/{'' if f == 'index.html' else f}</loc></url>\n" for f in urls) + '</urlset>\n')
 
     # category counts for the filters
     cats = {}

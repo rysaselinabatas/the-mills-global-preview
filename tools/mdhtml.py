@@ -86,6 +86,7 @@ class _H2M(HTMLParser):
 
 
 def html_to_md(html):
+    html = html.replace('\u200d', '').replace('&zwj;', '')
     p = _H2M()
     p.feed(html)
     lines, prev = [], None
