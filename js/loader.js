@@ -18,9 +18,9 @@
 
     var css = '' +
         '#millsLoader{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;' +
-        'background:linear-gradient(90deg,#3B475C 0%,#2A2F41 30%,#212431 58%,#212431 100%);transition:opacity .5s ease,visibility .5s ease}' +
+        'background:linear-gradient(90deg,#4A6BA3 0%,#2F3B5C 30%,#212431 58%,#212431 100%);transition:opacity .5s ease,visibility .5s ease}' +
         '#millsLoader.is-leaving{opacity:0;visibility:hidden}' +
-        '#millsLoader video{display:block;width:clamp(300px,32vw,460px);height:auto;mix-blend-mode:screen;pointer-events:none}' +
+        '#millsLoader video{display:block;width:clamp(220px,24vw,320px);height:auto;mix-blend-mode:screen;pointer-events:none}' +
         'html.mills-loading{overflow:hidden}';
     var style = document.createElement('style');
     style.textContent = css;
@@ -31,8 +31,8 @@
     el.setAttribute('role', 'status');
     el.setAttribute('aria-label', 'Loading');
     el.innerHTML = '<video muted playsinline autoplay preload="auto" aria-hidden="true">' +
-        '<source src="assets/videos/loader-mograph.webm" type="video/webm">' +
-        '<source src="assets/videos/loader-mograph.mp4" type="video/mp4"></video>';
+        '<source src="assets/videos/loader-mograph-v2.webm" type="video/webm">' +
+        '<source src="assets/videos/loader-mograph-v2.mp4" type="video/mp4"></video>';
     document.documentElement.appendChild(el);
     document.documentElement.classList.add('mills-loading');
     var video = el.querySelector('video');
