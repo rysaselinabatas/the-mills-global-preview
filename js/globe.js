@@ -67,7 +67,7 @@
                 .labelIncludeDot(false)
                 .labelAltitude(function (d) { return d.hq ? 0.2 : 0.08; })
                 .labelColor(function (d) { return d.hq ? '#FFB48A' : '#FFFFFF'; })
-                .labelResolution(3)
+                .labelResolution(2)
                 .ringsData([hq])
                 .ringColor(function () { return function (t) { return 'rgba(234,92,31,' + (1 - t) + ')'; }; })
                 .ringMaxRadius(6)
@@ -81,12 +81,13 @@
                 .arcDashAnimateTime(reduce ? 0 : 4200)
                 .arcAltitudeAutoScale(0.4);
 
+            g.renderer().setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
             var controls = g.controls();
             controls.autoRotate = !reduce;
             controls.autoRotateSpeed = 0.55;
             controls.enableZoom = false;
             controls.enablePan = false;
-            g.pointOfView({ lat: 14, lng: 121, altitude: 2.2 });
+            g.pointOfView({ lat: 14, lng: 121, altitude: 1.8 });
 
             if (window.ResizeObserver) {
                 new ResizeObserver(function () { g.width(el.clientWidth).height(el.clientWidth); }).observe(el);

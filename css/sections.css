@@ -410,6 +410,22 @@
   border-radius: var(--radius-md);
 }
 
+.stats-split__row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 480px) {
+  .stats-split__row { grid-template-columns: 1fr; }
+}
+
+.stat-card--mini {
+  min-height: 132px;
+  gap: var(--space-md);
+}
+
 .stat-card__label {
   font-family: var(--font-mono);
   font-size: 12px;

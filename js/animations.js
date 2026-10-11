@@ -68,7 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
             threshold: 0.5
         });
 
-        statElements.forEach(el => statObserver.observe(el));
+        statElements.forEach(el => {
+            // the HTML holds the real figure (for crawlers and no-JS); count up from zero when it scrolls into view
+            el.textContent = `${el.getAttribute('data-prefix') || ''}0${el.getAttribute('data-suffix') || ''}`;
+            statObserver.observe(el);
+        });
     }
 
     // 3. Services Slider - arrow nav + tap-to-reveal on touch devices

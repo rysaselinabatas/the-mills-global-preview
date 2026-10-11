@@ -1,7 +1,6 @@
 /**
  * Custom cursor: a small dot that tracks the pointer exactly, plus a larger
- * outlined ring that trails it with a soft delay, catching up to the dot, and
- * stretches slightly toward it while it lags. Both invert what is beneath them. The ring grows over
+ * outlined ring that trails it with a short delay and catches up to it. Both invert what is beneath them. The ring grows over
  * links and buttons. Desktop (fine pointer) only.
  */
 (function () {
@@ -22,11 +21,10 @@
 
     var mouse = { x: -100, y: -100 };
     var pos = { x: -100, y: -100 };
-    var vel = { x: 0, y: 0 };
     var scale = 1, scaleTarget = 1;
     var seen = false;
 
-    var FOLLOW = 0.09;      // the ring eases toward the dot: always behind it, never past it
+    var FOLLOW = 0.1;       // the ring eases toward the dot: always behind it, never past it
 
     var INTERACTIVE = 'a, button, [data-open], [role="button"], summary, label, .content-card, .faq-question, .service-slide, .cta-pair *';
     var TEXTY = 'input, textarea, select';
@@ -53,22 +51,20 @@
     document.addEventListener('mouseleave', function () { root.classList.remove('cursor-visible'); seen = false; });
     document.addEventListener('mouseenter', function () { root.classList.add('cursor-visible'); });
 
+    var running = false;
     function tick() {
-        // plain easing (no spring), so the ring only ever trails the dot
-        vel.x = (mouse.x - pos.x) * FOLLOW;
-        vel.y = (mouse.y - pos.y) * FOLLOW;
-        pos.x += vel.x;
-        pos.y += vel.y;
+        // plain easing: the ring simply lags a moment behind the dot, then catches up
+        pos.x += (mouse.x - pos.x) * FOLLOW;
+        pos.y += (mouse.y - pos.y) * FOLLOW;
         scale += (scaleTarget - scale) * 0.14;
 
-        // stretch gently along the direction of travel, then settle back to a circle
-        var lag = Math.min(Math.hypot(mouse.x - pos.x, mouse.y - pos.y), 60);
-        var stretch = 1 + lag / 400;
-        var angle = Math.atan2(mouse.y - pos.y, mouse.x - pos.x) * 180 / Math.PI;
-
-        ring.style.transform = 'translate3d(' + pos.x + 'px,' + pos.y + 'px,0) translate(-50%,-50%) rotate(' + angle + 'deg) scale(' + (scale * stretch) + ',' + (scale / stretch) + ')';
+        ring.style.transform = 'translate3d(' + pos.x + 'px,' + pos.y + 'px,0) translate(-50%,-50%) scale(' + scale + ')';
         dot.style.transform = 'translate3d(' + mouse.x + 'px,' + mouse.y + 'px,0) translate(-50%,-50%)';
+        var settled = Math.abs(mouse.x - pos.x) < 0.05 && Math.abs(mouse.y - pos.y) < 0.05 && Math.abs(scaleTarget - scale) < 0.005;
+        if (settled) { running = false; return; }   // idle: stop the loop until the pointer moves
         window.requestAnimationFrame(tick);
     }
-    window.requestAnimationFrame(tick);
+    function wake() { if (!running) { running = true; window.requestAnimationFrame(tick); } }
+    document.addEventListener('mousemove', wake, { passive: true });
+    wake();
 })();

@@ -10,8 +10,7 @@ INDUSTRIES = [(a, html.unescape(b)) for a, b in re.findall(r'<a href="(industrie
 assert len(INDUSTRIES) == 16, len(INDUSTRIES)
 STATS = [('15+', 'years of experience'), ('50K+', 'shipments cleared annually'), ('98.7%', 'compliance rate'), ('24/7', 'support availability'),
          ('150+', 'offices world wide'), ('19', 'countries'), ('40', 'cities')]
-LEAD = ('The Mills Global is a Philippine customs brokerage and trade-execution firm based in Manila, with 150+ offices world wide across 19 countries and 40 cities. '
-        'It offers 11 core services, from customs clearance and import permits to project cargo, marine, dangerous goods and logistics, for 16 core industries.')
+LEAD = ('The Mills Global is a Philippine customs brokerage and trade-execution firm based in Manila. It offers 11 core services, from customs clearance and import permits to project cargo, marine, dangerous goods and logistics, for 16 core industries.')
 
 def block():
     st = ''.join(f'<li><strong>{n}</strong><span>{l}</span></li>' for n, l in STATS)
@@ -19,10 +18,9 @@ def block():
     ind = ''.join(f'<li><a href="{u}">{html.escape(n)}</a></li>' for u, n in INDUSTRIES)
     return f'''  <section class="section section--paper glance" id="at-a-glance">
     <div class="container">
-      <p class="section__eyebrow animate-in">At a Glance</p>
-      <h2 class="services-intro__heading animate-in" data-delay="1">The Mills Global at a glance.</h2>
+      <p class="section__eyebrow animate-in">What We Do</p>
+      <h2 class="services-intro__heading animate-in" data-delay="1">Core services and core industries.</h2>
       <p class="glance__lead animate-in" data-delay="2">{LEAD}</p>
-      <ul class="glance__stats">{st}</ul>
       <div class="glance__cols">
         <div>
           <h3 class="glance__title">11 core services</h3>
