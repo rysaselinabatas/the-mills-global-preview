@@ -319,10 +319,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Core Support pointer: a small floating container icon that glides to
- * whichever numbered item is currently at reading height as the user scrolls.
- * Works for the 2-column grid and the stacked mobile layout alike: it always
- * sits at the top-right of the active item.
+ * Core Support pointer: a small container icon that travels through the
+ * numbered items strictly in order (1, 2, 3 ...) as the user scrolls.
+ * Waypoints sit at the top-right of each item; the path through them is a
+ * Catmull-Rom spline, so it swoops in soft curves instead of straight lines.
+ * Position is a pure function of scroll, then eased for an organic feel.
  */
 document.addEventListener('DOMContentLoaded', () => {
     const grids = document.querySelectorAll('.service-feature-grid');
@@ -335,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '<rect x="1" y="3" width="46" height="24" rx="3" stroke="#212431" stroke-opacity="0.55" stroke-width="1.5"/>' +
         '<rect x="3" y="27" width="6" height="3" rx="1" fill="#212431"/><rect x="39" y="27" width="6" height="3" rx="1" fill="#212431"/></svg>';
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const smooth = (f) => f * f * (3 - 2 * f);
 
     grids.forEach(grid => {
         const items = Array.from(grid.querySelectorAll('.service-feature'));
@@ -345,33 +347,86 @@ document.addEventListener('DOMContentLoaded', () => {
         pointer.innerHTML = '<div class="feature-pointer__bob">' + icon + '</div>';
         grid.appendChild(pointer);
 
-        let placed = false;
-        let raf = null;
-        const update = () => {
-            raf = null;
+        let pts = [];
+        let keys = [];
+        let single = true;
+        let cur = null;
+        let rot = 0;
+        let rafId = null;
+
+        const measure = () => {
+            const n = items.length;
+            const baseLeft = items[0].offsetLeft;
+            single = items.every(it => Math.abs(it.offsetLeft - baseLeft) < 4);
+            pts = items.map(it => ({
+                x: it.offsetLeft + it.offsetWidth - 58,
+                y: it.offsetTop + 10
+            }));
+            keys = items.map((it, i) => {
+                const col = single ? 0 : (it.offsetLeft > baseLeft + 4 ? 1 : 0);
+                return it.offsetTop + col * it.offsetHeight * 0.5;
+            });
+            for (let i = 1; i < n; i++) keys[i] = Math.max(keys[i], keys[i - 1] + 1);
+        };
+
+        const tAt = (u) => {
+            const n = keys.length;
+            if (n === 1 || u <= keys[0]) return { t: 0, j: 0, f: 0 };
+            if (u >= keys[n - 1]) return { t: n - 1, j: n - 2, f: 1 };
+            let j = 0;
+            while (j < n - 2 && u >= keys[j + 1]) j++;
+            const f = (u - keys[j]) / (keys[j + 1] - keys[j]);
+            return { t: j + smooth(f), j, f };
+        };
+
+        const spline = (t) => {
+            const n = pts.length;
+            if (n === 1) return { x: pts[0].x, y: pts[0].y };
+            const P = (i) => pts[Math.max(0, Math.min(n - 1, i))];
+            const i = Math.min(Math.floor(t), n - 2);
+            const f = t - i;
+            const p0 = P(i - 1), p1 = P(i), p2 = P(i + 1), p3 = P(i + 2);
+            const c = (a, b, cc, d) => 0.5 * (2 * b + (-a + cc) * f +
+                (2 * a - 5 * b + 4 * cc - d) * f * f + (-a + 3 * b - 3 * cc + d) * f * f * f);
+            return { x: c(p0.x, p1.x, p2.x, p3.x), y: c(p0.y, p1.y, p2.y, p3.y) };
+        };
+
+        const frame = () => {
+            rafId = null;
             const g = grid.getBoundingClientRect();
             const vh = window.innerHeight;
-            pointer.classList.toggle('is-visible', g.bottom > 0 && g.top < vh);
-            const line = vh * 0.55;
-            let active = items[0];
-            items.forEach(it => { if (it.getBoundingClientRect().top <= line) active = it; });
-            items.forEach(it => it.classList.toggle('is-active', it === active));
-            const r = active.getBoundingClientRect();
-            const x = r.right - g.left - 60;
-            const y = r.top - g.top + 12;
-            pointer.style.transform = `translate(${x}px, ${y}px)`;
-            if (!placed) {
-                placed = true;
-                requestAnimationFrame(() => pointer.classList.add('is-ready'));
+            const visible = g.bottom > 0 && g.top < vh;
+            pointer.classList.toggle('is-visible', visible);
+            const u = vh * 0.55 - g.top;
+            const seg = tAt(u);
+            const pos = spline(seg.t);
+            // soft S-bend between waypoints so the road feels organic
+            const amp = single ? 16 : 9;
+            pos.x += amp * Math.sin(seg.f * Math.PI) * (seg.j % 2 ? 1 : -1);
+            if (!cur || reduce) cur = { x: pos.x, y: pos.y };
+            const dx = pos.x - cur.x;
+            const dy = pos.y - cur.y;
+            cur.x += dx * 0.14;
+            cur.y += dy * 0.14;
+            const targetRot = Math.max(-12, Math.min(12, dx * 0.5));
+            rot += (targetRot - rot) * 0.15;
+            pointer.style.transform = `translate3d(${cur.x}px, ${cur.y}px, 0) rotate(${rot}deg)`;
+            const active = Math.round(seg.t);
+            items.forEach((it, i) => it.classList.toggle('is-active', i === active));
+            if (visible && (Math.abs(dx) > 0.3 || Math.abs(dy) > 0.3 || Math.abs(rot) > 0.3)) {
+                rafId = requestAnimationFrame(frame);
             }
         };
-        const queue = () => { if (raf === null) raf = requestAnimationFrame(update); };
-        window.addEventListener('scroll', queue, { passive: true });
-        window.addEventListener('resize', queue);
-        update();
-        // reveal animations shift item positions slightly right after load
-        setTimeout(queue, 700);
-        setTimeout(queue, 1400);
-        if (reduce) pointer.classList.add('is-static');
+        const kick = () => { if (rafId === null) rafId = requestAnimationFrame(frame); };
+        const remeasure = () => { measure(); kick(); };
+
+        measure();
+        window.addEventListener('scroll', kick, { passive: true });
+        window.addEventListener('resize', remeasure);
+        window.addEventListener('load', remeasure);
+        if (window.ResizeObserver) new ResizeObserver(remeasure).observe(grid);
+        setTimeout(remeasure, 700);
+        setTimeout(remeasure, 1400);
+        frame();
     });
 });
