@@ -16,9 +16,26 @@
 
     var GTM_ID = 'GTM-K3QFNL94';
     var ADS_ID = 'AW-17000148570';
-    var ADS_PHONE_CONVERSION = 'AW-17000148570/1VnWCI_inOEcENrcpqo_';
     var LINKEDIN_PARTNER_ID = '9889316';
-    var LINKEDIN_BOOKING_CONVERSION = 28098724;
+
+    // One conversion action per outcome, so each source is reported separately.
+    // Google Ads: 'AW-ACCOUNT/LABEL' from Goals > Conversions > the action's tag setup.
+    // Leave a value empty until that conversion action exists; empty ones are skipped.
+    var ADS_CONVERSIONS = {
+        phone: 'AW-17000148570/1VnWCI_inOEcENrcpqo_', // Call Now / any tel: link click
+        email: '',                                     // Email Us / any mailto: link click
+        book_click: '',                                // Book a Consultation / Book a Call click
+        book_scheduled: '',                            // a meeting was actually booked in Cal.com
+        form: ''                                       // contact form or lead magnet submitted
+    };
+    // LinkedIn: numeric conversion rule IDs from Campaign Manager > Conversions.
+    var LINKEDIN_CONVERSIONS = {
+        phone: 0,
+        email: 0,
+        book_click: 28098724,
+        book_scheduled: 0,
+        form: 0
+    };
     var CONTENTSQUARE_SRC = 'https://t.contentsquare.net/uxa/fde570633e6be.js';
 
     var host = window.location.hostname;
@@ -82,10 +99,16 @@
         try { return JSON.parse(window.sessionStorage.getItem(ATTR_STORE) || '{}'); } catch (e) { return {}; }
     };
 
-    function linkedinBookingConversion() {
-        if (isProduction && window.lintrk) window.lintrk('track', { conversion_id: LINKEDIN_BOOKING_CONVERSION });
-    }
-    window.mtgLinkedinBooking = linkedinBookingConversion;
+    // Fires the Google Ads and LinkedIn conversions for one outcome (production only).
+    window.mtgConversion = function (action) {
+        if (!isProduction) return;
+        if (ADS_CONVERSIONS[action]) {
+            window.gtag('event', 'conversion', { send_to: ADS_CONVERSIONS[action], value: 1.0, currency: 'PHP' });
+        }
+        if (LINKEDIN_CONVERSIONS[action] && window.lintrk) {
+            window.lintrk('track', { conversion_id: LINKEDIN_CONVERSIONS[action] });
+        }
+    };
 
     document.addEventListener('click', function (e) {
         var el = e.target.closest ? e.target.closest('a, button, [data-ga]') : null;
@@ -98,22 +121,20 @@
             window.mtgTrack(name, {
                 label: tag.getAttribute('data-ga-label') || (tag.textContent || '').trim().slice(0, 60)
             });
-            if (name === 'hero_book_consultation' || name === 'cta_book_consultation') linkedinBookingConversion();
+            if (name === 'hero_book_consultation' || name === 'cta_book_consultation') window.mtgConversion('book_click');
         }
 
         var href = el.getAttribute && el.getAttribute('href');
         if (!href) return;
         if (href.indexOf('mailto:') === 0) {
             window.mtgTrack('contact_click', { method: 'email' });
+            window.mtgConversion('email');
         } else if (href.indexOf('tel:') === 0) {
             window.mtgTrack('contact_click', { method: 'phone' });
-            // Google Ads phone-call conversion. Never blocks the call.
-            if (isProduction) {
-                window.gtag('event', 'conversion', { send_to: ADS_PHONE_CONVERSION, value: 1.0, currency: 'PHP' });
-            }
+            window.mtgConversion('phone'); // never blocks the call
         } else if (href.indexOf('book-a-call') !== -1) {
             window.mtgTrack('book_call_click', { link_text: (el.textContent || '').trim().slice(0, 60) });
-            linkedinBookingConversion();
+            window.mtgConversion('book_click');
         }
     });
 })();

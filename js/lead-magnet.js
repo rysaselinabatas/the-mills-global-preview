@@ -290,6 +290,7 @@
         function succeed(firstName) {
             storageSet(dismissKey, '1');
             track('generate_lead', { lead_source: 'lead_magnet', guide: slug, guide_title: guide.title, trigger: lastTrigger });
+            if (window.mtgConversion) window.mtgConversion('form');
             track('lead_magnet_download', { guide: slug, guide_title: guide.title, file_name: guide.pdf.split('/').pop() });
             body.innerHTML =
                 '<span class="lm-pill lm-pill_' + key + '">FREE CHECKLIST</span>' +

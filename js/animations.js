@@ -111,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = (data.get('email') || '').toString().trim();
             const message = (data.get('message') || '').toString().trim();
             const service = contactForm.getAttribute('data-service');
+            const attr = window.mtgAttribution ? window.mtgAttribution() : {};
+            const adSource = Object.keys(attr).map((k) => `${k}=${attr[k]}`).join('; ');
 
             const subjectLead = service ? `${service} inquiry` : 'Quote request';
             const subject = `${subjectLead} from ${name}${company ? ', ' + company : ''}`;
@@ -120,10 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 service ? `Service: ${service}` : null,
                 `Name: ${name}`,
                 company ? `Company: ${company}` : null,
-                `Reply-to email: ${email}`
+                `Reply-to email: ${email}`,
+                adSource ? `Ad source: ${adSource}` : null
             ].filter(Boolean);
 
             const mailtoUrl = `mailto:inquiry@themillsglobal.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+            if (window.mtgTrack) window.mtgTrack('generate_lead', { lead_source: 'contact_form', service: service || 'general' });
+            if (window.mtgConversion) window.mtgConversion('form');
             window.location.href = mailtoUrl;
         });
     }

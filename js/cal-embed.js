@@ -51,9 +51,16 @@
         window.Cal.config = window.Cal.config || {};
         window.Cal.config.forwardQueryParams = true;
 
+        // Pass ad attribution (gclid, utm_*) into the booking so each meeting keeps its source
+        var calConfig = { layout: 'month_view', useSlotsViewOnSmallScreen: 'true', theme: 'light' };
+        var attr = window.mtgAttribution ? window.mtgAttribution() : {};
+        Object.keys(attr).forEach(function (k) {
+            calConfig[k.indexOf('utm_') === 0 ? k : 'metadata[' + k + ']'] = attr[k];
+        });
+
         window.Cal.ns[NS]('inline', {
             elementOrSelector: '#my-cal-inline-30min',
-            config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true', theme: 'light' },
+            config: calConfig,
             calLink: CAL_LINK
         });
 
@@ -69,6 +76,7 @@
             action: 'bookingSuccessful',
             callback: function () {
                 if (window.mtgTrack) window.mtgTrack('book_call_scheduled', { calendar: CAL_LINK });
+                if (window.mtgConversion) window.mtgConversion('book_scheduled');
             }
         });
     }
