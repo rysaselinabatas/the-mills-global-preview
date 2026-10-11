@@ -804,3 +804,33 @@
     animation: none;
   }
 }
+
+/* Hero call-to-action pair: Call Now (primary) + Book a Consultation (secondary) */
+.service-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.service-hero .btn-secondary {
+  padding: 15px 28px;
+  border-color: rgba(245, 245, 245, 0.55);
+  color: #F5F5F5;
+}
+
+.service-hero .btn-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+@media (max-width: 560px) {
+  .service-hero__actions .btn-primary,
+  .service-hero__actions .btn-secondary {
+    width: 100%;
+  }
+}
+
+#book-call {
+  scroll-margin-top: 80px;
+}
