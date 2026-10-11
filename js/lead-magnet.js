@@ -190,7 +190,7 @@
         wrap.hidden = true;
         wrap.innerHTML =
             '<div class="lm-popup__backdrop lm-popup__backdrop_' + key + '" id="' + id('popupBackdrop') + '"></div>' +
-            '<div class="lm-popup__card lm-popup__card_' + key + '">' +
+            '<div class="lm-popup__card lm-popup__card_' + key + '" data-lenis-prevent>' +
             '<button type="button" class="lm-popup__close lm-popup__close_' + key + '" id="' + id('popupClose') + '" aria-label="Close">&times;</button>' +
             '<div class="lm-popup__media lm-popup__media_' + key + '"><img src="' + esc(photo) + '" alt="" loading="lazy"></div>' +
             '<div class="lm-popup__body lm-popup__body_' + key + '" id="' + id('popupBody') + '">' +
