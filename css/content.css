@@ -241,7 +241,7 @@
 
 .article-body p {
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 16.5px;
   line-height: 1.75;
   color: var(--color-text-light);
   margin-bottom: var(--space-lg);

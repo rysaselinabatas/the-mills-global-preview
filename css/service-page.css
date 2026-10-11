@@ -85,7 +85,7 @@
 
 .service-hero__subtitle {
   font-family: var(--font-body);
-  font-size: 18.5px;
+  font-size: 17.5px;
   line-height: 1.68;
   color: rgba(255, 255, 255, 0.85);
   max-width: 620px;
@@ -341,7 +341,7 @@
 
 .process-timeline__text {
   font-family: var(--font-body);
-  font-size: 17.5px;
+  font-size: 16.5px;
   line-height: 1.65;
   color: var(--color-text-light);
 }
