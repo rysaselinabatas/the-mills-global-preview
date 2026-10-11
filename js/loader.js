@@ -1,6 +1,7 @@
 /**
  * Site loading screen. Plays the Mills mograph (silent) on a navy gradient and
- * leaves as soon as the page and its assets have finished loading. Shown once
+ * leaves once the page and its assets have finished loading AND it has been
+ * on screen for the minimum time (MIN_MS) so the animation reads. Shown once
  * per browser session so moving between pages stays fast. Loaded in <head>.
  */
 (function () {
@@ -10,6 +11,9 @@
         window.sessionStorage.setItem('millsLoaderSeen', '1');
     } catch (e) { /* storage blocked: show the loader anyway */ }
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var MIN_MS = 4000;
+    var shownAt = Date.now();
 
     var css = '' +
         '#millsLoader{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;' +
@@ -43,7 +47,12 @@
         document.documentElement.classList.remove('mills-loading');
         setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 650);
     }
-    if (document.readyState === 'complete') leave();
-    else window.addEventListener('load', leave);
+    function leaveWhenReady() {
+        var wait = MIN_MS - (Date.now() - shownAt);
+        if (wait > 0) setTimeout(leave, wait);
+        else leave();
+    }
+    if (document.readyState === 'complete') leaveWhenReady();
+    else window.addEventListener('load', leaveWhenReady);
     setTimeout(leave, 12000); // safety net so a slow asset never traps the visitor
 })();
