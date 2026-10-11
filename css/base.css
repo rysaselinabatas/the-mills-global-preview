@@ -803,3 +803,15 @@ a {
     max-width: 360px;
   }
 }
+
+/* Cutout image placed below a section's content, flush with the section bottom */
+.cutout-below {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+}
+
+.cutout-below .img-slot--cutout {
+  justify-self: auto;
+  max-width: 560px;
+}
