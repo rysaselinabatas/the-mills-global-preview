@@ -338,6 +338,8 @@
                 page: window.location.href,
                 submitted_at: new Date().toISOString()
             };
+            var attr = window.mtgAttribution ? window.mtgAttribution() : {};
+            Object.keys(attr).forEach(function (k) { payload[k] = attr[k]; });
             send(payload).catch(function () {
                 return new Promise(function (r) { setTimeout(r, 1200); }).then(function () { return send(payload); });
             }).then(function () {
