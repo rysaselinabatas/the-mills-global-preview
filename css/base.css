@@ -759,6 +759,7 @@ a {
 
 .split-layout--cutout {
   align-items: end;
+  grid-template-columns: 0.9fr 1.1fr;
 }
 
 .split-layout--cutout > .split-layout__text {
@@ -767,15 +768,23 @@ a {
 }
 
 .img-slot--cutout {
-  width: 100%;
-  max-width: 520px;
+  /* wider than its column on purpose: it bleeds off the right edge (the section clips it) */
+  width: calc(100% + 190px);
+  max-width: none;
+  margin-right: -190px;
   justify-self: end;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   border-bottom: 0;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   background-image: repeating-conic-gradient(rgba(79, 93, 117, 0.16) 0 25%, transparent 0 50%);
   background-size: 28px 28px;
   background-color: transparent;
+}
+
+/* tall/narrow subjects (drill bit, propeller) stay inside the column */
+.img-slot--cutout-tall {
+  width: min(100%, 440px);
+  margin-right: 0;
 }
 
 .img-slot--cutout.has-image {
@@ -810,9 +819,12 @@ a {
     padding-bottom: var(--space-xl);
   }
 
-  .img-slot--cutout {
+  .img-slot--cutout,
+  .img-slot--cutout-tall {
     justify-self: center;
-    max-width: 360px;
+    width: 100%;
+    max-width: 420px;
+    margin-right: 0;
   }
 }
 
@@ -825,5 +837,7 @@ a {
 
 .cutout-below .img-slot--cutout {
   justify-self: auto;
-  max-width: 560px;
+  width: min(100%, 800px);
+  max-width: none;
+  margin-right: 0;
 }

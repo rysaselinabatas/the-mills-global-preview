@@ -300,6 +300,12 @@ document.addEventListener('DOMContentLoaded', () => {
         probe.onload = () => {
             slot.style.backgroundImage = `url("${src}")`;
             slot.classList.add('has-image');
+            // cutouts: size the box to the picture so it sits flush at the bottom
+            if (slot.classList.contains('img-slot--cutout')) {
+                const ratio = probe.naturalWidth / probe.naturalHeight;
+                slot.style.aspectRatio = String(ratio);
+                if (ratio < 1.15) slot.classList.add('img-slot--cutout-tall');
+            }
         };
         probe.src = src;
     });
