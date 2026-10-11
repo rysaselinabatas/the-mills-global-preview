@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const service = contactForm.getAttribute('data-service');
 
             const subjectLead = service ? `${service} inquiry` : 'Quote request';
-            const subject = `${subjectLead} from ${name}${company ? ' — ' + company : ''}`;
+            const subject = `${subjectLead} from ${name}${company ? ', ' + company : ''}`;
             const bodyLines = [
                 message || '(No details provided)',
                 '',
