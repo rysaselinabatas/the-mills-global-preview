@@ -1,0 +1,108 @@
+/* Crossy Customs: in-page arcade game, restyled to the Mills palette */
+.game-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.game-container {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  border: 2px solid #EA5C1F;
+  border-radius: 18px;
+  background: #212431;
+  box-shadow: 0 24px 60px rgba(33, 36, 49, 0.35);
+  overflow: hidden;
+}
+
+.game-container canvas {
+  display: block;
+  background: linear-gradient(180deg, #F5F5F5 0%, #D6D7D7 100%);
+  touch-action: none;
+}
+
+.game-hud {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(33, 36, 49, 0.86);
+  border: 1px solid rgba(245, 245, 245, 0.16);
+  color: #F5F5F5;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.game-hud span {
+  color: #EA5C1F;
+}
+
+.game-hint {
+  max-width: 560px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.game-over,
+.game-cleared {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.game-over {
+  display: none;
+  min-width: 260px;
+  padding: 28px 32px;
+  border-radius: 20px;
+  background: rgba(33, 36, 49, 0.96);
+  border: 1px solid rgba(234, 92, 31, 0.5);
+  color: #F5F5F5;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+}
+
+.game-over h2 {
+  margin-bottom: 8px;
+  font-family: var(--font-sans);
+  font-size: 26px;
+  font-weight: 800;
+  color: #EA5C1F;
+}
+
+.game-over p {
+  margin: 4px 0;
+  font-family: var(--font-body);
+  color: #D6D7D7;
+}
+
+.game-over .btn-primary {
+  margin-top: 16px;
+}
+
+.game-cleared {
+  display: none;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: #EA5C1F;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(234, 92, 31, 0.4);
+  animation: game-pop 1.6s ease-in-out;
+}
+
+@keyframes game-pop {
+  0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
+  25%, 75% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
