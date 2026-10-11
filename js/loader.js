@@ -16,6 +16,7 @@
     } catch (e) { /* storage blocked: treat as a first visit */ }
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    var BASE = (document.currentScript && document.currentScript.src) ? document.currentScript.src.replace(/js\/loader\.js.*$/, '') : '';
     var fast = seen && !force;
     var MIN_MS = fast ? 1000 : 4000;
     var clip = fast ? 'loader-fast' : 'loader-mograph-v2';
@@ -36,8 +37,8 @@
     el.setAttribute('role', 'status');
     el.setAttribute('aria-label', 'Loading');
     el.innerHTML = '<video muted playsinline autoplay preload="auto" aria-hidden="true">' +
-        '<source src="assets/videos/' + clip + '.webm" type="video/webm">' +
-        '<source src="assets/videos/' + clip + '.mp4" type="video/mp4"></video>';
+        '<source src="' + BASE + 'assets/videos/' + clip + '.webm" type="video/webm">' +
+        '<source src="' + BASE + 'assets/videos/' + clip + '.mp4" type="video/mp4"></video>';
     document.documentElement.appendChild(el);
     document.documentElement.classList.add('mills-loading');
     var video = el.querySelector('video');

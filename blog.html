@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/service-page.css">
-  <link rel="stylesheet" href="css/content.css">
+  <link rel="stylesheet" href="css/base.css?v=3">
+  <link rel="stylesheet" href="css/sections.css?v=3">
+  <link rel="stylesheet" href="css/service-page.css?v=3">
+  <link rel="stylesheet" href="css/content.css?v=3">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -76,6 +76,7 @@
         </li>
         <li><a href="about.html">About</a></li>
         <li><a href="index.html#why">Why Us</a></li>
+        <li><a href="location.html">Locations</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="contact.html" class="nav__cta">Get a Quote</a>
@@ -142,6 +143,7 @@
       <a href="about.html">About</a>
       <a href="index.html#why">Why Us</a>
       <a href="index.html#stats">Track Record</a>
+      <a href="location.html">Locations</a>
       <a href="contact.html">Contact</a>
       <a href="contact.html" class="nav__mobile-cta">Get a Quote</a>
     </div>
@@ -152,108 +154,162 @@
       <div class="service-hero__inner">
         <p class="service-breadcrumb"><a href="index.html">Home</a><span>/</span><span>Blog</span></p>
         <p class="section__eyebrow service-hero__eyebrow">Blog</p>
-        <h1 class="service-hero__title">Notes on Philippine Trade &amp; Customs</h1>
-        <p class="service-hero__subtitle">Practical guides and articles on permits, customs, project cargo and market entry, written for people who actually have to move the shipment.</p>
+        <h1 class="service-hero__title">Philippine Trade &amp; Customs: Guides and News</h1>
+        <p class="service-hero__subtitle">Practical guides on permits, customs, duties and compliance, plus the latest news from the Bureau of Customs and Philippine trade.</p>
       </div>
     </div>
   </header>
 
-  <section class="section section--paper">
+  <section class="section section--paper" id="posts">
     <div class="container">
-      <div class="template-notice">TEMPLATE PREVIEW: the cards below are placeholder posts demonstrating the blog layout. Replace with real published articles before launch.</div>
-
-      <div class="content-filters">
-        <span class="content-filter is-active">All</span>
-        <span class="content-filter">Market Entry</span>
-        <span class="content-filter">Customs</span>
-        <span class="content-filter">Project Cargo</span>
-        <span class="content-filter">Compliance</span>
-        <span class="content-filter">Cold Chain</span>
+      <div class="blog-tools">
+        <div class="content-filters" role="group" aria-label="Show">
+          <button type="button" class="content-filter is-active" data-type="all" aria-pressed="true">All <span class="content-filter__count">139</span></button>
+          <button type="button" class="content-filter" data-type="article" aria-pressed="false">Articles <span class="content-filter__count">95</span></button>
+          <button type="button" class="content-filter" data-type="news" aria-pressed="false">News <span class="content-filter__count">44</span></button>
+        </div>
+        <label class="resource-search">
+          <span class="sr-only">Search articles and news</span>
+          <input type="search" id="postSearch" placeholder="Search articles and news" autocomplete="off">
+        </label>
       </div>
-
-      <div class="content-grid">
-
-        <a href="blog-post-template.html" class="content-card">
-          <div class="content-card__image"><img src="assets/images/pexels-entry.jpg" alt="" loading="lazy"></div>
+      <div class="content-filters blog-cats" id="postCats" role="group" aria-label="Category"></div>
+      <p class="resource-status" id="postStatus" aria-live="polite"></p>
+      <div class="content-grid" id="postGrid">
+        <a href="news/manila-port-modernization-pcg-ppa-ati.html" class="content-card" data-type="news" data-cat="market-news">
+          <div class="content-card__image"><img src="assets/images/pexels-marine.jpg" alt="" loading="lazy"></div>
           <div class="content-card__body">
-            <span class="content-card__badge">Template Preview</span>
-            <p class="content-card__tag">Market Entry</p>
-            <h3 class="content-card__title">Before You Ship: A Founder's Checklist for First-Time Philippine Imports</h3>
-            <p class="content-card__excerpt">What to line up, structurally and documentarily, before your first regulated shipment leaves the country of origin.</p>
-            <p class="content-card__meta">[Date] &middot; 6 min read</p>
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Market News</p>
+            <h3 class="content-card__title">PCG, PPA, and ATI Sign Tripartite Agreement to Modernize Manila Port</h3>
+            <p class="content-card__excerpt">The Philippine Coast Guard, Philippine Ports Authority, and Asian Terminals Inc. have agreed to key infrastructure upgrades at the Port of Manila, including a new PCG headquarters.</p>
+            <p class="content-card__meta">Jul 21, 2026 &middot; 2 min read</p>
           </div>
         </a>
 
-        <a href="blog-post-template.html" class="content-card">
+        <a href="news/clark-cargo-city-development-lipad.html" class="content-card" data-type="news" data-cat="market-news">
+          <div class="content-card__image"><img src="assets/images/pexels-marine.jpg" alt="" loading="lazy"></div>
+          <div class="content-card__body">
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Market News</p>
+            <h3 class="content-card__title">LIPAD Allocates 30 Hectares for New Clark Cargo City</h3>
+            <p class="content-card__excerpt">LIPAD has set aside 30 hectares in the Clark Freeport Zone for a new Cargo City supporting warehousing, logistics, and cold storage, as cargo volumes surge at Clark International Airport.</p>
+            <p class="content-card__meta">Jul 21, 2026 &middot; 2 min read</p>
+          </div>
+        </a>
+
+        <a href="news/boc-clark-transsorting-air-cargo-rules.html" class="content-card" data-type="news" data-cat="customs">
           <div class="content-card__image"><img src="assets/images/pexels-customs.jpg" alt="" loading="lazy"></div>
           <div class="content-card__body">
-            <span class="content-card__badge">Template Preview</span>
+            <span class="content-card__badge">News</span>
             <p class="content-card__tag">Customs</p>
-            <h3 class="content-card__title">BOC Importer Accreditation, Explained</h3>
-            <p class="content-card__excerpt">What the three-year accreditation framework actually covers, and what it doesn't remove from your annual obligations.</p>
-            <p class="content-card__meta">[Date] &middot; 5 min read</p>
+            <h3 class="content-card__title">BOC-Clark Fast-Tracks New Transsorting Rules for Air Cargo</h3>
+            <p class="content-card__excerpt">BOC at the Port of Clark is finalizing new rules for transsorting air cargo as FedEx and UPS expand operations in Pampanga. Here&#x27;s what importers using Clark should know.</p>
+            <p class="content-card__meta">Jul 21, 2026 &middot; 2 min read</p>
           </div>
         </a>
 
-        <a href="blog-post-template.html" class="content-card">
+        <a href="news/boc-pccbi-brokerage-fee-order-review.html" class="content-card" data-type="news" data-cat="duties-taxes-fees">
+          <div class="content-card__image"><img src="assets/images/pexels-customs.jpg" alt="" loading="lazy"></div>
+          <div class="content-card__body">
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Duties, Taxes &amp; Fees</p>
+            <h3 class="content-card__title">BOC and PCCBI to Review 25-Year-Old Customs Brokerage Fee Order</h3>
+            <p class="content-card__excerpt">BOC and the Philippine Chamber of Customs Brokers have agreed to review and update CAO 01-2001, the 25-year-old order governing licensed customs broker fees.</p>
+            <p class="content-card__meta">Jul 21, 2026 &middot; 2 min read</p>
+          </div>
+        </a>
+
+        <a href="news/boc-seizure-misdeclared-farm-goods-manila.html" class="content-card" data-type="news" data-cat="compliance-regulations">
           <div class="content-card__image"><img src="assets/images/pexels-permits.jpg" alt="" loading="lazy"></div>
           <div class="content-card__body">
-            <span class="content-card__badge">Template Preview</span>
-            <p class="content-card__tag">Customs</p>
-            <h3 class="content-card__title">What Actually Happens When Customs Places a Hold on Your Cargo</h3>
-            <p class="content-card__excerpt">A walk-through of the documentary response process, and what determines how long a hold actually takes.</p>
-            <p class="content-card__meta">[Date] &middot; 7 min read</p>
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Compliance &amp; Regulations</p>
+            <h3 class="content-card__title">BOC Seizes PHP7.7-M in Misdeclared Farm Goods at Port of Manila</h3>
+            <p class="content-card__excerpt">BOC seized over PHP7.7 million in misdeclared agricultural goods at the Port of Manila. Here&#x27;s what the case shows about declaration accuracy and penalties for importers.</p>
+            <p class="content-card__meta">Jul 21, 2026 &middot; 2 min read</p>
           </div>
         </a>
 
-        <a href="blog-post-template.html" class="content-card">
-          <div class="content-card__image"><img src="assets/images/pexels-projects.jpg" alt="" loading="lazy"></div>
+        <a href="news/boc-accounts-management-office-pcag.html" class="content-card" data-type="news" data-cat="compliance-regulations">
+          <div class="content-card__image"><img src="assets/images/pexels-permits.jpg" alt="" loading="lazy"></div>
           <div class="content-card__body">
-            <span class="content-card__badge">Template Preview</span>
-            <p class="content-card__tag">Project Cargo</p>
-            <h3 class="content-card__title">Project Cargo 101: Planning an Oversized Shipment</h3>
-            <p class="content-card__excerpt">The information a broker needs before quoting anything oversized: dimensions, lifting points, and route constraints.</p>
-            <p class="content-card__meta">[Date] &middot; 8 min read</p>
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Compliance &amp; Regulations</p>
+            <h3 class="content-card__title">BOC Realigns Accounts Management Office Under Post-Clearance Audit Group</h3>
+            <p class="content-card__excerpt">BOC has moved its Accounts Management Office under the Post-Clearance Audit Group (PCAG) to strengthen risk management. Here&#x27;s what the realignment means for importer accreditation.</p>
+            <p class="content-card__meta">Jul 21, 2026 &middot; 2 min read</p>
           </div>
         </a>
 
-        <a href="blog-post-template.html" class="content-card">
-          <div class="content-card__image"><img src="assets/images/pexels-dangerous-goods.jpg" alt="" loading="lazy"></div>
+        <a href="news/boc-digital-transformation-ai-customs-philippines.html" class="content-card" data-type="news" data-cat="industry">
+          <div class="content-card__image"><img src="assets/images/pexels-logistics.jpg" alt="" loading="lazy"></div>
           <div class="content-card__body">
-            <span class="content-card__badge">Template Preview</span>
-            <p class="content-card__tag">Compliance</p>
-            <h3 class="content-card__title">Dangerous Goods Shipping: The Documents You Need Before You Book</h3>
-            <p class="content-card__excerpt">Why a Safety Data Sheet alone isn't enough, and what a carrier actually asks for before accepting the cargo.</p>
-            <p class="content-card__meta">[Date] &middot; 6 min read</p>
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Industry</p>
+            <h3 class="content-card__title">BOC Pushes Full Digitalization and AI Integration for Customs Processing</h3>
+            <p class="content-card__excerpt">BOC Commissioner Ariel Nepomuceno announced plans to fully digitalize the Customs Processing System and integrate AI into select services. Here&#x27;s what it means for importers.</p>
+            <p class="content-card__meta">Jul 21, 2026 &middot; 2 min read</p>
           </div>
         </a>
 
-        <a href="blog-post-template.html" class="content-card">
-          <div class="content-card__image"><img src="assets/images/industry-cold-chain.jpg" alt="" loading="lazy"></div>
+        <a href="news/boc-two-new-offices-modernization-2026.html" class="content-card" data-type="news" data-cat="compliance-regulations">
+          <div class="content-card__image"><img src="assets/images/pexels-permits.jpg" alt="" loading="lazy"></div>
           <div class="content-card__body">
-            <span class="content-card__badge">Template Preview</span>
-            <p class="content-card__tag">Cold Chain</p>
-            <h3 class="content-card__title">Cold Chain Imports: Keeping Temperature-Sensitive Cargo Compliant</h3>
-            <p class="content-card__excerpt">Where cold-chain shipments most often break down between the port and final delivery, and how to plan around it.</p>
-            <p class="content-card__meta">[Date] &middot; 5 min read</p>
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Compliance &amp; Regulations</p>
+            <h3 class="content-card__title">BOC Creates Two New Offices to Advance Customs Modernization</h3>
+            <p class="content-card__excerpt">BOC has created a dedicated Project Management Office and reorganized its Customs Policy and Issuance Office in 2026. Here&#x27;s what the restructuring means for importers and brokers.</p>
+            <p class="content-card__meta">Jul 21, 2026 &middot; 2 min read</p>
           </div>
         </a>
 
+        <a href="news/boc-takes-action-against-cargo-firm-abandoned-shipments.html" class="content-card" data-type="news" data-cat="market-news">
+          <div class="content-card__image"><img src="assets/images/pexels-marine.jpg" alt="" loading="lazy"></div>
+          <div class="content-card__body">
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Market News</p>
+            <h3 class="content-card__title">BOC TAKES ACTION AGAINST CARGO FIRM FOR ABANDONED SHIPMENTS</h3>
+            <p class="content-card__excerpt">The Bureau of Customs filed criminal complaints against officials of Makati Express Cargo Inc. after nearly 37,000 balikbayan boxes sent by OFWs were allegedly abandoned at major ports across the country.</p>
+            <p class="content-card__meta">May 29, 2026 &middot; 1 min read</p>
+          </div>
+        </a>
+
+        <a href="news/boc-targets-2026-rollout-electronic-airway-bill-system.html" class="content-card" data-type="news" data-cat="market-news">
+          <div class="content-card__image"><img src="assets/images/pexels-marine.jpg" alt="" loading="lazy"></div>
+          <div class="content-card__body">
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Market News</p>
+            <h3 class="content-card__title">BOC Targets 2026 Rollout of Electronic Airway Bill System</h3>
+            <p class="content-card__excerpt">The Bureau of Customs is moving forward with the implementation of the Electronic Airway Bill (e-AWB), targeting a nationwide rollout within 2026 to digitalize air cargo documentation and reduce processing times.</p>
+            <p class="content-card__meta">May 28, 2026 &middot; 1 min read</p>
+          </div>
+        </a>
+
+        <a href="news/boc-pom-urges-timely-release-cargoes-re-export-empty-containers.html" class="content-card" data-type="news" data-cat="market-news">
+          <div class="content-card__image"><img src="assets/images/pexels-marine.jpg" alt="" loading="lazy"></div>
+          <div class="content-card__body">
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Market News</p>
+            <h3 class="content-card__title">BOC-POM URGES TIMELY RELEASE OF CARGOES AND RE-EXPORT OF EMPTY CONTAINERS</h3>
+            <p class="content-card__excerpt">The Bureau of Customs - Port of Manila reminded importers, shipping lines, and other stakeholders to promptly release cargoes and re-export empty containers as Manila South Harbor&#x27;s yard utilization remained above 70%.</p>
+            <p class="content-card__meta">May 27, 2026 &middot; 1 min read</p>
+          </div>
+        </a>
+
+        <a href="news/scents-of-deception-841-million-valenzuela-counterfeit-collapse.html" class="content-card" data-type="news" data-cat="market-news">
+          <div class="content-card__image"><img src="assets/images/pexels-marine.jpg" alt="" loading="lazy"></div>
+          <div class="content-card__body">
+            <span class="content-card__badge">News</span>
+            <p class="content-card__tag">Market News</p>
+            <h3 class="content-card__title">SCENTS OF DECEPTION: INSIDE THE ₱841-MILLION VALENZUELA COUNTERFEIT COLLAPSE</h3>
+            <p class="content-card__excerpt">Philippine authorities seized ₱841 million worth of counterfeit perfumes and lotions mimicking luxury international brands during a warehouse raid in Valenzuela.</p>
+            <p class="content-card__meta">May 26, 2026 &middot; 1 min read</p>
+          </div>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <section class="section section--dark section--img-bg">
-    <div class="img-slot img-slot--bg" data-img="assets/images/slots/blog-bg.jpg" aria-hidden="true"><span class="img-slot__label">IMAGE: assets/images/slots/blog-bg.jpg<br>2400×1400 landscape · Wide atmospheric shot of cargo, ports or routes, darkened by overlay</span></div>
-    <div class="container" style="max-width: 880px; text-align:center;">
-      <div class="services-intro" style="align-items:center; text-align:center;">
-        <p class="section__eyebrow animate-in" style="justify-content:center;">Learning Pavilion</p>
-        <h2 class="services-intro__heading animate-in" data-delay="1" style="margin:0 auto;">Looking for guides, checklists and downloadable resources?</h2>
-      </div>
-      <a href="learning-pavilion.html" class="btn-primary" style="margin-top: var(--space-xl);">
-        Visit the Learning Pavilion
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+      <p class="resource-empty" id="postEmpty" hidden>Nothing matches that search. Try a different word or clear the filters.</p>
+      <div class="blog-more"><button type="button" class="btn-secondary" id="postMore" hidden>Load more</button></div>
     </div>
   </section>
 
@@ -265,6 +321,13 @@
           <a href="index.html" class="footer__logo" aria-label="The Mills Global home"><img src="assets/images/brand/mills-logo-horizontal-white.png" alt="The Mills Global" width="538" height="158"></a>
           <p class="footer__tagline">A Philippine market-entry, permits, customs and specialist-cargo platform. Coordinated trade execution from your first registration to final delivery.</p>
           <ul class="footer__social"><li><a href="https://www.instagram.com/themillsglobal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a></li><li><a href="https://www.facebook.com/themillsglobal" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a></li><li><a href="https://linkedin.com/company/themillsglobal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 9h4v11H4zM6 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4zM10 9h3.8v1.6C14.5 9.5 15.8 8.8 17.6 8.8c3 0 4.4 1.9 4.4 5.2V20h-4v-5.5c0-1.4-.5-2.4-1.9-2.4S14 13.100 14 14.500V20h-4z"/></svg></a></li><li><a href="https://www.youtube.com/@TheMillsGlobalCustomsBrokerage" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M22 8.500a3 3 0 0 0-2-2C18 6 12 6 12 6s-6 0-8 .5a3 3 0 0 0-2 2C1.500 10.500 1.500 12 1.500 12s0 1.500.5 3.500a3 3 0 0 0 2 2c2 .5 8 .5 8 .5s6 0 8-.5a3 3 0 0 0 2-2c.5-2 .5-3.500.5-3.500s0-1.500-.5-3.500zM10 15V9l5 3z"/></svg></a></li><li><a href="https://x.com/themillsglobal" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.500 3h3.200l-7 8 8.300 10h-6.500l-5-6.200L5 21H1.800l7.500-8.600L1.300 3H8l4.500 5.600L17.500 3z"/></svg></a></li><li><a href="https://www.threads.com/@themillsglobal" target="_blank" rel="noopener noreferrer" aria-label="Threads"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2.500C6.500 2.500 3 6 3 12s3.500 9.500 9 9.500c4.500 0 7-2 7-4.800 0-2.400-2-3.800-4.600-3.800-2.200 0-3.800.8-3.800 2.300 0 1.200 1 2 2.400 2 2 0 3.200-1.600 3.200-4.200 0-3.200-2-5.300-5.200-5.300-3 0-4.700 1.600-5.100 4.200"/></svg></a></li></ul>
+          <div class="footer__offices">
+            <p class="footer__contact-label">Offices</p>
+            <div class="footer__contact-list">
+              <span>Level 24 Philippine Stock Exchange Tower, 5th Ave. cor. 28th St., BGC, Taguig City, Manila, Philippines</span>
+              <span>Suite 301, 303 Escolta Street, Brgy. 29 Binondo, Manila, 1006 Metro Manila</span>
+            </div>
+          </div>
           
         </div>
 
@@ -294,61 +357,29 @@
           <a href="industries-construction.html">Construction & Infrastructure</a>
           <a href="industries-manufacturing.html">Manufacturing & Machinery</a>
           <a href="industries-freight-forwarders.html">Freight Forwarders & Logistics</a>
-          </div>
-
-          <div class="footer__nav-col">
-            <p class="footer__nav-col-title">Company</p>
-            <a href="about.html">About</a>
-            <a href="blog.html">Blog</a>
-            <a href="learning-pavilion.html">Learning Pavilion</a>
-            <a href="index.html#why">Why Us</a>
-            <a href="index.html#stats">Track Record</a>
-            <a href="book-a-call.html">Book a Call</a>
-            <a href="contact.html">Contact</a>
-            <a href="location.html">Locations</a>
-            <a href="crossy-customs.html">Crossy Customs</a>
-          </div>
-
-          <div class="footer__nav-col">
-            <p class="footer__nav-col-title">Legal</p>
-          <a href="legal-privacy-policy.html">Privacy Policy</a>
-          <a href="legal-website-terms.html">Terms &amp; Conditions</a>
-          <a href="legal-service-disclaimer.html">Service Disclaimer</a>
-          <a href="legal-anti-fraud-notice.html">Anti-Fraud Notice</a>
-          <a href="legal-accessibility-statement.html">Accessibility</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="footer__contact-row">
-        <div class="footer__contact-col">
-          <p class="footer__contact-label">Offices</p>
-          <div class="footer__contact-list">
-            <span>Level 24 Philippine Stock Exchange Tower, 5th Ave. cor. 28th St., BGC, Taguig City, Manila, Philippines</span>
-            <span>Suite 301, 303 Escolta Street, Brgy. 29 Binondo, Manila, 1006 Metro Manila</span>
-          </div>
-        </div>
-        <div class="footer__contact-col">
-          <p class="footer__contact-label">Call us</p>
-          <div class="footer__contact-list">
-            <a href="tel:+639177129000">+63 917 712 9000</a>
-            <a href="tel:+639998878395">+63 999 887 8395</a>
-            <a href="tel:0285963668">(02) 8596 3668</a>
-            <a href="tel:0288123312">(02) 8812 3312</a>
-          </div>
-        </div>
-        <div class="footer__contact-col">
-          <p class="footer__contact-label">Email us</p>
-          <div class="footer__contact-list">
+          
+            <p class="footer__nav-col-title footer__nav-col-title--sub">Contact Us</p>
             <a href="mailto:inquiry@themillsglobal.com">inquiry@themillsglobal.com</a>
-            <a href="mailto:sales@themillsglobal.com">sales@themillsglobal.com</a>
-            <a href="mailto:operations@themillsglobal.com">operations@themillsglobal.com</a>
+            <a href="tel:+639177129000">+63 917 712 9000</a>
+          </div>
+
+          <div class="footer__nav-col">
+            <p class="footer__nav-col-title">Other</p>
+            <a href="index.html#stats">Track Record</a>
+            <a href="crossy-customs.html">Crossy Customs</a>
+            <a href="book-a-call.html">Book a Call</a>
+            <p class="footer__nav-col-title footer__nav-col-title--sub">Legal</p>
+            <a href="legal-privacy-policy.html">Privacy Policy</a>
+            <a href="legal-website-terms.html">Terms &amp; Conditions</a>
+            <a href="legal-service-disclaimer.html">Service Disclaimer</a>
+            <a href="legal-anti-fraud-notice.html">Anti-Fraud Notice</a>
+            <a href="legal-accessibility-statement.html">Accessibility</a>
           </div>
         </div>
+
       </div>
 
-      <div class="footer__bottom">
+            <div class="footer__bottom">
         <div class="footer__bottom-left">
           &copy; 2026 The Mills Global Customs Brokerage Inc. All rights reserved.
         </div>
@@ -364,6 +395,7 @@
   <script src="js/cursor.js?v=1"></script>
   <script src="js/analytics.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/blog.js"></script>
 
 </body>
 </html>

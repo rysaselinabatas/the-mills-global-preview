@@ -1017,45 +1017,22 @@ html.cursor-texty .mills-cursor-dot {
   border-color: #EA5C1F;
 }
 
-.footer__contact-row {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: var(--space-xl) var(--space-2xl);
-  padding: var(--space-xl) 0;
-  margin-bottom: var(--space-xl);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+
+.footer__nav-col-title--sub {
+  margin-top: var(--space-xl);
 }
 
-.footer__contact-col .footer__contact-label {
-  margin: 0 0 14px;
+.footer__offices .footer__contact-label {
+  margin: 0 0 12px;
 }
 
-.footer__contact-row .footer__contact-list {
+.footer__offices .footer__contact-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-width: none;
+  gap: 10px;
 }
 
-.footer__contact-row .footer__contact-list a,
-.footer__contact-row .footer__contact-list span {
-  font-size: 15px;
+.footer__offices .footer__contact-list span {
+  font-size: 14.5px;
   line-height: 1.55;
-}
-
-@media (max-width: 900px) {
-  .footer__contact-row {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer__contact-col:first-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 560px) {
-  .footer__contact-row {
-    grid-template-columns: 1fr;
-  }
 }
