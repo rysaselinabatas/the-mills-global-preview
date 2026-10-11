@@ -892,20 +892,28 @@ html.has-custom-cursor textarea {
 }
 
 .mills-cursor {
-  width: 28px;
-  height: 28px;
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid #FFFFFF;
   border-radius: 50%;
-  background: #FFFFFF;
   mix-blend-mode: difference;   /* inverts whatever it passes over: a negative filter */
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+
+.mills-cursor.is-hot {
+  background: #FFFFFF;
 }
 
 .mills-cursor.is-down {
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .mills-cursor-dot {
-  display: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  mix-blend-mode: difference;
 }
 
 html.cursor-visible .mills-cursor,
@@ -993,6 +1001,47 @@ html.cursor-texty .mills-cursor-dot {
   font-weight: 600;
 }
 
+.globe-stats {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: clamp(32px, 7vw, 120px);
+  margin: var(--space-2xl, 56px) auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.globe-stats strong {
+  display: block;
+  font-family: var(--font-display, var(--font-sans));
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 800;
+  line-height: 1;
+  color: #F5F5F5;
+}
+
+.globe-stats strong span {
+  color: #EA5C1F;
+}
+
+.globe-stats em {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.8vw, 22px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: #D6D7D7;
+}
+
+@media (max-width: 600px) {
+  .globe-stats { grid-template-columns: 1fr; gap: 28px; }
+}
+
 .city-chips {
   display: flex;
   flex-wrap: wrap;
@@ -1035,4 +1084,18 @@ html.cursor-texty .mills-cursor-dot {
 .footer__offices .footer__contact-list span {
   font-size: 14.5px;
   line-height: 1.55;
+}
+
+/* Night-sky backdrop for the globe sections */
+.section--sky {
+  position: relative;
+  background-color: #070A14;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 50% 45%, rgba(60, 90, 160, 0.22), transparent 70%),
+    radial-gradient(1.7px 1.7px at 309px 475px, rgba(255,255,255,0.95), transparent), radial-gradient(1.8px 1.8px at 24px 993px, rgba(255,255,255,0.95), transparent), radial-gradient(1.4px 1.4px at 373px 538px, rgba(255,255,255,0.95), transparent), radial-gradient(1.6px 1.6px at 298px 858px, rgba(255,255,255,0.95), transparent), radial-gradient(1.4px 1.4px at 1248px 1159px, rgba(255,255,255,0.95), transparent), radial-gradient(1.9px 1.9px at 257px 1055px, rgba(255,255,255,0.95), transparent), radial-gradient(1.8px 1.8px at 110px 935px, rgba(255,255,255,0.95), transparent), radial-gradient(1.5px 1.5px at 1145px 803px, rgba(255,255,255,0.95), transparent),
+    radial-gradient(1.2px 1.2px at 608px 508px, rgba(255,255,255,0.7), transparent), radial-gradient(1.4px 1.4px at 467px 70px, rgba(255,255,255,0.7), transparent), radial-gradient(1.3px 1.3px at 276px 485px, rgba(255,255,255,0.7), transparent), radial-gradient(1.3px 1.3px at 66px 62px, rgba(255,255,255,0.7), transparent), radial-gradient(1.2px 1.2px at 317px 662px, rgba(255,255,255,0.7), transparent), radial-gradient(1.1px 1.1px at 697px 841px, rgba(255,255,255,0.7), transparent), radial-gradient(1.4px 1.4px at 733px 395px, rgba(255,255,255,0.7), transparent), radial-gradient(1.5px 1.5px at 355px 23px, rgba(255,255,255,0.7), transparent), radial-gradient(1.2px 1.2px at 363px 172px, rgba(255,255,255,0.7), transparent), radial-gradient(1.0px 1.0px at 505px 60px, rgba(255,255,255,0.7), transparent), radial-gradient(1.3px 1.3px at 294px 132px, rgba(255,255,255,0.7), transparent), radial-gradient(1.4px 1.4px at 407px 400px, rgba(255,255,255,0.7), transparent), radial-gradient(0.9px 0.9px at 508px 82px, rgba(255,255,255,0.7), transparent), radial-gradient(1.0px 1.0px at 411px 562px, rgba(255,255,255,0.7), transparent), radial-gradient(1.1px 1.1px at 140px 838px, rgba(255,255,255,0.7), transparent), radial-gradient(1.3px 1.3px at 563px 285px, rgba(255,255,255,0.7), transparent), radial-gradient(1.4px 1.4px at 367px 699px, rgba(255,255,255,0.7), transparent), radial-gradient(0.9px 0.9px at 236px 154px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(0.8px 0.8px at 331px 154px, rgba(255,255,255,0.9), transparent), radial-gradient(1.0px 1.0px at 49px 74px, rgba(255,255,255,0.9), transparent), radial-gradient(0.9px 0.9px at 96px 374px, rgba(255,255,255,0.9), transparent), radial-gradient(0.6px 0.6px at 519px 219px, rgba(255,255,255,0.9), transparent), radial-gradient(0.6px 0.6px at 444px 428px, rgba(255,255,255,0.9), transparent), radial-gradient(0.8px 0.8px at 92px 564px, rgba(255,255,255,0.9), transparent), radial-gradient(1.1px 1.1px at 579px 126px, rgba(255,255,255,0.9), transparent), radial-gradient(0.9px 0.9px at 596px 63px, rgba(255,255,255,0.9), transparent), radial-gradient(1.1px 1.1px at 406px 50px, rgba(255,255,255,0.9), transparent), radial-gradient(1.0px 1.0px at 47px 570px, rgba(255,255,255,0.9), transparent), radial-gradient(0.7px 0.7px at 296px 429px, rgba(255,255,255,0.9), transparent), radial-gradient(0.8px 0.8px at 120px 584px, rgba(255,255,255,0.9), transparent), radial-gradient(0.9px 0.9px at 185px 105px, rgba(255,255,255,0.9), transparent), radial-gradient(0.6px 0.6px at 192px 381px, rgba(255,255,255,0.9), transparent), radial-gradient(0.6px 0.6px at 64px 577px, rgba(255,255,255,0.9), transparent), radial-gradient(0.9px 0.9px at 210px 508px, rgba(255,255,255,0.9), transparent), radial-gradient(0.8px 0.8px at 437px 321px, rgba(255,255,255,0.9), transparent), radial-gradient(0.7px 0.7px at 464px 370px, rgba(255,255,255,0.9), transparent), radial-gradient(0.6px 0.6px at 184px 249px, rgba(255,255,255,0.9), transparent), radial-gradient(0.8px 0.8px at 307px 537px, rgba(255,255,255,0.9), transparent), radial-gradient(0.7px 0.7px at 351px 459px, rgba(255,255,255,0.9), transparent), radial-gradient(0.9px 0.9px at 74px 120px, rgba(255,255,255,0.9), transparent), radial-gradient(0.7px 0.7px at 168px 350px, rgba(255,255,255,0.9), transparent), radial-gradient(0.6px 0.6px at 500px 431px, rgba(255,255,255,0.9), transparent), radial-gradient(0.9px 0.9px at 79px 571px, rgba(255,255,255,0.9), transparent), radial-gradient(0.9px 0.9px at 321px 348px, rgba(255,255,255,0.9), transparent),
+    linear-gradient(180deg, #05070F 0%, #0A0F1F 100%);
+  background-size: 100% 100%, 1300px 1300px, 900px 900px, 600px 600px, 100% 100%;
+  background-repeat: no-repeat, repeat, repeat, repeat, no-repeat;
 }

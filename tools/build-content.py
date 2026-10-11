@@ -240,7 +240,7 @@ def card(p, prefix=''):
     url = f"{prefix}{'articles' if p['type'] == 'article' else 'news'}/{p['slug']}.html"
     badge = '<span class="content-card__badge">News</span>' if p['type'] == 'news' else ''
     return f'''<a href="{url}" class="content-card" data-type="{p['type']}" data-cat="{p['catSlug']}">
-          <div class="content-card__image"><img src="{prefix}{p['img']}" alt="" loading="lazy"></div>
+          <div class="content-card__image"><img src="{prefix}{p['img']}" alt="{escape(p['title'])}" loading="lazy"></div>
           <div class="content-card__body">
             {badge}
             <p class="content-card__tag">{escape(p['cat'])}</p>
@@ -286,7 +286,7 @@ def post_page(p, posts):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/base.css?v=3">
+  <link rel="stylesheet" href="../css/base.css?v=4">
   <link rel="stylesheet" href="../css/sections.css?v=3">
   <link rel="stylesheet" href="../css/service-page.css?v=3">
   <link rel="stylesheet" href="../css/content.css?v=3">
@@ -403,6 +403,7 @@ def main():
       </div>
       <div class="content-filters blog-cats" id="postCats" role="group" aria-label="Category"></div>
       <p class="resource-status" id="postStatus" aria-live="polite"></p>
+      <h2 class="sr-only">Latest Philippine customs guides and news</h2>
       <div class="content-grid" id="postGrid">
         {first}
       </div>

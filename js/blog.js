@@ -24,7 +24,7 @@
 
     function cardHtml(p) {
         return '<a href="' + p.url + '" class="content-card">' +
-            '<div class="content-card__image"><img src="' + p.img + '" alt="" loading="lazy"></div>' +
+            '<div class="content-card__image"><img src="' + p.img + '" alt="' + esc(p.title) + '" loading="lazy"></div>' +
             '<div class="content-card__body">' +
             (p.t === 'news' ? '<span class="content-card__badge">News</span>' : '') +
             '<p class="content-card__tag">' + esc(p.cat) + '</p>' +
