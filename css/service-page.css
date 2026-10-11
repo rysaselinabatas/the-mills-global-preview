@@ -845,3 +845,19 @@
 #book-call {
   scroll-margin-top: 80px;
 }
+
+/* Repeated call-to-action pair placed at the end of sections */
+.cta-pair {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+}
+
+@media (max-width: 560px) {
+  .cta-pair .btn-primary,
+  .cta-pair .btn-secondary {
+    width: 100%;
+  }
+}
