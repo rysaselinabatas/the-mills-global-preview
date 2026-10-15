@@ -4,14 +4,15 @@
  * script which checklist to offer. Every id and class is suffixed with the
  * guide key (for example popupWrap_customs) so popups never clash.
  *
- * SETUP: set CONFIG.WEBHOOK_URL to the endpoint the form should POST to.
+ * SETUP: set CONFIG.WEBHOOK_URL (services) and CONFIG.WEBHOOK_URL_INDUSTRY (industries) to the n8n production webhook URLs.
  * The hidden "guide" field carries the slug so one endpoint can route all 27.
  */
 (function () {
     'use strict';
 
     var CONFIG = {
-        WEBHOOK_URL: '',
+        WEBHOOK_URL: 'https://n8n.themillsglobal.com/webhook/mills-lead-magnet',            // n8n workflow for the 11 service checklists
+        WEBHOOK_URL_INDUSTRY: 'https://n8n.themillsglobal.com/webhook/mills-lead-magnet-industry',   // n8n workflow for the 16 industry checklists (falls back to WEBHOOK_URL)
         SUPPORT_EMAIL: 'inquiry@themillsglobal.com',
         OPEN_AT_DEPTH: 0.3
     };
@@ -278,9 +279,11 @@
             return null;
         }
 
+        var webhookUrl = (slug.indexOf('industry-') === 0 && CONFIG.WEBHOOK_URL_INDUSTRY) || CONFIG.WEBHOOK_URL;
+
         function send(payload) {
             var data = new URLSearchParams(payload).toString();
-            return fetch(CONFIG.WEBHOOK_URL, {
+            return fetch(webhookUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: data
@@ -324,7 +327,7 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             var firstName = v.name.trim().split(/\s+/)[0];
-            if (!CONFIG.WEBHOOK_URL) {
+            if (!webhookUrl) {
                 console.warn('lead-magnet: CONFIG.WEBHOOK_URL is empty, submission was not sent anywhere.');
                 succeed(firstName);
                 return;

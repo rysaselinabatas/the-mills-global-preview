@@ -1,0 +1,133 @@
+{
+  "e1": [
+    {
+      "subject": "{lead}your checklist is here",
+      "pre": "ready when you are... plus 3 things to check first",
+      "line": "That is exactly what this checklist is for. Here it is:"
+    },
+    {
+      "subject": "here is that checklist{tail}",
+      "pre": "inside: 3 spots worth a look first",
+      "line": "So we put together a checklist for exactly that. Here you go:"
+    },
+    {
+      "subject": "{lead}your {short} checklist",
+      "pre": "grab it now, skim it later...",
+      "line": "Good news, we built a checklist for it. It is yours:"
+    },
+    {
+      "subject": "checklist inside{tail}",
+      "pre": "short read, three things to check first",
+      "line": "Here is the checklist you asked for:"
+    },
+    {
+      "subject": "{lead}this one is for you",
+      "pre": "your checklist, plus three things to check first...",
+      "line": "If that rings a bell, this is for you:"
+    },
+    {
+      "subject": "{lead}as promised, the checklist",
+      "pre": "no fluff, just the list...",
+      "line": "As promised, here it is:"
+    },
+    {
+      "subject": "{lead}checklist, delivered",
+      "pre": "fresh off the press, three things to check first",
+      "line": "Delivered, as promised:"
+    },
+    {
+      "subject": "{lead}start here",
+      "pre": "the checklist, plus where to look first...",
+      "line": "Start with this:"
+    }
+  ],
+  "e2": [
+    {
+      "subject": "{lead}honest question about {short}",
+      "pre": "a 10 second gut check for {co}...",
+      "open": "Honest question..."
+    },
+    {
+      "subject": "can i ask you something{tail}?",
+      "pre": "it is about {short}, and it is a short one",
+      "open": "Can I ask you something?"
+    },
+    {
+      "subject": "{lead}gut check on {short}",
+      "pre": "answer in your head, no need to reply yet...",
+      "open": "Gut check time..."
+    },
+    {
+      "subject": "one thing about {short}{tail}",
+      "pre": "the part that is easy to skip...",
+      "open": "Here is the one I always start with..."
+    },
+    {
+      "subject": "{lead}before you ship anything",
+      "pre": "a 10 second check for {co}...",
+      "open": "Before anything ships..."
+    },
+    {
+      "subject": "did you check this{tail}?",
+      "pre": "one for {co}, and you can answer in your head...",
+      "open": "Okay, here goes..."
+    },
+    {
+      "subject": "{lead}is this on your radar?",
+      "pre": "about {short}, and worth a minute...",
+      "open": "Something I always ask first..."
+    },
+    {
+      "subject": "{lead}spot the problem?",
+      "pre": "see if you can spot it before we do...",
+      "open": "Let me ask you this..."
+    },
+    {
+      "subject": "{lead}real talk about {short}",
+      "pre": "no fluff, just one question...",
+      "open": "Real talk..."
+    },
+    {
+      "subject": "{lead}sound familiar?",
+      "pre": "think about your last shipment...",
+      "open": "Think about your last shipment for a second..."
+    }
+  ],
+  "e2tail": [
+    "If your honest answer is \"um... probably?\", that is the part of {topic} where things tend to go sideways.",
+    "If you had to think about it, that is usually where {topic} starts to wobble.",
+    "A \"hmm, not sure\" is common here. It is also where {topic} tends to get stuck."
+  ],
+  "e3": [
+    {
+      "subject": "last one from me{tail}",
+      "pre": "no hard feelings either way...",
+      "open": "I will stop filling your inbox after this one, promise."
+    },
+    {
+      "subject": "{lead}closing the loop",
+      "pre": "one last note, and an easy way to say not now",
+      "open": "Last note from me, I promise."
+    },
+    {
+      "subject": "should i close your file{tail}?",
+      "pre": "no pressure either way...",
+      "open": "I do not want to be the person who keeps emailing, so this is the last one."
+    },
+    {
+      "subject": "no pressure{tail}",
+      "pre": "one last thing, then I will leave you alone...",
+      "open": "One last thing, then I will leave you alone."
+    },
+    {
+      "subject": "{lead}parting thought",
+      "pre": "one more thing, then I am out of your inbox...",
+      "open": "Parting thought, then I am out of your inbox."
+    },
+    {
+      "subject": "{lead}door is open",
+      "pre": "no hard feelings, either way...",
+      "open": "I will leave the door open and stop here."
+    }
+  ]
+}
