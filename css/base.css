@@ -1208,3 +1208,14 @@ html.cursor-texty .mills-cursor-dot {
 .footer__contact-list a:hover {
   color: #EA5C1F;
 }
+
+/* Keep the night-sky section (and the globe glow) from widening the page on phones */
+.section--sky {
+  overflow-x: clip;
+}
+
+@media (max-width: 767px) {
+  .mills-globe::after {
+    inset: -6%;
+  }
+}

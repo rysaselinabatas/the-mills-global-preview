@@ -258,25 +258,27 @@
   transition: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  /* Scroll-scrubbed on phones too: the section is tall, the viewport sticks, the slides fade in turn */
   .hero-scroll-container {
-    height: auto;
+    height: 420vh;
+    height: 420svh;
   }
-  
+
   .hero-viewport {
-    position: relative;
     height: 100vh;
+    height: 100svh;
   }
-  
+
+  .hero-darken {
+    background:
+      linear-gradient(180deg, rgba(6,7,10,0.5) 0%, rgba(6,7,10,0.1) 25%, rgba(6,7,10,0.35) 50%, rgba(6,7,10,0.88) 100%);
+  }
+
   .hero-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2xl);
-    padding: var(--space-lg) var(--space-lg);
-    text-align: center;
+    position: absolute;
+    inset: 0;
+    padding: 0;
   }
 
   .hero-slide,
@@ -284,26 +286,56 @@
   .hero-slide--pos-right,
   .hero-slide--pos-bottom,
   .hero-slide--pos-center {
-    position: relative;
-    left: auto;
-    right: auto;
+    position: absolute;
+    left: 22px;
+    right: 22px;
     top: auto;
-    bottom: auto;
-    opacity: 1;
-    transform: none;
-    text-align: center;
-    max-width: 100%;
+    bottom: calc(11svh + env(safe-area-inset-bottom, 0px));
+    max-width: none;
+    text-align: left;
+  }
+
+  .hero-slide__eyebrow {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .hero-slide__heading {
+    font-size: clamp(28px, 8.4vw, 38px);
+    margin-bottom: 12px;
+  }
+
+  .hero-slide__description {
+    max-width: none;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(240, 237, 232, 0.88);
   }
 
   .hero-slide--pos-right .hero-slide__description,
   .hero-slide--pos-center .hero-slide__description {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .scroll-indicator,
-  .hero-progress,
-  .hero-frame,
+  .scroll-indicator {
+    bottom: calc(2.5svh + env(safe-area-inset-bottom, 0px));
+  }
+
+  .scroll-indicator__text {
+    font-size: 10px;
+  }
+
+  .hero-progress {
+    display: block;
+    height: 2px;
+  }
+
+  .hero-frame {
+    inset: 14px;
+  }
+
   .hero-hud {
     display: none;
   }

@@ -3,7 +3,8 @@
  * Desktop: the video's own playback position is driven directly by scroll
  * (currentTime = progress * duration), updated every frame - scrolling
  * down moves forward through the clip, scrolling up moves back.
- * Mobile: scroll-scrub is disabled, so the video just loops normally.
+ * Mobile: scrubs too, using a smaller all-keyframe copy of the clip (every
+ * frame is seekable) with eased, throttled seeking so touch scrolling stays smooth.
  * Self-initializes on DOMContentLoaded.
  */
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isActive = false;
     let scrollY = window.scrollY;
     let lastProgress = -1;
+    let smoothTime = 0;
     let rafId = null;
     let containerTop = 0;
     let containerHeight = 0;
@@ -57,6 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // scrubbing, and re-testing it every frame flickered the placeholder
     // on and off during scroll (looked like the video glitching).
     let videoReady = false;
+
+    // Choose the clip by screen size (the mobile copy is ~1.7 MB, all keyframes) and start loading it
+    const phone = window.innerWidth < 768;
+    if (video && video.dataset.src) {
+        video.src = (phone && video.dataset.mobileSrc) ? video.dataset.mobileSrc : video.dataset.src;
+        video.preload = 'auto';
+        video.load();
+    }
 
     // Check if video is valid
     if (video) {
@@ -87,17 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const calculateDimensions = () => {
         containerTop = container.offsetTop;
         containerHeight = container.offsetHeight;
-        windowHeight = window.innerHeight;
-    };
-
-    // Mobile: no scroll-scrub, so the video just plays and loops freely.
-    const playVideoLoop = () => {
-        if (hasVideo && video) {
-            video.muted = true;
-            video.loop = true;
-            video.playsInline = true;
-            video.play().catch(() => {});
-        }
+        windowHeight = viewport.offsetHeight || window.innerHeight;
     };
 
     // Desktop: currentTime is driven by scroll (see render() step 4), so
@@ -119,23 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             video.pause();
         }
-    };
-
-    const applyMobileState = () => {
-        if (indicator) indicator.classList.add('hidden');
-        if (slides.length > 0) {
-            slides.forEach((s, i) => {
-                // Clear any inline styles left behind by the desktop
-                // scroll-scrub loop so the mobile CSS rules can take over
-                // cleanly (inline styles would otherwise outrank them).
-                s.style.opacity = '';
-                s.style.transform = '';
-                s.style.pointerEvents = '';
-                if (i === 0) s.classList.add('active');
-                else s.classList.remove('active');
-            });
-        }
-        playVideoLoop();
     };
 
     const onScroll = () => {
@@ -180,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 1:1. Placeholder visibility is decided once via videoReady
             // (see above), never re-checked here, so it can't flicker.
             if (hasVideo && video && videoReady) {
-                if (!isNaN(video.duration) && isFinite(video.duration)) {
+                if (!isMobile && !isNaN(video.duration) && isFinite(video.duration)) {
                     video.currentTime = progress * video.duration;
                 }
             } else if (!videoReady && placeholderSlides.length > 0) {
@@ -211,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const { opacity, y } = slideMotion(t);
                 slide.style.opacity = opacity.toFixed(3);
                 slide.style.pointerEvents = opacity > 0.5 ? 'auto' : 'none';
-                const base = slide.dataset.baseTransform ? slide.dataset.baseTransform + ' ' : '';
+                const base = (!isMobile && slide.dataset.baseTransform) ? slide.dataset.baseTransform + ' ' : '';
                 slide.style.transform = `${base}translateY(${y.toFixed(1)}px)`;
             });
 
@@ -235,6 +218,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Mobile: ease toward the scroll position and never queue a seek while one is still running
+        if (isMobile && hasVideo && video && videoReady && isFinite(video.duration) && video.duration > 0) {
+            const target = lastProgress * video.duration;
+            smoothTime += (target - smoothTime) * 0.22;
+            if (!video.seeking && Math.abs(video.currentTime - smoothTime) > 0.02) {
+                video.currentTime = smoothTime;
+            }
+        }
+
         rafId = requestAnimationFrame(render);
     };
 
@@ -242,17 +234,12 @@ document.addEventListener('DOMContentLoaded', () => {
         checkMobile();
         calculateDimensions();
 
-        if (isMobile) {
-            isActive = false;
-            applyMobileState();
-        } else {
-            primeVideoForScrub();
-            if (!isActive) {
-                isActive = true;
-                window.addEventListener('scroll', onScroll, { passive: true });
-                lastProgress = -1; // force render
-                rafId = requestAnimationFrame(render);
-            }
+        primeVideoForScrub();
+        if (!isActive) {
+            isActive = true;
+            window.addEventListener('scroll', onScroll, { passive: true });
+            lastProgress = -1; // force render
+            rafId = requestAnimationFrame(render);
         }
     };
 
@@ -266,21 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            const wasMobile = isMobile;
             checkMobile();
             calculateDimensions();
-
-            if (wasMobile !== isMobile) {
-                if (isMobile) {
-                    destroy();
-                    applyMobileState();
-                } else {
-                    init();
-                }
-            } else if (isActive) {
-                // If it wasn't a mobile state change, just force a render update
-                lastProgress = -1;
-            }
+            lastProgress = -1;
         }, 200);
     });
 
