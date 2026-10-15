@@ -30,7 +30,18 @@ else if (digits.length < 7 || digits.length > 15) error = 'phone';
 else if (clean(b.company).length < 2) error = 'company';
 
 const name = clean(b.name);
+const FREE = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'live.com', 'proton.me', 'protonmail.com'];
+const domain = email.split('@')[1] || '';
+const fromAd = !!(clean(b.gclid) || clean(b.gbraid) || clean(b.wbraid));
+// Hot = came from a Google ad, or used a company email address
+const priority = (fromAd || (domain && !FREE.includes(domain))) ? 'Hot' : 'Normal';
 return [{ json: {
+  received_date: new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Manila' }),
+  category: 'Service',
+  priority,
+  status: 'New',
+  owner: '',
+  notes: '',
   valid: !error,
   error,
   submitted_at: clean(b.submitted_at) || new Date().toISOString(),
@@ -62,7 +73,7 @@ ok = {'parameters': {'respondWith': 'json', 'responseBody': '={{ JSON.stringify(
       'id': nid(), 'name': 'Respond 200', 'type': 'n8n-nodes-base.respondToWebhook', 'typeVersion': 1.1, 'position': [720, -100]}
 bad = {'parameters': {'respondWith': 'json', 'responseBody': '={{ JSON.stringify({ ok: false, error: $json.error }) }}', 'options': {'responseCode': 400}},
        'id': nid(), 'name': 'Respond 400', 'type': 'n8n-nodes-base.respondToWebhook', 'typeVersion': 1.1, 'position': [720, 160]}
-cols = {k: '={{ $json.%s }}' % k for k in ['submitted_at', 'service', 'guide', 'guide_title', 'name', 'email', 'phone', 'company', 'page', 'lead_source',
+cols = {k: '={{ $json.%s }}' % k for k in ['received_date', 'submitted_at', 'status', 'priority', 'owner', 'category', 'service', 'guide', 'guide_title', 'name', 'email', 'phone', 'company', 'page', 'lead_source', 'notes',
         'gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']}
 sheet = {'parameters': {'operation': 'append', 'documentId': {'__rl': True, 'value': '', 'mode': 'id'}, 'sheetName': {'__rl': True, 'value': 'Leads', 'mode': 'name'},
          'columns': {'mappingMode': 'defineBelow', 'value': cols, 'matchingColumns': [], 'schema': []}, 'options': {}},
@@ -82,7 +93,7 @@ notif = '''<p><strong>New lead magnet download</strong></p>
 mail2 = {'parameters': {'sendTo': 'inquiry@themillsglobal.com', 'subject': '=New lead: {{ $json.service }} - {{ $json.company }}', 'emailType': 'html', 'message': '=' + notif,
          'options': {'appendAttribution': False}},
          'id': nid(), 'name': 'Notify the team', 'type': 'n8n-nodes-base.gmail', 'typeVersion': 2.1, 'position': [960, 220], 'onError': 'continueRegularOutput'}
-note = {'parameters': {'content': '## Mills | Lead magnets: all 11 services\n**Webhook:** POST, form-urlencoded (what the site sends). The Respond nodes return JSON so the site sees a 200.\n**Setup:**\n1. Pick your Google Sheets and Gmail credentials on the three action nodes.\n2. In the Sheet node choose your spreadsheet: a tab named "Leads" with headers matching the column names.\n3. Activate, then copy the **Production URL** into js/lead-magnet.js (WEBHOOK_URL).\n**Test:** use the Test URL once, then switch to Production.', 'height': 320, 'width': 420, 'color': 5},
+note = {'parameters': {'content': '## Mills | Lead magnets: all 11 services\n**Webhook:** POST, form-urlencoded (what the site sends). The Respond nodes return JSON so the site sees a 200.\n**Setup:**\n1. Pick your Google Sheets and Gmail credentials on the three action nodes.\n2. In the Sheet node choose your spreadsheet: a tab named "Leads" whose first-row headers match the column names (see the list in the Sheet node). Turn on Data > Create a filter, or use filter views, to sort by status, priority or service.\n3. Activate, then copy the **Production URL** into js/lead-magnet.js (WEBHOOK_URL).\n**Test:** use the Test URL once, then switch to Production.', 'height': 320, 'width': 420, 'color': 5},
         'id': nid(), 'name': 'Setup notes', 'type': 'n8n-nodes-base.stickyNote', 'typeVersion': 1, 'position': [-20, -380]}
 link = lambda n: {'node': n['name'], 'type': 'main', 'index': 0}
 conn = {webhook['name']: {'main': [[link(codeN)]]}, codeN['name']: {'main': [[link(ifN)]]},
