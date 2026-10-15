@@ -14,6 +14,14 @@ code = '''// Mills lead magnet: validate, normalize and enrich one form submissi
 const SITE = 'https://themillsglobal.com/';
 const GUIDES = %s;
 
+// Who is notified for each service. Replace the addresses with the person who owns that service.
+const DEFAULT_OWNER = 'inquiry@themillsglobal.com';
+const OWNERS = {
+  'Mills Entry': DEFAULT_OWNER, 'Mills Permits': DEFAULT_OWNER, 'Mills Customs': DEFAULT_OWNER, 'Mills Projects': DEFAULT_OWNER,
+  'Mills Marine': DEFAULT_OWNER, 'Mills Dangerous Goods': DEFAULT_OWNER, 'Mills Logistics': DEFAULT_OWNER, 'Mills Packaging': DEFAULT_OWNER,
+  'Mills Insurance': DEFAULT_OWNER, 'Mills Time Critical': DEFAULT_OWNER, 'Mills Advisory': DEFAULT_OWNER
+};
+
 const b = $input.first().json.body || {};
 const clean = (v) => String(v == null ? '' : v).trim();
 const guide = clean(b.guide);
@@ -38,6 +46,7 @@ const priority = (fromAd || (domain && !FREE.includes(domain))) ? 'Hot' : 'Norma
 return [{ json: {
   received_date: new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Manila' }),
   category: 'Service',
+  notify_to: (g && OWNERS[g.service]) || DEFAULT_OWNER,
   priority,
   status: 'New',
   owner: '',
@@ -77,9 +86,13 @@ bad = {'parameters': {'respondWith': 'json', 'responseBody': '={{ JSON.stringify
        'id': nid(), 'name': 'Respond 400', 'type': 'n8n-nodes-base.respondToWebhook', 'typeVersion': 1.1, 'position': [720, 160]}
 cols = {k: '={{ $json.%s }}' % k for k in ['received_date', 'submitted_at', 'status', 'priority', 'owner', 'category', 'service', 'guide', 'guide_title', 'name', 'email', 'phone', 'company', 'page', 'lead_source', 'notes',
         'gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']}
-sheet = {'parameters': {'operation': 'append', 'documentId': {'__rl': True, 'value': '', 'mode': 'id'}, 'sheetName': {'__rl': True, 'value': 'Leads', 'mode': 'name'},
+sheet = {'parameters': {'operation': 'append', 'documentId': {'__rl': True, 'value': '', 'mode': 'id'}, 'sheetName': {'__rl': True, 'value': 'All Leads', 'mode': 'name'},
          'columns': {'mappingMode': 'defineBelow', 'value': cols, 'matchingColumns': [], 'schema': []}, 'options': {}},
-         'id': nid(), 'name': 'Log lead to Google Sheet', 'type': 'n8n-nodes-base.googleSheets', 'typeVersion': 4.5, 'position': [960, -220], 'onError': 'continueRegularOutput'}
+         'id': nid(), 'name': 'Log to All Leads tab', 'type': 'n8n-nodes-base.googleSheets', 'typeVersion': 4.5, 'position': [960, -220], 'onError': 'continueRegularOutput'}
+import copy
+sheet2 = copy.deepcopy(sheet)
+sheet2['id'] = nid(); sheet2['name'] = 'Log to the service tab'; sheet2['position'] = [960, -330]
+sheet2['parameters']['sheetName'] = {'__rl': True, 'value': '={{ $json.service }}', 'mode': 'name'}
 leadmail = '''<p>Hi {{ $json.first_name_greeting }},</p>
 <p>Thank you for your interest. Here is your free checklist: <strong>{{ $json.guide_title }}</strong>.</p>
 <p><a href="{{ $json.pdf_url }}" style="display:inline-block;padding:12px 22px;background:#EA5C1F;color:#ffffff;border-radius:999px;text-decoration:none;font-weight:600">Download the checklist</a></p>
@@ -92,21 +105,22 @@ notif = '''<p><strong>New lead magnet download</strong></p>
 <p>Service: {{ $json.service }}<br>Checklist: {{ $json.guide_title }}</p>
 <p>Name: {{ $json.name }}<br>Company: {{ $json.company }}<br>Email: {{ $json.email }}<br>Phone: {{ $json.phone }}</p>
 <p>Page: {{ $json.page }}<br>Ad source: {{ $json.utm_source }} / {{ $json.utm_campaign }} {{ $json.gclid ? '(gclid ' + $json.gclid + ')' : '' }}</p>'''
-mail2 = {'parameters': {'sendTo': 'inquiry@themillsglobal.com', 'subject': '=New lead: {{ $json.service }} - {{ $json.company }}', 'emailType': 'html', 'message': '=' + notif,
+mail2 = {'parameters': {'sendTo': '={{ $json.notify_to }}', 'subject': '=New lead: {{ $json.service }} - {{ $json.company }}', 'emailType': 'html', 'message': '=' + notif,
          'options': {'appendAttribution': False}},
          'id': nid(), 'name': 'Notify the team', 'type': 'n8n-nodes-base.gmail', 'typeVersion': 2.1, 'position': [960, 220], 'onError': 'continueRegularOutput'}
 desc = ('Lead magnet: {{ $json.guide_title }}\nService: {{ $json.service }}\nPriority: {{ $json.priority }}\nPage: {{ $json.page }}\n'
         'Ad source: {{ $json.utm_source }} / {{ $json.utm_medium }} / {{ $json.utm_campaign }}\nGCLID: {{ $json.gclid }}\nSubmitted: {{ $json.submitted_at }}')
 zoho = {'parameters': {'resource': 'lead', 'operation': 'upsert', 'lastName': '={{ $json.last_name }}',
         'additionalFields': {'First_Name': '={{ $json.first_name }}', 'Company': '={{ $json.company }}', 'Email': '={{ $json.email }}', 'Phone': '={{ $json.phone }}',
-                             'Lead_Source': 'Website', 'Lead_Status': 'Not Contacted', 'Description': '=' + desc}},
+                             'Lead_Source': 'Website', 'Lead_Status': 'Not Contacted', 'Description': '=' + desc,
+                             'customFields': {'customFields': [{'fieldId': 'Service', 'value': '={{ $json.service }}'}, {'fieldId': 'Priority', 'value': '={{ $json.priority }}'}]}}},
         'id': nid(), 'name': 'Create or update lead in Zoho CRM', 'type': 'n8n-nodes-base.zohoCrm', 'typeVersion': 1, 'position': [960, -440], 'onError': 'continueRegularOutput'}
-note = {'parameters': {'content': '## Mills | Lead magnets: all 11 services\n**Webhook:** POST, form-urlencoded (what the site sends). The Respond nodes return JSON so the site sees a 200.\n**Setup:**\n1. Pick your Zoho CRM (OAuth2, your data center), Google Sheets and Gmail credentials on the four action nodes. The Sheet is an optional backup log: delete that node if you only want Zoho.\n2. In the Sheet node choose your spreadsheet: a tab named "Leads" whose first-row headers match the column names (see the list in the Sheet node). Turn on Data > Create a filter, or use filter views, to sort by status, priority or service.\n3. Activate, then copy the **Production URL** into js/lead-magnet.js (WEBHOOK_URL).\n**Test:** use the Test URL once, then switch to Production.', 'height': 320, 'width': 420, 'color': 5},
+note = {'parameters': {'content': "## Mills | Lead magnets: all 11 services\n**Webhook:** POST, form-urlencoded (what the site sends). The Respond nodes return JSON so the site sees a 200.\n**Setup:**\n1. Pick your Zoho CRM (OAuth2, your data center), Google Sheets and Gmail credentials on the action nodes. The two Sheet nodes are optional: delete them if you only want Zoho.\n2. **Segmentation.** Every lead goes to the All Leads tab and to a tab named exactly like its service: Mills Entry, Mills Permits, Mills Customs, Mills Projects, Mills Marine, Mills Dangerous Goods, Mills Logistics, Mills Packaging, Mills Insurance, Mills Time Critical, Mills Advisory. Create the 12 tabs first, each with the same header row. In Zoho, create custom Lead fields named Service and Priority (API names Service and Priority).\n3. Set each service owner's email in the OWNERS list in the code node; the team notification goes to that person.\n4. Activate, then copy the **Production URL** into js/lead-magnet.js (WEBHOOK_URL).\n**Test:** use the Test URL once, then switch to Production.", 'height': 320, 'width': 420, 'color': 5},
         'id': nid(), 'name': 'Setup notes', 'type': 'n8n-nodes-base.stickyNote', 'typeVersion': 1, 'position': [-20, -380]}
 link = lambda n: {'node': n['name'], 'type': 'main', 'index': 0}
 conn = {webhook['name']: {'main': [[link(codeN)]]}, codeN['name']: {'main': [[link(ifN)]]},
-        ifN['name']: {'main': [[link(ok)], [link(bad)]]}, ok['name']: {'main': [[link(zoho), link(sheet), link(mail1), link(mail2)]]}}
-wf = {'name': 'Mills | Lead magnet - all 11 services', 'nodes': [note, webhook, codeN, ifN, ok, bad, zoho, sheet, mail1, mail2], 'connections': conn,
+        ifN['name']: {'main': [[link(ok)], [link(bad)]]}, ok['name']: {'main': [[link(zoho), link(sheet), link(sheet2), link(mail1), link(mail2)]]}}
+wf = {'name': 'Mills | Lead magnet - all 11 services', 'nodes': [note, webhook, codeN, ifN, ok, bad, zoho, sheet, sheet2, mail1, mail2], 'connections': conn,
       'active': False, 'settings': {'executionOrder': 'v1'}, 'pinData': {}, 'meta': {'templateCredsSetupCompleted': False}}
 os.makedirs('n8n', exist_ok=True)
 json.dump(wf, open('n8n/lead-magnet-services.json', 'w'), indent=2)

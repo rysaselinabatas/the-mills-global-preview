@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## Mills | Lead magnets: all 11 services\n**Webhook:** POST, form-urlencoded (what the site sends). The Respond nodes return JSON so the site sees a 200.\n**Setup:**\n1. Pick your Zoho CRM (OAuth2, your data center), Google Sheets and Gmail credentials on the four action nodes. The Sheet is an optional backup log: delete that node if you only want Zoho.\n2. In the Sheet node choose your spreadsheet: a tab named \"Leads\" whose first-row headers match the column names (see the list in the Sheet node). Turn on Data > Create a filter, or use filter views, to sort by status, priority or service.\n3. Activate, then copy the **Production URL** into js/lead-magnet.js (WEBHOOK_URL).\n**Test:** use the Test URL once, then switch to Production.",
+        "content": "## Mills | Lead magnets: all 11 services\n**Webhook:** POST, form-urlencoded (what the site sends). The Respond nodes return JSON so the site sees a 200.\n**Setup:**\n1. Pick your Zoho CRM (OAuth2, your data center), Google Sheets and Gmail credentials on the action nodes. The two Sheet nodes are optional: delete them if you only want Zoho.\n2. **Segmentation.** Every lead goes to the All Leads tab and to a tab named exactly like its service: Mills Entry, Mills Permits, Mills Customs, Mills Projects, Mills Marine, Mills Dangerous Goods, Mills Logistics, Mills Packaging, Mills Insurance, Mills Time Critical, Mills Advisory. Create the 12 tabs first, each with the same header row. In Zoho, create custom Lead fields named Service and Priority (API names Service and Priority).\n3. Set each service owner's email in the OWNERS list in the code node; the team notification goes to that person.\n4. Activate, then copy the **Production URL** into js/lead-magnet.js (WEBHOOK_URL).\n**Test:** use the Test URL once, then switch to Production.",
         "height": 320,
         "width": 420,
         "color": 5
       },
-      "id": "4836ba0b-3d2e-4f11-bedb-89c8d247469b",
+      "id": "37823ca5-cf2f-4d05-9cb5-351e3c2679ec",
       "name": "Setup notes",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -26,7 +26,7 @@
           "allowedOrigins": "https://themillsglobal.com,https://www.themillsglobal.com,https://themillsglobalcustomsbrokerage.github.io"
         }
       },
-      "id": "ba89dafa-2311-4d9d-b95c-fda207696ea9",
+      "id": "722eb3d0-54e6-4a40-881e-cea16b219f9e",
       "name": "Webhook - lead magnet form",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
@@ -34,13 +34,13 @@
         0,
         0
       ],
-      "webhookId": "4176edd0-1efd-4105-96f0-d221de7d34a3"
+      "webhookId": "4ef49837-2786-4b4e-bfdf-f1f83a786650"
     },
     {
       "parameters": {
-        "jsCode": "// Mills lead magnet: validate, normalize and enrich one form submission.\n// To add the 16 industry guides later, add their slugs to GUIDES below (same shape).\nconst SITE = 'https://themillsglobal.com/';\nconst GUIDES = {\n  \"entry\": {\n    \"service\": \"Mills Entry\",\n    \"title\": \"Philippine Market Entry Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/entry-readiness-checklist.pdf\"\n  },\n  \"permits\": {\n    \"service\": \"Mills Permits\",\n    \"title\": \"Import Permit and Product Registration Checklist\",\n    \"pdf\": \"assets/lead-magnets/permits-readiness-checklist.pdf\"\n  },\n  \"customs\": {\n    \"service\": \"Mills Customs\",\n    \"title\": \"Customs Clearance Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/customs-readiness-checklist.pdf\"\n  },\n  \"projects\": {\n    \"service\": \"Mills Projects\",\n    \"title\": \"Project Cargo Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/projects-readiness-checklist.pdf\"\n  },\n  \"marine\": {\n    \"service\": \"Mills Marine\",\n    \"title\": \"Vessel and Marine Equipment Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/marine-readiness-checklist.pdf\"\n  },\n  \"dangerous-goods\": {\n    \"service\": \"Mills Dangerous Goods\",\n    \"title\": \"Dangerous Goods Shipping Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/dangerous-goods-readiness-checklist.pdf\"\n  },\n  \"logistics\": {\n    \"service\": \"Mills Logistics\",\n    \"title\": \"Post-Clearance Delivery Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/logistics-readiness-checklist.pdf\"\n  },\n  \"packaging\": {\n    \"service\": \"Mills Packaging\",\n    \"title\": \"Export and Industrial Packaging Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/packaging-readiness-checklist.pdf\"\n  },\n  \"insurance\": {\n    \"service\": \"Mills Insurance\",\n    \"title\": \"Marine Cargo Insurance Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/insurance-readiness-checklist.pdf\"\n  },\n  \"time-critical\": {\n    \"service\": \"Mills Time Critical\",\n    \"title\": \"Priority Clearance Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/time-critical-readiness-checklist.pdf\"\n  },\n  \"advisory\": {\n    \"service\": \"Mills Advisory\",\n    \"title\": \"Philippine Trade Regulation Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/advisory-readiness-checklist.pdf\"\n  }\n};\n\nconst b = $input.first().json.body || {};\nconst clean = (v) => String(v == null ? '' : v).trim();\nconst guide = clean(b.guide);\nconst email = clean(b.email).toLowerCase();\nconst digits = clean(b.phone).replace(/\\D/g, '');\nconst g = GUIDES[guide];\n\nlet error = '';\nif (clean(b.hp)) error = 'spam';\nelse if (!g) error = 'unknown guide: ' + guide;\nelse if (clean(b.name).length < 2) error = 'name';\nelse if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) error = 'email';\nelse if (digits.length < 7 || digits.length > 15) error = 'phone';\nelse if (clean(b.company).length < 2) error = 'company';\n\nconst name = clean(b.name);\nconst FREE = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'live.com', 'proton.me', 'protonmail.com'];\nconst domain = email.split('@')[1] || '';\nconst fromAd = !!(clean(b.gclid) || clean(b.gbraid) || clean(b.wbraid));\n// Hot = came from a Google ad, or used a company email address\nconst priority = (fromAd || (domain && !FREE.includes(domain))) ? 'Hot' : 'Normal';\nreturn [{ json: {\n  received_date: new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Manila' }),\n  category: 'Service',\n  priority,\n  status: 'New',\n  owner: '',\n  notes: '',\n  valid: !error,\n  error,\n  submitted_at: clean(b.submitted_at) || new Date().toISOString(),\n  guide,\n  service: g ? g.service : '',\n  guide_title: g ? g.title : clean(b.guide_title),\n  pdf_url: g ? SITE + g.pdf : '',\n  name,\n  first_name: name.split(/\\s+/).length > 1 ? name.split(/\\s+/)[0] : '',\n  last_name: name.split(/\\s+/).length > 1 ? name.split(/\\s+/).slice(1).join(' ') : name,\n  first_name_greeting: name.split(/\\s+/)[0],\n  email,\n  phone: clean(b.phone),\n  company: clean(b.company),\n  page: clean(b.page),\n  gclid: clean(b.gclid), gbraid: clean(b.gbraid), wbraid: clean(b.wbraid),\n  utm_source: clean(b.utm_source), utm_medium: clean(b.utm_medium), utm_campaign: clean(b.utm_campaign),\n  utm_term: clean(b.utm_term), utm_content: clean(b.utm_content),\n  lead_source: 'lead_magnet'\n} }];"
+        "jsCode": "// Mills lead magnet: validate, normalize and enrich one form submission.\n// To add the 16 industry guides later, add their slugs to GUIDES below (same shape).\nconst SITE = 'https://themillsglobal.com/';\nconst GUIDES = {\n  \"entry\": {\n    \"service\": \"Mills Entry\",\n    \"title\": \"Philippine Market Entry Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/entry-readiness-checklist.pdf\"\n  },\n  \"permits\": {\n    \"service\": \"Mills Permits\",\n    \"title\": \"Import Permit and Product Registration Checklist\",\n    \"pdf\": \"assets/lead-magnets/permits-readiness-checklist.pdf\"\n  },\n  \"customs\": {\n    \"service\": \"Mills Customs\",\n    \"title\": \"Customs Clearance Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/customs-readiness-checklist.pdf\"\n  },\n  \"projects\": {\n    \"service\": \"Mills Projects\",\n    \"title\": \"Project Cargo Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/projects-readiness-checklist.pdf\"\n  },\n  \"marine\": {\n    \"service\": \"Mills Marine\",\n    \"title\": \"Vessel and Marine Equipment Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/marine-readiness-checklist.pdf\"\n  },\n  \"dangerous-goods\": {\n    \"service\": \"Mills Dangerous Goods\",\n    \"title\": \"Dangerous Goods Shipping Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/dangerous-goods-readiness-checklist.pdf\"\n  },\n  \"logistics\": {\n    \"service\": \"Mills Logistics\",\n    \"title\": \"Post-Clearance Delivery Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/logistics-readiness-checklist.pdf\"\n  },\n  \"packaging\": {\n    \"service\": \"Mills Packaging\",\n    \"title\": \"Export and Industrial Packaging Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/packaging-readiness-checklist.pdf\"\n  },\n  \"insurance\": {\n    \"service\": \"Mills Insurance\",\n    \"title\": \"Marine Cargo Insurance Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/insurance-readiness-checklist.pdf\"\n  },\n  \"time-critical\": {\n    \"service\": \"Mills Time Critical\",\n    \"title\": \"Priority Clearance Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/time-critical-readiness-checklist.pdf\"\n  },\n  \"advisory\": {\n    \"service\": \"Mills Advisory\",\n    \"title\": \"Philippine Trade Regulation Readiness Checklist\",\n    \"pdf\": \"assets/lead-magnets/advisory-readiness-checklist.pdf\"\n  }\n};\n\n// Who is notified for each service. Replace the addresses with the person who owns that service.\nconst DEFAULT_OWNER = 'inquiry@themillsglobal.com';\nconst OWNERS = {\n  'Mills Entry': DEFAULT_OWNER, 'Mills Permits': DEFAULT_OWNER, 'Mills Customs': DEFAULT_OWNER, 'Mills Projects': DEFAULT_OWNER,\n  'Mills Marine': DEFAULT_OWNER, 'Mills Dangerous Goods': DEFAULT_OWNER, 'Mills Logistics': DEFAULT_OWNER, 'Mills Packaging': DEFAULT_OWNER,\n  'Mills Insurance': DEFAULT_OWNER, 'Mills Time Critical': DEFAULT_OWNER, 'Mills Advisory': DEFAULT_OWNER\n};\n\nconst b = $input.first().json.body || {};\nconst clean = (v) => String(v == null ? '' : v).trim();\nconst guide = clean(b.guide);\nconst email = clean(b.email).toLowerCase();\nconst digits = clean(b.phone).replace(/\\D/g, '');\nconst g = GUIDES[guide];\n\nlet error = '';\nif (clean(b.hp)) error = 'spam';\nelse if (!g) error = 'unknown guide: ' + guide;\nelse if (clean(b.name).length < 2) error = 'name';\nelse if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) error = 'email';\nelse if (digits.length < 7 || digits.length > 15) error = 'phone';\nelse if (clean(b.company).length < 2) error = 'company';\n\nconst name = clean(b.name);\nconst FREE = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'live.com', 'proton.me', 'protonmail.com'];\nconst domain = email.split('@')[1] || '';\nconst fromAd = !!(clean(b.gclid) || clean(b.gbraid) || clean(b.wbraid));\n// Hot = came from a Google ad, or used a company email address\nconst priority = (fromAd || (domain && !FREE.includes(domain))) ? 'Hot' : 'Normal';\nreturn [{ json: {\n  received_date: new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Manila' }),\n  category: 'Service',\n  notify_to: (g && OWNERS[g.service]) || DEFAULT_OWNER,\n  priority,\n  status: 'New',\n  owner: '',\n  notes: '',\n  valid: !error,\n  error,\n  submitted_at: clean(b.submitted_at) || new Date().toISOString(),\n  guide,\n  service: g ? g.service : '',\n  guide_title: g ? g.title : clean(b.guide_title),\n  pdf_url: g ? SITE + g.pdf : '',\n  name,\n  first_name: name.split(/\\s+/).length > 1 ? name.split(/\\s+/)[0] : '',\n  last_name: name.split(/\\s+/).length > 1 ? name.split(/\\s+/).slice(1).join(' ') : name,\n  first_name_greeting: name.split(/\\s+/)[0],\n  email,\n  phone: clean(b.phone),\n  company: clean(b.company),\n  page: clean(b.page),\n  gclid: clean(b.gclid), gbraid: clean(b.gbraid), wbraid: clean(b.wbraid),\n  utm_source: clean(b.utm_source), utm_medium: clean(b.utm_medium), utm_campaign: clean(b.utm_campaign),\n  utm_term: clean(b.utm_term), utm_content: clean(b.utm_content),\n  lead_source: 'lead_magnet'\n} }];"
       },
-      "id": "894783c5-e149-4e12-a767-c07a07b2fcaa",
+      "id": "ea9da754-73f3-4b81-94a1-8fcc5a0c665a",
       "name": "Validate and normalize",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -59,7 +59,7 @@
           },
           "conditions": [
             {
-              "id": "d8f2967b-e794-42dc-a6e6-cb4db4495703",
+              "id": "2c91e17c-912f-44d1-ae7b-bd9f296abcb2",
               "leftValue": "={{ $json.valid }}",
               "rightValue": "",
               "operator": {
@@ -73,7 +73,7 @@
         },
         "options": {}
       },
-      "id": "896b9f6d-3944-4a0d-ae47-30dc9dde8e89",
+      "id": "d0f619e6-c07f-4a2f-813b-a856d6836fb8",
       "name": "Valid submission?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
@@ -90,7 +90,7 @@
           "responseCode": 200
         }
       },
-      "id": "d0605de5-0bb6-4805-bd05-965b069e05b6",
+      "id": "6d6e2c85-137f-464b-baa1-b762f60629f7",
       "name": "Respond 200",
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
@@ -107,7 +107,7 @@
           "responseCode": 400
         }
       },
-      "id": "bcde82f3-749a-4234-9f88-24548b7af872",
+      "id": "543bb4ee-99ca-49f4-b0b4-b822109b8ede",
       "name": "Respond 400",
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
@@ -128,10 +128,22 @@
           "Phone": "={{ $json.phone }}",
           "Lead_Source": "Website",
           "Lead_Status": "Not Contacted",
-          "Description": "=Lead magnet: {{ $json.guide_title }}\nService: {{ $json.service }}\nPriority: {{ $json.priority }}\nPage: {{ $json.page }}\nAd source: {{ $json.utm_source }} / {{ $json.utm_medium }} / {{ $json.utm_campaign }}\nGCLID: {{ $json.gclid }}\nSubmitted: {{ $json.submitted_at }}"
+          "Description": "=Lead magnet: {{ $json.guide_title }}\nService: {{ $json.service }}\nPriority: {{ $json.priority }}\nPage: {{ $json.page }}\nAd source: {{ $json.utm_source }} / {{ $json.utm_medium }} / {{ $json.utm_campaign }}\nGCLID: {{ $json.gclid }}\nSubmitted: {{ $json.submitted_at }}",
+          "customFields": {
+            "customFields": [
+              {
+                "fieldId": "Service",
+                "value": "={{ $json.service }}"
+              },
+              {
+                "fieldId": "Priority",
+                "value": "={{ $json.priority }}"
+              }
+            ]
+          }
         }
       },
-      "id": "f67acaa4-445e-41f6-b73e-b6dff183e741",
+      "id": "50a662ef-c38c-42dd-beda-dbf2b89628b1",
       "name": "Create or update lead in Zoho CRM",
       "type": "n8n-nodes-base.zohoCrm",
       "typeVersion": 1,
@@ -151,7 +163,7 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": "Leads",
+          "value": "All Leads",
           "mode": "name"
         },
         "columns": {
@@ -187,13 +199,69 @@
         },
         "options": {}
       },
-      "id": "3a3f863b-b4d2-4f44-aa1c-c53065737858",
-      "name": "Log lead to Google Sheet",
+      "id": "116d2f71-babc-4230-b4bd-8a96188f2716",
+      "name": "Log to All Leads tab",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
         960,
         -220
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.service }}",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "received_date": "={{ $json.received_date }}",
+            "submitted_at": "={{ $json.submitted_at }}",
+            "status": "={{ $json.status }}",
+            "priority": "={{ $json.priority }}",
+            "owner": "={{ $json.owner }}",
+            "category": "={{ $json.category }}",
+            "service": "={{ $json.service }}",
+            "guide": "={{ $json.guide }}",
+            "guide_title": "={{ $json.guide_title }}",
+            "name": "={{ $json.name }}",
+            "email": "={{ $json.email }}",
+            "phone": "={{ $json.phone }}",
+            "company": "={{ $json.company }}",
+            "page": "={{ $json.page }}",
+            "lead_source": "={{ $json.lead_source }}",
+            "notes": "={{ $json.notes }}",
+            "gclid": "={{ $json.gclid }}",
+            "gbraid": "={{ $json.gbraid }}",
+            "wbraid": "={{ $json.wbraid }}",
+            "utm_source": "={{ $json.utm_source }}",
+            "utm_medium": "={{ $json.utm_medium }}",
+            "utm_campaign": "={{ $json.utm_campaign }}",
+            "utm_term": "={{ $json.utm_term }}",
+            "utm_content": "={{ $json.utm_content }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "a5ec6ca1-402a-4a23-b1fd-fb7efef36d31",
+      "name": "Log to the service tab",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        960,
+        -330
       ],
       "onError": "continueRegularOutput"
     },
@@ -209,7 +277,7 @@
           "replyTo": "inquiry@themillsglobal.com"
         }
       },
-      "id": "32c85cc8-18da-4285-8873-9855eed1d796",
+      "id": "ca813a3b-8919-4900-adca-22a97cca1ce8",
       "name": "Email the checklist to the lead",
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
@@ -221,7 +289,7 @@
     },
     {
       "parameters": {
-        "sendTo": "inquiry@themillsglobal.com",
+        "sendTo": "={{ $json.notify_to }}",
         "subject": "=New lead: {{ $json.service }} - {{ $json.company }}",
         "emailType": "html",
         "message": "=<p><strong>New lead magnet download</strong></p>\n<p>Service: {{ $json.service }}<br>Checklist: {{ $json.guide_title }}</p>\n<p>Name: {{ $json.name }}<br>Company: {{ $json.company }}<br>Email: {{ $json.email }}<br>Phone: {{ $json.phone }}</p>\n<p>Page: {{ $json.page }}<br>Ad source: {{ $json.utm_source }} / {{ $json.utm_campaign }} {{ $json.gclid ? '(gclid ' + $json.gclid + ')' : '' }}</p>",
@@ -229,7 +297,7 @@
           "appendAttribution": false
         }
       },
-      "id": "4bd44b6f-dd75-43b2-999e-868f41070bde",
+      "id": "27884f3e-930c-4ca2-8b7f-015d919f4ad6",
       "name": "Notify the team",
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
@@ -290,7 +358,12 @@
             "index": 0
           },
           {
-            "node": "Log lead to Google Sheet",
+            "node": "Log to All Leads tab",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log to the service tab",
             "type": "main",
             "index": 0
           },
